@@ -1,0 +1,305 @@
+{
+  "meta": {
+    "siteName": "Zalty Boyz Adventures"
+  },
+  "nav": {
+    "home": "Inicio",
+    "surfLessons": "Clases de Surf",
+    "tours": "Tours",
+    "packages": "Paquetes",
+    "massages": "Masajes",
+    "about": "Nosotros",
+    "gallery": "Galería",
+    "faq": "Preguntas Frecuentes",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "menu": "Menú",
+    "closeMenu": "Cerrar menú",
+    "skipToContent": "Saltar al contenido principal"
+  },
+  "common": {
+    "whatsappUs": "Escríbenos por WhatsApp",
+    "contactUs": "Contáctanos",
+    "bookNow": "Consultar Disponibilidad",
+    "learnMore": "Saber Más",
+    "viewAllTours": "Ver Todos los Tours",
+    "readMore": "Leer Más",
+    "from": "Desde",
+    "perPerson": "por persona",
+    "duration": "Duración",
+    "groupSize": "Tamaño del grupo",
+    "difficulty": "Nivel",
+    "included": "Qué incluye",
+    "goodToKnow": "Bueno saber",
+    "pageNotFound": "No pudimos encontrar esa página.",
+    "backToHome": "Volver al Inicio"
+  },
+  "quickBook": {
+    "title": "Consultar Disponibilidad",
+    "subtitle": "Elige lo que buscas y te confirmamos por WhatsApp — respuestas reales de una persona real, normalmente en menos de una hora.",
+    "activityLabel": "Quiero hacer",
+    "activityPlaceholder": "Elige una actividad",
+    "surfLessonOption": "Clases de Surf",
+    "customOption": "Un paquete personalizado",
+    "peopleLabel": "Personas",
+    "dateLabel": "Fecha preferida",
+    "submit": "Consultar Disponibilidad por WhatsApp",
+    "disclaimer": "Esto envía tu selección directo a nuestro WhatsApp — sin pago, sin compromiso, solo una respuesta rápida.",
+    "messageIntro": "¡Hola Zalty Boyz Adventures! Quisiera consultar disponibilidad para:",
+    "messageActivity": "Actividad",
+    "messagePeople": "Personas",
+    "messageDate": "Fecha preferida",
+    "messageNotSet": "Flexible / aún no estoy seguro/a"
+  },
+  "testimonials": {
+    "eyebrow": "Reseñas de Huéspedes",
+    "title": "Lo que dicen los viajeros",
+    "subtitle": "Viajes reales, olas reales — algunas palabras de huéspedes que hemos recibido.",
+    "googleLink": "Ver más reseñas en Google →",
+    "prev": "Reseñas anteriores",
+    "next": "Más reseñas",
+    "region": "Reseñas de huéspedes, desliza para ver más"
+  },
+  "whatsapp": {
+    "floatingButtonLabel": "Chatea con nosotros por WhatsApp",
+    "prefilledMessage": "¡Hola Zalty Boyz Adventures! Quisiera saber más sobre sus tours."
+  },
+  "footer": {
+    "tagline": "Clases de surf y aventuras de selva a mar en Puerto Viejo, Costa Rica.",
+    "quickLinks": "Enlaces Rápidos",
+    "getInTouch": "Contáctanos",
+    "followUs": "Síguenos",
+    "location": "Puerto Viejo de Talamanca, Limón, Costa Rica",
+    "rights": "Todos los derechos reservados."
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Puerto Viejo, Costa Rica",
+      "title": "Aprende a Surfear. Explora la Selva. Vive el Caribe.",
+      "subtitle": "Clases de surf en grupos pequeños y tours de aventura de selva a mar en Puerto Viejo de Talamanca — con surfistas locales que conocen mejor que nadie estas olas y senderos.",
+      "primaryCta": "Escríbenos por WhatsApp",
+      "secondaryCta": "Ver Clases de Surf"
+    },
+    "trustBar": {
+      "localGuides": "Guías locales certificados",
+      "smallGroups": "Grupos pequeños, atención personal",
+      "allLevels": "Todos los niveles son bienvenidos",
+      "fastReplies": "Respuestas rápidas por WhatsApp"
+    },
+    "servicesIntro": {
+      "eyebrow": "Qué Ofrecemos",
+      "title": "Un solo equipo, toda aventura del Caribe",
+      "subtitle": "Empieza con una clase de surf y arma tu propia semana de aventuras entre selva y mar — o déjanos armarla por ti con un paquete."
+    },
+    "surfHighlight": {
+      "eyebrow": "Nuestra Especialidad",
+      "title": "Clases de Surf para Todos los Niveles",
+      "body": "Nuestras clases de surf son donde comenzó Zalty Boyz Adventures — enseñanza paciente y enfocada en la seguridad en las playas ideales para principiantes de Puerto Viejo y Cocles. Ya sea que nunca te hayas parado en una tabla o busques tu primer tubo, adaptamos la clase a ti.",
+      "cta": "Explorar Clases de Surf"
+    },
+    "toursTeaser": {
+      "eyebrow": "Más Allá del Surf",
+      "title": "Kayak, paddle board, cascadas y fauna",
+      "body": "Puerto Viejo no es solo olas — es selva tropical, fauna, ríos y cascadas escondidas. Reserva un tour o combina varios en un paquete de varios días.",
+      "cta": "Ver Todos los Tours"
+    },
+    "packagesTeaser": {
+      "eyebrow": "Mejor Valor",
+      "title": "Reserva una Semana o Fin de Semana Completo, de Una Vez",
+      "body": "Combina clases de surf, tours e incluso un masaje de nuestra empresa aliada en una sola reserva — ideal si estás planeando tu viaje desde el extranjero.",
+      "cta": "Ver Paquetes"
+    },
+    "socialProof": {
+      "title": "La confianza de viajeros de todo el mundo",
+      "subtitle": "Huéspedes de Estados Unidos, Canadá, Europa, Sudamérica y Costa Rica regresan año tras año."
+    },
+    "finalCta": {
+      "title": "¿Listo para planear tu aventura en Puerto Viejo?",
+      "subtitle": "Escríbenos por WhatsApp y te ayudamos a armar la clase, tour o paquete perfecto.",
+      "cta": "Escríbenos por WhatsApp"
+    }
+  },
+  "surfLessons": {
+    "hero": {
+      "eyebrow": "Nuestra Especialidad",
+      "title": "Clases de Surf en Puerto Viejo y Cocles",
+      "subtitle": "Clases de surf grupales y privadas para principiantes absolutos hasta surfistas intermedios, en las playas cálidas y suaves de Puerto Viejo."
+    },
+    "intro": {
+      "title": "Por qué aprender a surfear con nosotros",
+      "body": "Zalty Boyz Adventures comenzó como una escuela de surf, y sigue siendo lo que mejor hacemos. Nuestros instructores crecieron surfeando estas mismas playas, así que las clases se basan en condiciones locales reales — las olas más amigables para principiantes, los puntos de entrada más seguros y las mejores ventanas de marea cada día."
+    },
+    "pickup": {
+      "title": "Te recogemos",
+      "body": "Te recogemos en nuestro Zalty Tuk Tuk y te llevamos a algunas de nuestras playas favoritas — incluyendo Cocles, Punta Uva, Playa Grande y más — donde estén las mejores condiciones ese día, para darte la mejor clase posible."
+    },
+    "levels": {
+      "title": "Clases para todos los niveles",
+      "beginner": {
+        "title": "Primera Vez",
+        "body": "¿Nunca te has parado en una tabla? Empezamos en la arena con seguridad, posición y técnica de pop-up antes de remar en una ola ideal para principiantes."
+      },
+      "improver": {
+        "title": "En Progreso",
+        "body": "¿Ya agarraste algunas olas? Trabajamos en técnica de remada, selección de olas y lectura del line-up para que surfees con más consistencia."
+      },
+      "advanced": {
+        "title": "Coaching Avanzado",
+        "body": "¿Buscas mejorar una habilidad específica — bajadas más pronunciadas, cutbacks, o probar una ola más rápida como Salsa Brava? Adaptamos la sesión a tus metas."
+      }
+    },
+    "whatToExpect": {
+      "title": "Qué esperar",
+      "items": [
+        "Grupos pequeños (máximo 4 estudiantes por instructor) o clases privadas 1 a 1",
+        "Todo el equipo incluido: tabla soft-top, rashguard y protector solar biodegradable",
+        "Clases programadas según la mejor marea y oleaje del día",
+        "Fotos/video de tu sesión bajo pedido"
+      ]
+    },
+    "pricing": {
+      "title": "Precios",
+      "group": {
+        "title": "Clase Grupal",
+        "price": "$60",
+        "items": ["2 horas", "Transporte", "Equipo de surf", "Snack"]
+      },
+      "private": {
+        "title": "Clase Privada",
+        "price": "$70",
+        "items": [
+          "2 horas",
+          "15–30 minutos de práctica en la playa",
+          "1 hora 30 minutos en el agua",
+          "Transporte",
+          "Equipo de surf"
+        ]
+      },
+      "note": "Confirma las tarifas exactas y precios para grupos cuando nos escribas por WhatsApp."
+    },
+    "cta": {
+      "title": "¿Listo para agarrar tu primera ola?",
+      "subtitle": "Escríbenos tus fechas de viaje y nivel de experiencia y armamos la clase ideal.",
+      "cta": "Reservar Clase por WhatsApp"
+    }
+  },
+  "tours": {
+    "hero": {
+      "eyebrow": "Tours y Excursiones",
+      "title": "Aventuras de Selva a Mar",
+      "subtitle": "Más allá de las clases de surf, ofrecemos tours en grupos pequeños por Puerto Viejo y Talamanca — en el agua, en la selva y de noche."
+    },
+    "packagesNote": {
+      "title": "¿Quieres combinar varios?",
+      "body": "La mayoría de nuestros huéspedes combinan dos o tres tours con sus clases de surf. Mira nuestros paquetes para combinaciones ya armadas, o escríbenos para crear la tuya.",
+      "cta": "Ver Paquetes"
+    }
+  },
+  "packages": {
+    "hero": {
+      "eyebrow": "Mejor Valor",
+      "title": "Paquetes de Aventura de Varios Días",
+      "subtitle": "No te preocupes por planear cada actividad — somos tus planificadores de aventuras del Caribe. Elige un paquete de clases de surf, tours y relajación, y nosotros nos encargamos del resto."
+    },
+    "customNote": {
+      "title": "¿No ves la combinación que buscas?",
+      "body": "Cada paquete a continuación se puede ajustar. Cuéntanos tus fechas de viaje, tamaño de grupo e intereses por WhatsApp y armamos un itinerario a tu medida — tú solo relájate y disfruta.",
+      "cta": "Armar Mi Propio Paquete"
+    }
+  },
+  "massages": {
+    "hero": {
+      "eyebrow": "Servicio Aliado",
+      "title": "Masajes para Cerrar tu Día de Aventura",
+      "subtitle": "Después de un día de surf y exploración, relájate con un masaje de nuestra aliada local de confianza — disponible solo o agregado a cualquier paquete."
+    },
+    "body": {
+      "title": "Una conexión familiar de confianza",
+      "text": "Nuestro servicio de masajes es dirigido por una terapeuta local de confianza en Puerto Viejo — un servicio que nos enorgullece ofrecer junto a nuestros tours porque conocemos su calidad de primera mano."
+    },
+    "cta": {
+      "title": "Agrega un masaje a tu viaje",
+      "cta": "Preguntar por Masajes"
+    }
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "Nuestra Historia",
+      "title": "Sobre Zalty Boyz Adventures",
+      "subtitle": "Un equipo local, con conexión familiar, compartiendo el Caribe de Costa Rica tal como crecimos viviéndolo."
+    },
+    "howItStarted": {
+      "title": "Cómo Comenzamos",
+      "paragraphs": [
+        "Todo comenzó como un canal de YouTube, Zalty Boyz, a principios de 2020, cuando el mundo se detuvo por el COVID. Empezamos a grabar nuestro día a día: surfeando, patinando, pescando, saltando de acantilados, viajando y viviendo todo tipo de aventuras con nuestros amigos por la hermosa costa caribeña de Puerto Viejo. Vivimos el estilo de vida Pura Vida, y quisimos compartirlo.",
+        "De ahí, convertimos nuestra pasión en nuestra propia escuela de surf — la mayoría de los boyz llevamos años siendo instructores de surf, y no hay nada que disfrutemos más que enseñarle a alguien el deporte que tenemos la suerte de practicar casi todos los días de nuestras vidas. A medida que más visitantes nos preguntaban qué más había para hacer, nos expandimos también a los tours, mostrándole a los viajeros el hermoso lugar que llamamos hogar.",
+        "Tener la escuela de surf nos da una forma de seguir haciendo lo que amamos — y de seguir grabando los videos que lo empezaron todo — mientras compartimos nuestro estilo de vida con quien quiera unirse a la aventura."
+      ],
+      "youtubeCta": "Míranos en YouTube"
+    },
+    "team": {
+      "title": "¿Quiénes Somos?"
+    }
+  },
+  "gallery": {
+    "hero": {
+      "eyebrow": "Galería",
+      "title": "Mira la Aventura",
+      "subtitle": "Fotos y videos de clases, tours y paquetes. Galería completa próximamente — mientras tanto, visita nuestro Instagram."
+    }
+  },
+  "faqPage": {
+    "hero": {
+      "eyebrow": "Preguntas Frecuentes",
+      "title": "Preguntas Frecuentes",
+      "subtitle": "Respuestas a las preguntas que más escuchamos de viajeros planeando su visita a Puerto Viejo."
+    },
+    "stillQuestions": {
+      "title": "¿Aún tienes preguntas?",
+      "cta": "Pregúntanos por WhatsApp"
+    }
+  },
+  "blog": {
+    "hero": {
+      "eyebrow": "Blog",
+      "title": "Guías de Puerto Viejo y Talamanca",
+      "subtitle": "Guías para planear tu viaje, reportes de oleaje y tips para ver fauna, escritos por el equipo. Próximamente nuevos artículos."
+    },
+    "comingSoon": "Estamos escribiendo nuestras primeras guías — vuelve pronto, o síguenos en Instagram mientras tanto."
+  },
+  "contact": {
+    "hero": {
+      "eyebrow": "Contáctanos",
+      "title": "Planea Tu Viaje",
+      "subtitle": "La forma más rápida de contactarnos es por WhatsApp. Envíanos tus fechas de viaje, tamaño de grupo y qué te interesa, y te responderemos pronto."
+    },
+    "whatsapp": {
+      "title": "WhatsApp (más rápido)",
+      "body": "La mayoría de las reservas se hacen aquí mismo. Toca abajo para iniciar un chat.",
+      "cta": "Escribir por WhatsApp"
+    },
+    "form": {
+      "title": "O envía una consulta",
+      "name": "Nombre completo",
+      "email": "Correo electrónico",
+      "phone": "Teléfono / WhatsApp",
+      "dates": "Fechas de viaje",
+      "interest": "Estoy interesado/a en",
+      "interestOptions": {
+        "surf": "Clases de surf",
+        "tours": "Tours",
+        "packages": "Paquete de varios días",
+        "massage": "Masaje",
+        "other": "Aún no estoy seguro/a"
+      },
+      "message": "Cuéntanos más",
+      "submit": "Enviar Consulta",
+      "success": "¡Gracias! Recibimos tu mensaje y te responderemos pronto por WhatsApp o correo.",
+      "error": "Algo salió mal al enviar tu mensaje. Por favor intenta por WhatsApp."
+    },
+    "info": {
+      "title": "Encuéntranos",
+      "location": "Puerto Viejo de Talamanca, Limón, Costa Rica"
+    }
+  }
+}

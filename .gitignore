@@ -1,0 +1,47 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env files
+.env*
+!.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Raw/unprocessed camera & drone exports — large source dumps kept locally
+# only, several of which exceed GitHub's 100MB per-file limit outright.
+# The actual site assets are the renamed copies in the same folders (see
+# public/images/README.md for the mapping); these originals aren't
+# referenced by any code, so excluding them doesn't affect the site.
+public/images/**/*.MP4
+public/images/**/*.mp4
+public/images/**/*.mov
+public/images/tours/kayak[0-9].webp
+public/images/tours/nighttour[0-9].webp
+public/images/surf-lessons/surf[0-9].webp
+public/images/surf-lessons/surf[0-9].webp.jpg

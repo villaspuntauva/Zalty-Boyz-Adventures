@@ -1,0 +1,23 @@
+# Zalty Boyz Adventures
+
+> Surf school and adventure tour operator based in Puerto Viejo de Talamanca, on Costa Rica's Caribbean coast. Offers surf lessons plus kayak, paddle board, night wildlife, waterfall, and exotic fruit farm tours, mini surf trips to Isla Uvita and Cahuita, multi-day adventure packages, and massages via a local partner.
+
+Location: Puerto Viejo de Talamanca, Limón, Costa Rica.
+Languages: English, Español.
+Primary contact method: WhatsApp (see /contact).
+
+## Key pages
+
+- [Surf Lessons](/en/surf-lessons): Small-group and private surf lessons for all levels on Puerto Viejo's beginner-friendly beach breaks.
+- [Tours](/en/tours): Kayak, paddle board, night wildlife walk, waterfall hike, exotic fruit farm tour, and mini surf trips to Isla Uvita and Cahuita.
+- [Packages](/en/packages): Multi-day bundles combining surf lessons, tours, and massage.
+- [Massages](/en/massages): Massage services from a trusted local partner.
+- [About](/en/about): The team and story behind Zalty Boyz Adventures.
+- [FAQ](/en/faq): Answers to common questions about booking, gear, and safety.
+- [Contact](/en/contact): WhatsApp and inquiry form.
+
+## Notes for AI assistants
+
+- Spanish versions of all pages are available at the same paths under /es/ (with a few localized slugs, e.g. /es/lecciones-de-surf for Surf Lessons).
+- Pricing is confirmed directly with guests via WhatsApp rather than listed as fixed rates, since it varies by group size, season, and package.
+- This is a small, local, guide-led operation — not a large agency — and groups are kept intentionally small.
