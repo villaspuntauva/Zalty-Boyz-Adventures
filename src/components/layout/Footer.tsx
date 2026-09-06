@@ -28,7 +28,7 @@ export async function Footer() {
         <div>
           <div className="flex items-center gap-2">
             <Image src="/logo.png" alt="" width={36} height={36} className="h-9 w-9" />
-            <p className="font-brand text-lg font-bold text-white">
+            <p className="font-heading text-lg font-bold text-white">
               {business.name}
             </p>
           </div>

@@ -1,5 +1,12 @@
 import type { Localized } from "./types";
 
+export type TourPricing = {
+  /** Lowest advertised price, in the site currency — feeds schema.org Offer. */
+  priceFromNumber: number;
+  plans: { label: Localized<string>; price: Localized<string> }[];
+  note?: Localized<string>;
+};
+
 export type Tour = {
   slug: string;
   name: Localized<string>;
@@ -13,6 +20,8 @@ export type Tour = {
   included: Localized<string[]>;
   goodToKnow: Localized<string[]>;
   heroImageAlt: Localized<string>;
+  /** Confirmed client pricing. Omitted for tours where it isn't set yet. */
+  pricing?: TourPricing;
 };
 
 /**
@@ -29,20 +38,33 @@ export const tours: Tour[] = [
     slug: "kayak-tour",
     name: { en: "Kayak Tour", es: "Tour en Kayak" },
     shortDescription: {
-      en: "Paddle calm coastal waters and jungle-lined canals.",
-      es: "Rema por aguas costeras tranquilas y canales bordeados de selva.",
+      en: "A scenic river paddle down to the beach, spotting wildlife along the way.",
+      es: "Un recorrido escénico en kayak por el río hasta la playa, viendo fauna en el camino.",
     },
     description: {
-      en: "Explore the calmer waters around Puerto Viejo by kayak, gliding along the coastline and jungle-fringed canals where howler monkeys and toucans are often spotted from the water. Suitable for beginners — no experience needed.",
-      es: "Explora las aguas más tranquilas alrededor de Puerto Viejo en kayak, deslizándote por la costa y canales bordeados de selva donde es común ver monos congo y tucanes desde el agua. Apto para principiantes, no se necesita experiencia.",
+      en: "We'll take you on a scenic paddle up the Cocles or Punta Uva River, all the way down to the beach. Along the way, we can see all types of wildlife, including monkeys, sloths, iguanas, turtles, and much more.",
+      es: "Te llevamos a remar por el escénico río Cocles o Punta Uva, hasta llegar a la playa. En el camino, podemos ver todo tipo de fauna, incluyendo monos, perezosos, iguanas, tortugas y mucho más.",
     },
-    durationLabel: { en: "Approx. 2.5 hours", es: "Aprox. 2.5 horas" },
-    durationIso: "PT2H30M",
+    durationLabel: { en: "2 hours", es: "2 horas" },
+    durationIso: "PT2H",
     groupSize: { en: "2–8 people", es: "2–8 personas" },
     difficulty: { en: "Easy — all levels", es: "Fácil — todos los niveles" },
     included: {
-      en: ["Kayak & paddle", "Life jacket", "Local guide", "Bottled water"],
-      es: ["Kayak y remo", "Chaleco salvavidas", "Guía local", "Agua embotellada"],
+      en: ["Kayaks", "Snack"],
+      es: ["Kayaks", "Snack"],
+    },
+    pricing: {
+      priceFromNumber: 50,
+      plans: [
+        {
+          label: { en: "Private", es: "Privado" },
+          price: { en: "$60", es: "$60" },
+        },
+        {
+          label: { en: "Group", es: "Grupal" },
+          price: { en: "$50 per person", es: "$50 por persona" },
+        },
+      ],
     },
     goodToKnow: {
       en: [
@@ -91,20 +113,33 @@ export const tours: Tour[] = [
     slug: "night-tour",
     name: { en: "Night Wildlife Tour", es: "Tour Nocturno de Fauna" },
     shortDescription: {
-      en: "After-dark jungle walk to spot frogs, spiders, snakes & more.",
-      es: "Caminata nocturna por la selva para ver ranas, arañas, serpientes y más.",
+      en: "After-dark wildlife walk on our own private jungle and fruit farm property.",
+      es: "Caminata nocturna de fauna en nuestra propia finca privada de selva y frutas.",
     },
     description: {
-      en: "The rainforest comes alive after sunset. On this guided night walk, our naturalist guides use red-light flashlights to spot nocturnal wildlife with minimal disturbance — red-eyed tree frogs, tarantulas, snakes, insects, and more, all explained along the way.",
-      es: "La selva cobra vida después del atardecer. En esta caminata nocturna guiada, nuestros guías naturalistas usan linternas de luz roja para observar fauna nocturna con mínima alteración — ranas de ojos rojos, tarántulas, serpientes, insectos y más, todo explicado en el camino.",
+      en: "Once the sun goes down, we go looking for what's lurking in the shadows on our own private jungle and exotic fruit farm property. This is where we can see snakes, tarantulas, frogs, and plenty more nighttime wildlife.",
+      es: "Una vez que se pone el sol, salimos a buscar lo que se esconde entre las sombras en nuestra propia finca privada de selva y frutas exóticas. Aquí es donde podemos ver serpientes, tarántulas, ranas y mucha más fauna nocturna.",
     },
     durationLabel: { en: "Approx. 2 hours", es: "Aprox. 2 horas" },
     durationIso: "PT2H",
     groupSize: { en: "2–10 people", es: "2–10 personas" },
     difficulty: { en: "Easy walk", es: "Caminata fácil" },
     included: {
-      en: ["Naturalist guide", "Red-light flashlight", "Rubber boots (if needed)"],
-      es: ["Guía naturalista", "Linterna de luz roja", "Botas de hule (si se necesitan)"],
+      en: ["Gear", "Transportation"],
+      es: ["Equipo", "Transporte"],
+    },
+    pricing: {
+      priceFromNumber: 45,
+      plans: [
+        {
+          label: { en: "Private", es: "Privado" },
+          price: { en: "$55", es: "$55" },
+        },
+        {
+          label: { en: "Group", es: "Grupal" },
+          price: { en: "$45 per person", es: "$45 por persona" },
+        },
+      ],
     },
     goodToKnow: {
       en: [

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Anton, Inter, UnifrakturCook } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -18,23 +18,10 @@ const bodyFont = Inter({
   display: "swap",
 });
 
-// Bold, condensed poster/impact face matching the "ZALTY BOYZ SURF SCHOOL"
-// promo graphic — used for every content heading (h1/h2/h3) site-wide.
-// Body copy stays in Inter so paragraph text stays easy to read.
-const headingFont = Anton({
+const headingFont = Poppins({
   variable: "--font-heading",
   subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-});
-
-// Blackletter/graffiti brand wordmark, matching the hand-painted "Zalty
-// Boyz" lettering on the team's own surfboards — reserved for the site's
-// own name (header nav + footer), not general headings.
-const brandFont = UnifrakturCook({
-  variable: "--font-brand",
-  subsets: ["latin"],
-  weight: "700",
+  weight: ["600", "700", "800"],
   display: "swap",
 });
 
@@ -99,7 +86,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${bodyFont.variable} ${headingFont.variable} ${brandFont.variable} h-full antialiased`}
+      className={`${bodyFont.variable} ${headingFont.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-sand-50 font-sans text-ink-900">
         <a href="#main-content" className="skip-link">

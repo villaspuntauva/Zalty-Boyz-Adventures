@@ -47,10 +47,7 @@ export function QuickBookWidget() {
       onSubmit={handleSubmit}
       className="w-full max-w-xl rounded-3xl bg-white/95 p-5 shadow-xl shadow-brand-900/10 backdrop-blur sm:p-6"
     >
-      {/* Plain (non-display) font here on purpose: this is a functional
-          control label, not a marketing heading, and the blackletter
-          display face misreads "Check" as "Chef" at this size/weight. */}
-      <h2 className="text-lg font-bold text-ink-900 sm:text-xl">
+      <h2 className="font-heading text-lg font-bold text-ink-900 sm:text-xl">
         {t("title")}
       </h2>
       <p className="mt-1 text-sm text-ink-700">{t("subtitle")}</p>

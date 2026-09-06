@@ -64,6 +64,7 @@ export default async function TourDetailPage({
           description: tour.description[l],
           slug: tour.slug,
           durationIso: tour.durationIso,
+          priceFrom: tour.pricing?.priceFromNumber,
         })}
       />
 
@@ -114,6 +115,34 @@ export default async function TourDetailPage({
                 </dd>
               </div>
             </dl>
+
+            {tour.pricing && (
+              <>
+                <h2 className="mt-10 font-heading text-xl font-bold text-ink-900">
+                  {t("pricing")}
+                </h2>
+                <div className="mt-3 grid gap-4 sm:grid-cols-2">
+                  {tour.pricing.plans.map((plan) => (
+                    <div
+                      key={plan.label[l]}
+                      className="rounded-xl border border-brand-100 bg-white p-4"
+                    >
+                      <p className="text-sm font-semibold text-brand-600">
+                        {plan.label[l]}
+                      </p>
+                      <p className="mt-1 text-2xl font-extrabold text-ink-900">
+                        {plan.price[l]}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                {tour.pricing.note && (
+                  <p className="mt-3 text-sm text-ink-700/70">
+                    {tour.pricing.note[l]}
+                  </p>
+                )}
+              </>
+            )}
 
             <h2 className="mt-10 font-heading text-xl font-bold text-ink-900">
               {t("included")}
