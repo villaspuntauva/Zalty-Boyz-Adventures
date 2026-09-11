@@ -21,13 +21,13 @@ export const routing = defineRouting({
       en: "/packages",
       es: "/paquetes",
     },
-    "/massages": {
-      en: "/massages",
-      es: "/masajes",
-    },
     "/about": {
       en: "/about",
       es: "/sobre-nosotros",
+    },
+    "/location": {
+      en: "/location",
+      es: "/ubicacion",
     },
     "/gallery": {
       en: "/gallery",

@@ -17,7 +17,7 @@ const contentSecurityPolicy = `
   img-src 'self' data: blob: https:;
   font-src 'self' data:;
   connect-src 'self' https://wa.me https://api.whatsapp.com${isDev ? " ws:" : ""};
-  frame-src 'self' https://www.google.com;
+  frame-src 'self' https://www.google.com https://www.surf-forecast.com;
   base-uri 'self';
   form-action 'self';
   frame-ancestors 'self';

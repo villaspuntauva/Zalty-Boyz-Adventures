@@ -16,6 +16,7 @@ update the path in code to match).
 | `home/surf-highlight.jpg` | Homepage — "Surf Lessons for Every Level" card |
 | `home/tours-teaser.jpg` | Homepage — "Kayak, paddle board, waterfalls & wildlife" card |
 | `home/packages-teaser.jpg` | Homepage — "Book a Full Week or Weekend" card |
+| `surf-lessons/hero.jpg` | Surf Lessons page — hero banner background |
 | `surf-lessons/lesson.jpg` | Surf Lessons page — intro photo |
 | `tours/kayak-tour.jpg` | Kayak Tour — card + detail page + gallery |
 | `tours/paddle-board.jpg` | Paddle Board (SUP) — card + detail page + gallery |
@@ -27,14 +28,35 @@ update the path in code to match).
 | `packages/full-week-explorer.jpg` | "Full Week Explorer" package card |
 | `packages/surf-and-relax.jpg` | "Surf & Relax" package card |
 | `massages/hero.jpg` | Massages page photo |
+| `about/hero.jpg` | About page — hero banner background |
 | `about/team.jpg` | About page — "How It Started" photo |
 | `about/team-cedric.jpg` | About page — Cedric McCrackin's team card |
 | `about/team-solomon.jpg` | About page — Solomon McCrackin's team card |
 | `about/team-julie.jpg` | About page — Julie Hickey's team card |
+| `location/hero.jpg` | Location page — hero banner background |
+| `faq/hero.jpg` | FAQ page — hero banner background |
+| `location/cocles.jpg` | Location page — Cocles Beach carousel card |
+| `location/punta-uva.jpg` | Location page — Punta Uva carousel card |
+| `location/playa-grande.jpg` | Location page — Playa Grande carousel card |
+| `location/playa-negra.jpg` | Location page — Playa Negra carousel card |
 
 Each tour and package image is reused in more than one place (its
 listing card, its own page, and — for tours — the Gallery page), so one
 good photo per row above covers several spots on the site at once.
+
+## Adding more photos to a carousel
+
+The Surf Lessons page and each tour's detail page show their main photo
+as a swipeable carousel (arrows + dot indicators) whenever more than one
+photo exists for it. To add photos beyond the first one, use the same
+base name with `-2`, `-3`, etc.:
+
+- `tours/kayak-tour.jpg`, `tours/kayak-tour-2.jpg`, `tours/kayak-tour-3.jpg`, ...
+- `surf-lessons/lesson.jpg`, `surf-lessons/lesson-2.jpg`, `surf-lessons/lesson-3.jpg`, ...
+
+Any numbers up to 15 are auto-detected — drop a file in and it just
+appears in the carousel, no code changes needed. Gaps are fine (e.g.
+`-2` and `-4` without a `-3`), but there's no reason to leave one.
 
 ## What makes a good file
 

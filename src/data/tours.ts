@@ -240,6 +240,42 @@ export const tours: Tour[] = [
       es: "Surfista remando en Isla Uvita cerca de Limón, Costa Rica",
     },
   },
+  {
+    slug: "massage",
+    name: { en: "Massage", es: "Masaje" },
+    shortDescription: {
+      en: "Unwind with a massage from our trusted local partner.",
+      es: "Relájate con un masaje de nuestra aliada local de confianza.",
+    },
+    description: {
+      en: "After a day of surfing and exploring, unwind with a massage from our trusted local partner — bookable on its own or added to any package. Our massage services are run by a trusted local therapist in Puerto Viejo, a service we're proud to offer alongside our own tours because we know the quality firsthand.",
+      es: "Después de un día de surf y exploración, relájate con un masaje de nuestra aliada local de confianza — disponible solo o agregado a cualquier paquete. Nuestros servicios de masaje están a cargo de una terapeuta local de confianza en Puerto Viejo, un servicio que nos enorgullece ofrecer junto a nuestros tours porque conocemos su calidad de primera mano.",
+    },
+    // TODO(client): confirm actual session length; "by appointment" avoids
+    // stating a specific duration that hasn't been confirmed.
+    durationLabel: { en: "By appointment", es: "Con cita previa" },
+    durationIso: "PT1H",
+    groupSize: { en: "1–2 people", es: "1–2 personas" },
+    difficulty: { en: "For all guests", es: "Para todos los huéspedes" },
+    included: {
+      en: ["Professional local massage therapist"],
+      es: ["Terapeuta de masajes profesional local"],
+    },
+    goodToKnow: {
+      en: [
+        "Can be booked on its own or added to any package",
+        "Message us to confirm current availability and pricing",
+      ],
+      es: [
+        "Se puede reservar sola o agregar a cualquier paquete",
+        "Escríbenos para confirmar disponibilidad y precios actuales",
+      ],
+    },
+    heroImageAlt: {
+      en: "Relaxing massage space near Puerto Viejo",
+      es: "Espacio de masajes relajante cerca de Puerto Viejo",
+    },
+  },
 ];
 
 export function getTourBySlug(slug: string) {

@@ -7,6 +7,7 @@ import { CTAButton } from "@/components/ui/Button";
 import { HeroMedia } from "@/components/HeroMedia";
 import { QuickBookWidget } from "@/components/QuickBookWidget";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
+import { PlaceholderVideo } from "@/components/ui/PlaceholderVideo";
 import { Testimonials } from "@/components/Testimonials";
 import { whatsappLink } from "@/lib/business";
 
@@ -165,6 +166,39 @@ export default async function HomePage({
       </section>
 
       <Testimonials locale={locale as Locale} />
+
+      <section className="py-16 sm:py-20">
+        <Container>
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-wide text-brand-600">
+              {t("instructorSpotlight.eyebrow")}
+            </p>
+            <h2 className="mt-2 font-heading text-3xl font-bold text-ink-900 sm:text-4xl">
+              {t("instructorSpotlight.title")}
+            </h2>
+            <p className="mt-3 text-ink-700">
+              {t("instructorSpotlight.subtitle")}
+            </p>
+          </div>
+
+          <div className="mx-auto mt-8 max-w-3xl">
+            <PlaceholderVideo
+              src="/videos/cedric-surfing.mp4"
+              label={
+                locale === "es"
+                  ? "Video de Cedric surfeando — próximamente"
+                  : "Cedric surfing — video coming soon"
+              }
+            />
+          </div>
+
+          <div className="mt-8 flex justify-center">
+            <CTAButton href="/about" variant="secondary">
+              {t("instructorSpotlight.cta")}
+            </CTAButton>
+          </div>
+        </Container>
+      </section>
 
       <section className="bg-brand-800 py-16 text-white sm:py-20">
         <Container className="text-center">

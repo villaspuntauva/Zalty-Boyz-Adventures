@@ -107,12 +107,6 @@ export default async function PackagesPage({
                         {name}
                       </li>
                     ))}
-                    {pkg.includesMassage && (
-                      <li className="flex gap-2">
-                        <span aria-hidden="true" className="text-brand-600">✓</span>
-                        {l === "es" ? "Masaje" : "Massage"}
-                      </li>
-                    )}
                   </ul>
 
                   <CTAButton

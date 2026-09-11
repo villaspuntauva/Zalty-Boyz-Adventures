@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { Container } from "@/components/ui/Container";
 import { CTAButton } from "@/components/ui/Button";
+import { HeroMedia } from "@/components/HeroMedia";
 import { JsonLd } from "@/components/JsonLd";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
@@ -57,7 +58,15 @@ export default async function FaqPage({
         )}
       />
 
-      <section className="bg-brand-800 py-16 text-white sm:py-20">
+      <section className="relative isolate overflow-hidden py-16 text-white sm:py-20">
+        <HeroMedia
+          imageSrc="/images/faq/hero.jpg"
+          imageAlt={
+            l === "es"
+              ? "Surfista saltando la ola en Puerto Viejo"
+              : "Surfer catching air on a wave in Puerto Viejo"
+          }
+        />
         <Container>
           <p className="text-sm font-semibold uppercase tracking-widest text-brand-100">
             {t("hero.eyebrow")}

@@ -10,8 +10,8 @@
  * and opening hours below are already the real values.
  */
 export const business = {
-  name: "Zalty Boyz Adventures",
-  legalName: "Zalty Boyz Adventures",
+  name: "Zalty Boyz",
+  legalName: "Zalty Boyz",
   tagline: {
     en: "Surf lessons & jungle-to-ocean adventures in Puerto Viejo",
     es: "Clases de surf y aventuras de selva a mar en Puerto Viejo",
@@ -28,12 +28,20 @@ export const business = {
   email: "hello@zaltyboyzadventures.com",
 
   address: {
-    streetAddress: "Playa Cocles",
+    streetAddress: "Calle El Tucán, Cocles (primera casa mano derecha)",
     addressLocality: "Puerto Viejo de Talamanca",
     addressRegion: "Limón",
     postalCode: "70403",
     addressCountry: "CR",
   },
+
+  // Google Business Profile listing name — still the pre-rebrand
+  // "Zalty Boyz Surf School" rather than "Zalty Boyz" above; update this
+  // if/when they rename the GBP listing to match the site.
+  // Searching the verified GBP name (rather than a raw address) gets
+  // Google to render an actual labeled pin + info card — complete with
+  // their real rating/reviews — instead of just centering the map.
+  mapQuery: "Zalty Boyz Surf School",
 
   // Approximate coordinates for Puerto Viejo de Talamanca; refine to the
   // exact shop/meeting-point location before launch.

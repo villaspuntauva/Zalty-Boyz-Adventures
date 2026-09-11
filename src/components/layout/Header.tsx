@@ -19,8 +19,8 @@ const navItems: { href: StaticPathnames; labelKey: string }[] = [
   { href: "/surf-lessons", labelKey: "surfLessons" },
   { href: "/tours", labelKey: "tours" },
   { href: "/packages", labelKey: "packages" },
-  { href: "/massages", labelKey: "massages" },
   { href: "/about", labelKey: "about" },
+  { href: "/location", labelKey: "location" },
   { href: "/faq", labelKey: "faq" },
 ];
 
@@ -62,7 +62,7 @@ export function Header() {
             priority
           />
           <span className="text-lg font-heading font-bold text-brand-800 sm:text-xl">
-            Zalty Boyz Adventures
+            Zalty Boyz
           </span>
         </Link>
 

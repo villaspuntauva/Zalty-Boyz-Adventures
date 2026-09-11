@@ -6,10 +6,9 @@ export type Package = {
   shortDescription: Localized<string>;
   durationLabel: Localized<string>;
   goodFor: Localized<string>;
-  /** Tour slugs (see src/data/tours.ts) bundled into this package. */
+  /** Tour slugs (see src/data/tours.ts) bundled into this package — "massage" included. */
   includesTourSlugs: string[];
   includesSurfLessons: boolean;
-  includesMassage: boolean;
 };
 
 /**
@@ -27,9 +26,8 @@ export const packages: Package[] = [
     },
     durationLabel: { en: "2 days", es: "2 días" },
     goodFor: { en: "Short trips & weekend visitors", es: "Viajes cortos y visitantes de fin de semana" },
-    includesTourSlugs: ["waterfall-tour"],
+    includesTourSlugs: ["waterfall-tour", "massage"],
     includesSurfLessons: true,
-    includesMassage: true,
   },
   {
     slug: "full-week-explorer",
@@ -40,9 +38,8 @@ export const packages: Package[] = [
     },
     durationLabel: { en: "7 days", es: "7 días" },
     goodFor: { en: "Travelers who want to see it all", es: "Viajeros que quieren verlo todo" },
-    includesTourSlugs: ["kayak-tour", "night-tour", "waterfall-tour", "fruit-farm-tour"],
+    includesTourSlugs: ["kayak-tour", "night-tour", "waterfall-tour", "fruit-farm-tour", "massage"],
     includesSurfLessons: true,
-    includesMassage: true,
   },
   {
     slug: "surf-and-relax",
@@ -53,8 +50,7 @@ export const packages: Package[] = [
     },
     durationLabel: { en: "3–5 days", es: "3–5 días" },
     goodFor: { en: "Surf-focused travelers", es: "Viajeros enfocados en el surf" },
-    includesTourSlugs: [],
+    includesTourSlugs: ["massage"],
     includesSurfLessons: true,
-    includesMassage: true,
   },
 ];

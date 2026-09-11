@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { reviews } from "@/data/reviews";
 import { Container } from "@/components/ui/Container";
-import { ReviewsCarousel } from "@/components/ReviewsCarousel";
+import { ScrollCarousel } from "@/components/ui/ScrollCarousel";
 import { business } from "@/lib/business";
 
 type Locale = "en" | "es";
@@ -36,13 +36,51 @@ export async function Testimonials({ locale }: { locale: Locale }) {
         </div>
 
         <div className="mt-10">
-          <ReviewsCarousel
-            reviews={reviews}
-            locale={locale}
+          <ScrollCarousel
             prevLabel={t("prev")}
             nextLabel={t("next")}
             regionLabel={t("region")}
-          />
+          >
+            {reviews.map((review, index) => (
+              <figure
+                key={index}
+                data-carousel-card
+                className="flex w-[85%] flex-none snap-start flex-col justify-between rounded-2xl border border-brand-100 bg-white p-6 shadow-sm sm:w-[380px]"
+              >
+                <div>
+                  <div
+                    aria-label={`${review.rating} out of 5 stars`}
+                    className="flex gap-0.5 text-accent-500"
+                  >
+                    {Array.from({ length: 5 }).map((_, starIndex) => (
+                      <svg
+                        key={starIndex}
+                        aria-hidden="true"
+                        viewBox="0 0 20 20"
+                        className="h-4 w-4"
+                        fill={starIndex < review.rating ? "currentColor" : "none"}
+                        stroke="currentColor"
+                      >
+                        <path d="M10 1.5l2.6 5.4 5.9.7-4.3 4.1 1.1 5.9L10 14.8l-5.3 2.8 1.1-5.9-4.3-4.1 5.9-.7L10 1.5z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <blockquote className="mt-3 text-sm text-ink-700">
+                    “{review.text[locale]}”
+                  </blockquote>
+                </div>
+                <figcaption className="mt-4 text-sm font-semibold text-ink-900">
+                  {review.author}
+                  {review.location && (
+                    <span className="font-normal text-ink-700/70">
+                      {" "}
+                      · {review.location}
+                    </span>
+                  )}
+                </figcaption>
+              </figure>
+            ))}
+          </ScrollCarousel>
         </div>
       </Container>
     </section>

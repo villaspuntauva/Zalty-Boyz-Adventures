@@ -1,14 +1,14 @@
 {
   "meta": {
-    "siteName": "Zalty Boyz Adventures"
+    "siteName": "Zalty Boyz"
   },
   "nav": {
     "home": "Home",
     "surfLessons": "Surf Lessons",
     "tours": "Tours",
     "packages": "Packages",
-    "massages": "Massages",
     "about": "About",
+    "location": "Location",
     "gallery": "Gallery",
     "faq": "FAQ",
     "blog": "Blog",
@@ -32,6 +32,9 @@
     "included": "What's included",
     "goodToKnow": "Good to know",
     "pricing": "Pricing",
+    "previousPhoto": "Previous photo",
+    "nextPhoto": "Next photo",
+    "goToPhoto": "Go to photo {number} of {total}",
     "pageNotFound": "We couldn't find that page.",
     "backToHome": "Back to Home"
   },
@@ -46,7 +49,7 @@
     "dateLabel": "Preferred date",
     "submit": "Check Availability on WhatsApp",
     "disclaimer": "This sends your selection straight to our WhatsApp — no payment, no commitment, just a fast reply.",
-    "messageIntro": "Hi Zalty Boyz Adventures! I'd like to check availability for:",
+    "messageIntro": "Hi Zalty Boyz! I'd like to check availability for:",
     "messageActivity": "Activity",
     "messagePeople": "People",
     "messageDate": "Preferred date",
@@ -63,7 +66,7 @@
   },
   "whatsapp": {
     "floatingButtonLabel": "Chat with us on WhatsApp",
-    "prefilledMessage": "Hi Zalty Boyz Adventures! I'd like to know more about your tours."
+    "prefilledMessage": "Hi Zalty Boyz! I'd like to know more about your tours."
   },
   "footer": {
     "tagline": "Surf lessons & jungle-to-ocean adventures in Puerto Viejo, Costa Rica.",
@@ -95,7 +98,7 @@
     "surfHighlight": {
       "eyebrow": "Our Specialty",
       "title": "Surf Lessons for Every Level",
-      "body": "Our surf lessons are where Zalty Boyz Adventures started — patient, safety-first coaching on the beginner-friendly beach breaks of Puerto Viejo and Cocles. Whether you've never stood on a board or you're chasing your first barrel, we'll match the lesson to you.",
+      "body": "Our surf lessons are where Zalty Boyz started — patient, safety-first coaching on the beginner-friendly beach breaks of Puerto Viejo and Cocles. Whether you've never stood on a board or you're chasing your first barrel, we'll match the lesson to you.",
       "cta": "Explore Surf Lessons"
     },
     "toursTeaser": {
@@ -118,6 +121,12 @@
       "title": "Ready to plan your Puerto Viejo adventure?",
       "subtitle": "Message us on WhatsApp and we'll help you build the perfect surf lesson, tour, or full package.",
       "cta": "WhatsApp Us"
+    },
+    "instructorSpotlight": {
+      "eyebrow": "Meet the Team",
+      "title": "See Your Instructor in Action",
+      "subtitle": "Watch Cedric, our founder and head instructor, doing what he does best.",
+      "cta": "Meet Your Instructors"
     }
   },
   "surfLessons": {
@@ -128,7 +137,7 @@
     },
     "intro": {
       "title": "Why learn to surf with us",
-      "body": "Zalty Boyz Adventures started as a surf school, and it's still what we do best. Our instructors grew up surfing these exact beaches, so lessons are built around real local conditions — the friendliest breaks for beginners, the safest entry points, and the best tide windows each day."
+      "body": "Zalty Boyz started as a surf school, and it's still what we do best. Our instructors grew up surfing these exact beaches, so lessons are built around real local conditions — the friendliest breaks for beginners, the safest entry points, and the best tide windows each day."
     },
     "pickup": {
       "title": "We come to you",
@@ -208,25 +217,10 @@
       "cta": "Build My Own Package"
     }
   },
-  "massages": {
-    "hero": {
-      "eyebrow": "Partner Service",
-      "title": "Massages to End Your Adventure Day",
-      "subtitle": "After a day of surfing and exploring, unwind with a massage from our trusted local partner — bookable on its own or added to any package."
-    },
-    "body": {
-      "title": "A family connection you can trust",
-      "text": "Our massage services are run by a trusted local therapist in Puerto Viejo — a service we're proud to offer alongside our own tours because we know the quality firsthand."
-    },
-    "cta": {
-      "title": "Add a massage to your trip",
-      "cta": "Ask About Massages"
-    }
-  },
   "about": {
     "hero": {
       "eyebrow": "Our Story",
-      "title": "About Zalty Boyz Adventures",
+      "title": "About Zalty Boyz",
       "subtitle": "A local, family-connected team sharing the Caribbean side of Costa Rica the way we grew up experiencing it."
     },
     "howItStarted": {
@@ -240,6 +234,25 @@
     },
     "team": {
       "title": "Who Are We?"
+    }
+  },
+  "location": {
+    "hero": {
+      "eyebrow": "Find Us",
+      "title": "Where We Are & Where We Surf",
+      "subtitle": "Based in Puerto Viejo de Talamanca, teaching across the best beginner-friendly beaches on this stretch of Caribbean coast."
+    },
+    "map": {
+      "title": "Our Location"
+    },
+    "beaches": {
+      "title": "Beaches We Teach At",
+      "subtitle": "Every lesson is matched to whichever beach has the best conditions that day."
+    },
+    "forecast": {
+      "title": "Surf Forecast",
+      "subtitle": "Live 2-day forecast for Cocles, from Surf-Forecast.com.",
+      "cta": "View Full Forecast on Surf-Forecast.com"
     }
   },
   "gallery": {

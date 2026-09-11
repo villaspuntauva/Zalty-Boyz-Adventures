@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { Container } from "@/components/ui/Container";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
+import { HeroMedia } from "@/components/HeroMedia";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { siteUrl, business } from "@/lib/business";
@@ -47,7 +48,15 @@ export default async function AboutPage({
         ])}
       />
 
-      <section className="bg-brand-800 py-16 text-white sm:py-20">
+      <section className="relative isolate overflow-hidden py-16 text-white sm:py-20">
+        <HeroMedia
+          imageSrc="/images/about/hero.jpg"
+          imageAlt={
+            l === "es"
+              ? "El equipo de Zalty Boyz en Puerto Viejo"
+              : "The Zalty Boyz team in Puerto Viejo"
+          }
+        />
         <Container>
           <p className="text-sm font-semibold uppercase tracking-widest text-brand-100">
             {t("hero.eyebrow")}
@@ -67,8 +76,8 @@ export default async function AboutPage({
             src="/images/about/team.jpg"
             alt={
               l === "es"
-                ? "El equipo de Zalty Boyz Adventures en la playa de Puerto Viejo"
-                : "The Zalty Boyz Adventures team on the beach in Puerto Viejo"
+                ? "El equipo de Zalty Boyz en la playa de Puerto Viejo"
+                : "The Zalty Boyz team on the beach in Puerto Viejo"
             }
             aspect="aspect-[4/3]"
           />

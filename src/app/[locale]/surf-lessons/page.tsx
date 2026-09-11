@@ -4,10 +4,13 @@ import { routing } from "@/i18n/routing";
 import { Container } from "@/components/ui/Container";
 import { CTAButton } from "@/components/ui/Button";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
+import { PhotoCarousel } from "@/components/ui/PhotoCarousel";
+import { HeroMedia } from "@/components/HeroMedia";
 import { QuickBookWidget } from "@/components/QuickBookWidget";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema, tourServiceSchema } from "@/lib/schema";
 import { siteUrl, whatsappLink } from "@/lib/business";
+import { findPhotos } from "@/lib/findPhotos";
 
 type Locale = "en" | "es";
 
@@ -43,6 +46,19 @@ export default async function SurfLessonsPage({
 
   const levelKeys = ["beginner", "improver", "advanced"] as const;
 
+  const lessonPhotoAlt =
+    l === "es"
+      ? "Estudiante de surf principiante practicando pop-up en la playa"
+      : "Beginner surf student practicing a pop-up on the beach";
+  const photoPaths = findPhotos("surf-lessons", "lesson");
+  const lessonPhotos = photoPaths.map((src, i) => ({
+    src,
+    alt:
+      photoPaths.length > 1
+        ? `${lessonPhotoAlt} (${i + 1}/${photoPaths.length})`
+        : lessonPhotoAlt,
+  }));
+
   return (
     <>
       <JsonLd
@@ -62,7 +78,15 @@ export default async function SurfLessonsPage({
         })}
       />
 
-      <section className="bg-brand-800 py-16 text-white sm:py-20">
+      <section className="relative isolate overflow-hidden py-16 text-white sm:py-20">
+        <HeroMedia
+          imageSrc="/images/surf-lessons/hero.jpg"
+          imageAlt={
+            l === "es"
+              ? "Clase de surf en Puerto Viejo, Costa Rica"
+              : "Surf lesson in Puerto Viejo, Costa Rica"
+          }
+        />
         <Container>
           <p className="text-sm font-semibold uppercase tracking-widest text-brand-100">
             {t("hero.eyebrow")}
@@ -85,16 +109,19 @@ export default async function SurfLessonsPage({
             <p className="mt-3 text-ink-700">{t("intro.body")}</p>
             <p className="mt-3 text-ink-700">{t("pickup.body")}</p>
 
-            <PlaceholderImage
-              src="/images/surf-lessons/lesson.jpg"
-              alt={
-                l === "es"
-                  ? "Estudiante de surf principiante practicando pop-up en la playa"
-                  : "Beginner surf student practicing a pop-up on the beach"
-              }
-              aspect="aspect-[16/9]"
-              className="mt-8"
-            />
+            <div className="mt-8">
+              {lessonPhotos.length > 0 ? (
+                <PhotoCarousel
+                  images={lessonPhotos}
+                  aspect="aspect-[16/9]"
+                  prevLabel={tCommon("previousPhoto")}
+                  nextLabel={tCommon("nextPhoto")}
+                  photoLabelTemplate={tCommon.raw("goToPhoto")}
+                />
+              ) : (
+                <PlaceholderImage alt={lessonPhotoAlt} aspect="aspect-[16/9]" />
+              )}
+            </div>
 
             <h2 className="mt-12 font-heading text-2xl font-bold text-ink-900 sm:text-3xl">
               {t("levels.title")}

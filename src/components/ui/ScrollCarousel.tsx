@@ -1,19 +1,21 @@
 "use client";
 
 import { useRef, useState, useEffect, useCallback } from "react";
-import type { Review } from "@/data/reviews";
 
-type Locale = "en" | "es";
-
-export function ReviewsCarousel({
-  reviews,
-  locale,
+/**
+ * Horizontal snap-scroll row with prev/next arrow buttons, shared by any
+ * carousel on the site (reviews, beach photos, ...). Children are rendered
+ * as-is — mark each card with `data-carousel-card` so the arrows know how
+ * far to scroll. Native touch/trackpad scroll and keyboard focus still work
+ * alongside the buttons.
+ */
+export function ScrollCarousel({
+  children,
   prevLabel,
   nextLabel,
   regionLabel,
 }: {
-  reviews: Review[];
-  locale: Locale;
+  children: React.ReactNode;
   prevLabel: string;
   nextLabel: string;
   regionLabel: string;
@@ -31,17 +33,14 @@ export function ReviewsCarousel({
 
   useEffect(() => {
     updateEdges();
-    const el = scrollerRef.current;
-    if (!el) return;
-    const onResize = () => updateEdges();
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
+    window.addEventListener("resize", updateEdges);
+    return () => window.removeEventListener("resize", updateEdges);
   }, [updateEdges]);
 
   function scrollByCard(direction: 1 | -1) {
     const el = scrollerRef.current;
     if (!el) return;
-    const card = el.querySelector<HTMLElement>("[data-review-card]");
+    const card = el.querySelector<HTMLElement>("[data-carousel-card]");
     const gap = 24;
     const distance = card ? card.offsetWidth + gap : el.clientWidth * 0.8;
     el.scrollBy({ left: direction * distance, behavior: "smooth" });
@@ -57,45 +56,7 @@ export function ReviewsCarousel({
         aria-label={regionLabel}
         className="scrollbar-hide flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-2"
       >
-        {reviews.map((review, index) => (
-          <figure
-            key={index}
-            data-review-card
-            className="flex w-[85%] flex-none snap-start flex-col justify-between rounded-2xl border border-brand-100 bg-white p-6 shadow-sm sm:w-[380px]"
-          >
-            <div>
-              <div
-                aria-label={`${review.rating} out of 5 stars`}
-                className="flex gap-0.5 text-accent-500"
-              >
-                {Array.from({ length: 5 }).map((_, starIndex) => (
-                  <svg
-                    key={starIndex}
-                    aria-hidden="true"
-                    viewBox="0 0 20 20"
-                    className="h-4 w-4"
-                    fill={starIndex < review.rating ? "currentColor" : "none"}
-                    stroke="currentColor"
-                  >
-                    <path d="M10 1.5l2.6 5.4 5.9.7-4.3 4.1 1.1 5.9L10 14.8l-5.3 2.8 1.1-5.9-4.3-4.1 5.9-.7L10 1.5z" />
-                  </svg>
-                ))}
-              </div>
-              <blockquote className="mt-3 text-sm text-ink-700">
-                “{review.text[locale]}”
-              </blockquote>
-            </div>
-            <figcaption className="mt-4 text-sm font-semibold text-ink-900">
-              {review.author}
-              {review.location && (
-                <span className="font-normal text-ink-700/70">
-                  {" "}
-                  · {review.location}
-                </span>
-              )}
-            </figcaption>
-          </figure>
-        ))}
+        {children}
       </div>
 
       <div className="mt-4 flex justify-center gap-3">

@@ -4,10 +4,12 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { Container } from "@/components/ui/Container";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
+import { PhotoCarousel } from "@/components/ui/PhotoCarousel";
 import { QuickBookWidget } from "@/components/QuickBookWidget";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema, tourServiceSchema } from "@/lib/schema";
 import { siteUrl } from "@/lib/business";
+import { findPhotos } from "@/lib/findPhotos";
 import { getTourBySlug, tours } from "@/data/tours";
 
 type Locale = "en" | "es";
@@ -48,6 +50,15 @@ export default async function TourDetailPage({
   const t = await getTranslations("common");
   const tTours = await getTranslations("tours");
 
+  const photoPaths = findPhotos("tours", tour.slug);
+  const photos = photoPaths.map((src, i) => ({
+    src,
+    alt:
+      photoPaths.length > 1
+        ? `${tour.heroImageAlt[l]} (${i + 1}/${photoPaths.length})`
+        : tour.heroImageAlt[l],
+  }));
+
   return (
     <>
       <JsonLd
@@ -82,11 +93,20 @@ export default async function TourDetailPage({
       <section className="py-16 sm:py-20">
         <Container className="grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:items-start">
           <div>
-            <PlaceholderImage
-              src={`/images/tours/${tour.slug}.jpg`}
-              alt={tour.heroImageAlt[l]}
-              aspect="aspect-[16/9]"
-            />
+            {photos.length > 0 ? (
+              <PhotoCarousel
+                images={photos}
+                aspect="aspect-[16/9]"
+                prevLabel={t("previousPhoto")}
+                nextLabel={t("nextPhoto")}
+                photoLabelTemplate={t.raw("goToPhoto")}
+              />
+            ) : (
+              <PlaceholderImage
+                alt={tour.heroImageAlt[l]}
+                aspect="aspect-[16/9]"
+              />
+            )}
             <p className="mt-8 text-ink-700">{tour.description[l]}</p>
 
             <dl className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
