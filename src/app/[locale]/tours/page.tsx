@@ -74,12 +74,19 @@ export default async function ToursPage({
                 key={tour.slug}
                 className="flex flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm"
               >
-                <PlaceholderImage
-                  src={`/images/tours/${tour.slug}.jpg`}
-                  alt={tour.heroImageAlt[l]}
-                  aspect="aspect-[16/10]"
-                  className="rounded-none"
-                />
+                <div className="relative">
+                  <PlaceholderImage
+                    src={`/images/tours/${tour.slug}.jpg`}
+                    alt={tour.heroImageAlt[l]}
+                    aspect="aspect-[16/10]"
+                    className="rounded-none"
+                  />
+                  {tour.pricing && (
+                    <span className="absolute bottom-3 right-3 rounded-full bg-white/95 px-3 py-1 text-sm font-bold text-brand-700 shadow-sm">
+                      {tCommon("from")} ${tour.pricing.priceFromNumber}
+                    </span>
+                  )}
+                </div>
                 <div className="flex flex-1 flex-col p-6">
                   <h2 className="font-heading text-xl font-bold text-ink-900">
                     {tour.name[l]}

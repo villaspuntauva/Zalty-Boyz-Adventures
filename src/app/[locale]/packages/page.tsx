@@ -4,6 +4,7 @@ import { routing } from "@/i18n/routing";
 import { Container } from "@/components/ui/Container";
 import { CTAButton } from "@/components/ui/Button";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
+import { HeroMedia } from "@/components/HeroMedia";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { siteUrl, whatsappLink } from "@/lib/business";
@@ -51,7 +52,15 @@ export default async function PackagesPage({
         ])}
       />
 
-      <section className="bg-brand-800 py-16 text-white sm:py-20">
+      <section className="relative isolate overflow-hidden py-16 text-white sm:py-20">
+        <HeroMedia
+          imageSrc="/images/packages/hero.jpg"
+          imageAlt={
+            l === "es"
+              ? "Estudiantes de surf caminando por la playa con una tabla en Puerto Viejo"
+              : "Surf students walking down the beach with a board in Puerto Viejo"
+          }
+        />
         <Container>
           <p className="text-sm font-semibold uppercase tracking-widest text-brand-100">
             {t("hero.eyebrow")}
@@ -69,8 +78,8 @@ export default async function PackagesPage({
         <Container className="grid gap-8 lg:grid-cols-3">
           {packages.map((pkg) => {
             const includedTours = pkg.includesTourSlugs
-              .map((slug) => getTourBySlug(slug)?.name[l])
-              .filter(Boolean);
+              .map((slug) => getTourBySlug(slug))
+              .filter((tour): tour is NonNullable<typeof tour> => Boolean(tour));
 
             return (
               <div
@@ -101,10 +110,17 @@ export default async function PackagesPage({
                         {l === "es" ? "Clases de surf" : "Surf lessons"}
                       </li>
                     )}
-                    {includedTours.map((name) => (
-                      <li key={name} className="flex gap-2">
-                        <span aria-hidden="true" className="text-brand-600">✓</span>
-                        {name}
+                    {includedTours.map((tour) => (
+                      <li key={tour.slug} className="flex items-center justify-between gap-2">
+                        <span className="flex gap-2">
+                          <span aria-hidden="true" className="text-brand-600">✓</span>
+                          {tour.name[l]}
+                        </span>
+                        {tour.pricing && (
+                          <span className="shrink-0 rounded-full bg-brand-50 px-2 py-0.5 text-xs font-semibold text-brand-700">
+                            {tCommon("from")} ${tour.pricing.priceFromNumber}
+                          </span>
+                        )}
                       </li>
                     ))}
                   </ul>

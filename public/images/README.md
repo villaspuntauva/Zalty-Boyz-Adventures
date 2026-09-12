@@ -25,6 +25,7 @@ update the path in code to match).
 | `tours/fruit-farm-tour.jpg` | Exotic Fruit Farm Tour — card + detail page + gallery |
 | `tours/mini-surf-trip.jpg` | Mini Surf Trip (Isla Uvita & Cahuita) — card + detail page + gallery |
 | `tours/massage.jpg` | Massage — card + detail page + gallery (folded into Tours) |
+| `packages/hero.jpg` | Packages page — hero banner background |
 | `packages/weekend-taste.jpg` | "Weekend Taste of Puerto Viejo" package card |
 | `packages/full-week-explorer.jpg` | "Full Week Explorer" package card |
 | `packages/surf-and-relax.jpg` | "Surf & Relax" package card |
