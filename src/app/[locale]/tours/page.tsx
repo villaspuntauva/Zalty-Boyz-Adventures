@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
 import { CTAButton } from "@/components/ui/Button";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
+import { HeroMedia } from "@/components/HeroMedia";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { siteUrl } from "@/lib/business";
@@ -50,7 +51,8 @@ export default async function ToursPage({
         ])}
       />
 
-      <section className="bg-brand-800 py-16 text-white sm:py-20">
+      <section className="relative isolate overflow-hidden py-16 text-white sm:py-20">
+        <HeroMedia videoSrc="/images/tours/hero.mp4" />
         <Container>
           <p className="text-sm font-semibold uppercase tracking-widest text-brand-100">
             {t("hero.eyebrow")}

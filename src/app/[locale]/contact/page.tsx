@@ -88,11 +88,6 @@ export default async function ContactPage({
                     {business.phone}
                   </a>
                 </p>
-                <p>
-                  <a href={`mailto:${business.email}`} className="hover:text-brand-700">
-                    {business.email}
-                  </a>
-                </p>
               </address>
             </div>
           </div>

@@ -11,9 +11,7 @@ const links: { href: StaticPathnames; labelKey: string }[] = [
   { href: "/packages", labelKey: "packages" },
   { href: "/about", labelKey: "about" },
   { href: "/location", labelKey: "location" },
-  { href: "/gallery", labelKey: "gallery" },
   { href: "/faq", labelKey: "faq" },
-  { href: "/blog", labelKey: "blog" },
   { href: "/contact", labelKey: "contact" },
 ];
 
@@ -62,11 +60,6 @@ export async function Footer() {
             <li>
               <a href={`tel:${business.phone.replace(/\s/g, "")}`} className="hover:text-white">
                 {business.phone}
-              </a>
-            </li>
-            <li>
-              <a href={`mailto:${business.email}`} className="hover:text-white">
-                {business.email}
               </a>
             </li>
           </ul>

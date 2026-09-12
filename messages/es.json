@@ -9,9 +9,7 @@
     "packages": "Paquetes",
     "about": "Nosotros",
     "location": "Ubicación",
-    "gallery": "Galería",
     "faq": "Preguntas Frecuentes",
-    "blog": "Blog",
     "contact": "Contacto",
     "menu": "Menú",
     "closeMenu": "Cerrar menú",
@@ -227,8 +225,7 @@
       "title": "Cómo Comenzamos",
       "paragraphs": [
         "Todo comenzó como un canal de YouTube, Zalty Boyz, a principios de 2020, cuando el mundo se detuvo por el COVID. Empezamos a grabar nuestro día a día: surfeando, patinando, pescando, saltando de acantilados, viajando y viviendo todo tipo de aventuras con nuestros amigos por la hermosa costa caribeña de Puerto Viejo. Vivimos el estilo de vida Pura Vida, y quisimos compartirlo.",
-        "De ahí, convertimos nuestra pasión en nuestra propia escuela de surf — la mayoría de los boyz llevamos años siendo instructores de surf, y no hay nada que disfrutemos más que enseñarle a alguien el deporte que tenemos la suerte de practicar casi todos los días de nuestras vidas. A medida que más visitantes nos preguntaban qué más había para hacer, nos expandimos también a los tours, mostrándole a los viajeros el hermoso lugar que llamamos hogar.",
-        "Tener la escuela de surf nos da una forma de seguir haciendo lo que amamos — y de seguir grabando los videos que lo empezaron todo — mientras compartimos nuestro estilo de vida con quien quiera unirse a la aventura."
+        "De ahí, convertimos nuestra pasión en nuestra propia escuela de surf — la mayoría de los boyz llevamos años siendo instructores de surf, y no hay nada que disfrutemos más que enseñarle a alguien el deporte que tenemos la suerte de practicar casi todos los días de nuestras vidas. A medida que más visitantes nos preguntaban qué más había para hacer, nos expandimos también a los tours, mostrándole a los viajeros el hermoso lugar que llamamos hogar."
       ],
       "youtubeCta": "Míranos en YouTube"
     },
@@ -241,6 +238,9 @@
       "eyebrow": "Encuéntranos",
       "title": "Dónde Estamos y Dónde Surfeamos",
       "subtitle": "Con base en Puerto Viejo de Talamanca, dando clases en las mejores playas para principiantes de esta zona del Caribe."
+    },
+    "video": {
+      "title": "Un Vistazo a Playa Cocles"
     },
     "map": {
       "title": "Nuestra Ubicación"
@@ -255,13 +255,6 @@
       "cta": "Ver Pronóstico Completo en Surf-Forecast.com"
     }
   },
-  "gallery": {
-    "hero": {
-      "eyebrow": "Galería",
-      "title": "Mira la Aventura",
-      "subtitle": "Fotos y videos de clases, tours y paquetes. Galería completa próximamente — mientras tanto, visita nuestro Instagram."
-    }
-  },
   "faqPage": {
     "hero": {
       "eyebrow": "Preguntas Frecuentes",
@@ -272,14 +265,6 @@
       "title": "¿Aún tienes preguntas?",
       "cta": "Pregúntanos por WhatsApp"
     }
-  },
-  "blog": {
-    "hero": {
-      "eyebrow": "Blog",
-      "title": "Guías de Puerto Viejo y Talamanca",
-      "subtitle": "Guías para planear tu viaje, reportes de oleaje y tips para ver fauna, escritos por el equipo. Próximamente nuevos artículos."
-    },
-    "comingSoon": "Estamos escribiendo nuestras primeras guías — vuelve pronto, o síguenos en Instagram mientras tanto."
   },
   "contact": {
     "hero": {

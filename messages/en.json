@@ -9,9 +9,7 @@
     "packages": "Packages",
     "about": "About",
     "location": "Location",
-    "gallery": "Gallery",
     "faq": "FAQ",
-    "blog": "Blog",
     "contact": "Contact",
     "menu": "Menu",
     "closeMenu": "Close menu",
@@ -227,8 +225,7 @@
       "title": "How It Started",
       "paragraphs": [
         "It all started as a YouTube channel, Zalty Boyz, back in early 2020, when the world shut down for COVID. We started filming our day-to-day life: surfing, skating, fishing, cliff jumping, traveling, and getting into all kinds of adventures with our friends around the beautiful Caribbean coast of Puerto Viejo. We live the Pura Vida lifestyle, and we wanted to share it.",
-        "From there, we turned our passion into our own surf school — most of the boyz have been surf instructors for years, and there's nothing we enjoy more than teaching someone the sport we're lucky enough to do almost every day of our lives. As more visitors asked what else there was to do, we expanded into tours too, showing travelers the beautiful place we call home.",
-        "Running the surf school gives us a way to keep doing what we love — and keep making the videos that started it all — while sharing our lifestyle with anyone who wants to come along for the ride."
+        "From there, we turned our passion into our own surf school — most of the boyz have been surf instructors for years, and there's nothing we enjoy more than teaching someone the sport we're lucky enough to do almost every day of our lives. As more visitors asked what else there was to do, we expanded into tours too, showing travelers the beautiful place we call home."
       ],
       "youtubeCta": "Watch Us on YouTube"
     },
@@ -241,6 +238,9 @@
       "eyebrow": "Find Us",
       "title": "Where We Are & Where We Surf",
       "subtitle": "Based in Puerto Viejo de Talamanca, teaching across the best beginner-friendly beaches on this stretch of Caribbean coast."
+    },
+    "video": {
+      "title": "A Look at Cocles Beach"
     },
     "map": {
       "title": "Our Location"
@@ -255,13 +255,6 @@
       "cta": "View Full Forecast on Surf-Forecast.com"
     }
   },
-  "gallery": {
-    "hero": {
-      "eyebrow": "Gallery",
-      "title": "See the Adventure",
-      "subtitle": "Photos and video from lessons, tours, and packages. Full gallery coming soon — check our Instagram in the meantime."
-    }
-  },
   "faqPage": {
     "hero": {
       "eyebrow": "FAQ",
@@ -272,14 +265,6 @@
       "title": "Still have questions?",
       "cta": "Ask Us on WhatsApp"
     }
-  },
-  "blog": {
-    "hero": {
-      "eyebrow": "Blog",
-      "title": "Guides to Puerto Viejo & Talamanca",
-      "subtitle": "Trip-planning guides, surf reports, and wildlife spotting tips from the team. New articles coming soon."
-    },
-    "comingSoon": "We're writing our first guides — check back soon, or follow us on Instagram for updates in the meantime."
   },
   "contact": {
     "hero": {

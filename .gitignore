@@ -35,12 +35,16 @@ next-env.d.ts
 
 # Raw/unprocessed camera & drone exports — large source dumps kept locally
 # only, several of which exceed GitHub's 100MB per-file limit outright.
-# The actual site assets are the renamed copies in the same folders (see
-# public/images/README.md for the mapping); these originals aren't
-# referenced by any code, so excluding them doesn't affect the site.
+# The actual site assets are the compressed copies in the same folders
+# (see public/images/README.md for the mapping) — those are explicitly
+# un-ignored below since they ARE referenced by code and must ship.
 public/images/**/*.MP4
 public/images/**/*.mp4
 public/images/**/*.mov
+!public/images/tours/hero.mp4
+!public/images/tours/kayak-tour-3.mp4
+!public/images/tours/paddle-board-3.mp4
+!public/images/location/cocles-video.mp4
 public/images/tours/kayak[0-9].webp
 public/images/tours/nighttour[0-9].webp
 public/images/surf-lessons/surf[0-9].webp

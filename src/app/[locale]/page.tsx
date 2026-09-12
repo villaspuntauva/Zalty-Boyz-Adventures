@@ -44,6 +44,7 @@ export default async function HomePage({
 
   const t = await getTranslations("home");
   const tWhatsapp = await getTranslations("whatsapp");
+  const tCommon = await getTranslations("common");
 
   return (
     <>
@@ -134,6 +135,7 @@ export default async function HomePage({
                   ? "Instructor enseñando una clase de surf en Puerto Viejo"
                   : "Instructor teaching a surf lesson in Puerto Viejo"
               }
+              priceLabel={`${tCommon("from")} $60`}
             />
             <ServiceCard
               eyebrow={t("toursTeaser.eyebrow")}
@@ -147,6 +149,7 @@ export default async function HomePage({
                   ? "Kayak y cascada en la selva de Talamanca"
                   : "Kayaking and a waterfall in the Talamanca rainforest"
               }
+              priceLabel={`${tCommon("from")} $45`}
             />
             <ServiceCard
               eyebrow={t("packagesTeaser.eyebrow")}
@@ -231,6 +234,7 @@ function ServiceCard({
   href,
   imageSrc,
   imageAlt,
+  priceLabel,
 }: {
   eyebrow: string;
   title: string;
@@ -239,15 +243,23 @@ function ServiceCard({
   href: "/surf-lessons" | "/tours" | "/packages";
   imageSrc: string;
   imageAlt: string;
+  priceLabel?: string;
 }) {
   return (
     <div className="flex flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm">
-      <PlaceholderImage
-        src={imageSrc}
-        alt={imageAlt}
-        aspect="aspect-[16/10]"
-        className="rounded-none"
-      />
+      <div className="relative">
+        <PlaceholderImage
+          src={imageSrc}
+          alt={imageAlt}
+          aspect="aspect-[16/10]"
+          className="rounded-none"
+        />
+        {priceLabel && (
+          <span className="absolute bottom-3 right-3 rounded-full bg-white/95 px-3 py-1 text-sm font-bold text-brand-700 shadow-sm">
+            {priceLabel}
+          </span>
+        )}
+      </div>
       <div className="flex flex-1 flex-col p-6">
         <p className="text-xs font-semibold uppercase tracking-wide text-brand-600">
           {eyebrow}

@@ -23,9 +23,8 @@ export const business = {
 
   whatsappNumber: "50685634224",
   phone: "+506 8563 4224",
-  // TODO(client): confirm a real inbox for this once the domain is set up —
-  // currently a placeholder guess, not a working address.
-  email: "hello@zaltyboyzadventures.com",
+  // No public email inbox yet — WhatsApp is the primary contact channel.
+  // Add an `email` field back here once a real, working inbox exists.
 
   address: {
     streetAddress: "Calle El Tucán, Cocles (primera casa mano derecha)",

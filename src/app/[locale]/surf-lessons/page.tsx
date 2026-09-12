@@ -10,7 +10,7 @@ import { QuickBookWidget } from "@/components/QuickBookWidget";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema, tourServiceSchema } from "@/lib/schema";
 import { siteUrl, whatsappLink } from "@/lib/business";
-import { findPhotos } from "@/lib/findPhotos";
+import { findMedia } from "@/lib/findMedia";
 
 type Locale = "en" | "es";
 
@@ -50,12 +50,12 @@ export default async function SurfLessonsPage({
     l === "es"
       ? "Estudiante de surf principiante practicando pop-up en la playa"
       : "Beginner surf student practicing a pop-up on the beach";
-  const photoPaths = findPhotos("surf-lessons", "lesson");
-  const lessonPhotos = photoPaths.map((src, i) => ({
-    src,
+  const media = findMedia("surf-lessons", "lesson");
+  const lessonPhotos = media.map((item, i) => ({
+    ...item,
     alt:
-      photoPaths.length > 1
-        ? `${lessonPhotoAlt} (${i + 1}/${photoPaths.length})`
+      media.length > 1
+        ? `${lessonPhotoAlt} (${i + 1}/${media.length})`
         : lessonPhotoAlt,
   }));
 

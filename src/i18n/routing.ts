@@ -29,17 +29,9 @@ export const routing = defineRouting({
       en: "/location",
       es: "/ubicacion",
     },
-    "/gallery": {
-      en: "/gallery",
-      es: "/galeria",
-    },
     "/faq": {
       en: "/faq",
       es: "/preguntas-frecuentes",
-    },
-    "/blog": {
-      en: "/blog",
-      es: "/blog",
     },
     "/contact": {
       en: "/contact",

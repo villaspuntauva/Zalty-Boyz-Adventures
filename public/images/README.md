@@ -24,34 +24,39 @@ update the path in code to match).
 | `tours/waterfall-tour.jpg` | Waterfall Tour — card + detail page + gallery |
 | `tours/fruit-farm-tour.jpg` | Exotic Fruit Farm Tour — card + detail page + gallery |
 | `tours/mini-surf-trip.jpg` | Mini Surf Trip (Isla Uvita & Cahuita) — card + detail page + gallery |
+| `tours/massage.jpg` | Massage — card + detail page + gallery (folded into Tours) |
 | `packages/weekend-taste.jpg` | "Weekend Taste of Puerto Viejo" package card |
 | `packages/full-week-explorer.jpg` | "Full Week Explorer" package card |
 | `packages/surf-and-relax.jpg` | "Surf & Relax" package card |
-| `massages/hero.jpg` | Massages page photo |
 | `about/hero.jpg` | About page — hero banner background |
-| `about/team.jpg` | About page — "How It Started" photo |
 | `about/team-cedric.jpg` | About page — Cedric McCrackin's team card |
 | `about/team-solomon.jpg` | About page — Solomon McCrackin's team card |
 | `about/team-julie.jpg` | About page — Julie Hickey's team card |
 | `location/hero.jpg` | Location page — hero banner background |
+| `location/cocles-video.mp4` | Location page — "A Look at Cocles Beach" video, before the map |
 | `faq/hero.jpg` | FAQ page — hero banner background |
 | `location/cocles.jpg` | Location page — Cocles Beach carousel card |
 | `location/punta-uva.jpg` | Location page — Punta Uva carousel card |
 | `location/playa-grande.jpg` | Location page — Playa Grande carousel card |
 | `location/playa-negra.jpg` | Location page — Playa Negra carousel card |
 
-Each tour and package image is reused in more than one place (its
-listing card, its own page, and — for tours — the Gallery page), so one
-good photo per row above covers several spots on the site at once.
+Note: `about/team.jpg` (the old "How It Started" photo) is no longer
+used — that section now embeds the real Zalty Boyz YouTube video
+instead of a photo.
 
-## Adding more photos to a carousel
+Each tour and package image is reused in more than one place (its
+listing card and its own page), so one good photo per row above covers
+several spots on the site at once.
+
+## Adding more photos (or videos) to a carousel
 
 The Surf Lessons page and each tour's detail page show their main photo
 as a swipeable carousel (arrows + dot indicators) whenever more than one
-photo exists for it. To add photos beyond the first one, use the same
-base name with `-2`, `-3`, etc.:
+photo exists for it. To add items beyond the first one, use the same
+base name with `-2`, `-3`, etc. — each slot can be either a `.jpg`
+photo or an `.mp4` video, in any mix:
 
-- `tours/kayak-tour.jpg`, `tours/kayak-tour-2.jpg`, `tours/kayak-tour-3.jpg`, ...
+- `tours/kayak-tour.jpg`, `tours/kayak-tour-2.jpg`, `tours/kayak-tour-3.mp4`, ...
 - `surf-lessons/lesson.jpg`, `surf-lessons/lesson-2.jpg`, `surf-lessons/lesson-3.jpg`, ...
 
 Any numbers up to 15 are auto-detected — drop a file in and it just
@@ -81,7 +86,7 @@ appears in the carousel, no code changes needed. Gaps are fine (e.g.
 - **Social share image**: auto-generated from site copy/colors at
   `src/app/[locale]/opengraph-image.tsx` — no file needed, but replace
   it with a real designed image later if you want.
-- **Gallery-only extra photos**: the Gallery page currently reuses the
-  tour photos above. If you want additional photos there beyond the six
-  tours, ask and it's a small change to support a dedicated
-  `gallery/*.jpg` folder of extras.
+- **Videos**: `.mp4` works anywhere a numbered carousel slot is listed
+  above (see "Adding more photos (or videos) to a carousel"), and as a
+  single clip via `location/cocles-video.mp4`. Keep clips compressed
+  (under ~25MB) so pages stay fast.

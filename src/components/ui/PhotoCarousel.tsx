@@ -3,12 +3,16 @@
 import { useState } from "react";
 import Image from "next/image";
 
+export type CarouselItem = { src: string; type: "image" | "video"; alt: string };
+
 /**
- * Single large photo with prev/next arrows and dot indicators — for a
- * tour/page's main photo when there's more than one shot of it. Takes an
- * already-filtered list of real image paths (see findPhotos()); renders
+ * Single large photo (or video) with prev/next arrows and dot indicators —
+ * for a tour/page's main media when there's more than one shot of it.
+ * Takes an already-filtered list of real media (see findMedia()); renders
  * nothing if the list is empty, so the caller can fall back to
- * PlaceholderImage in that case.
+ * PlaceholderImage in that case. Video slides get playback controls
+ * instead of autoplay, since this is content the visitor chooses to watch,
+ * not background ambiance.
  */
 export function PhotoCarousel({
   images,
@@ -17,7 +21,7 @@ export function PhotoCarousel({
   nextLabel,
   photoLabelTemplate,
 }: {
-  images: { src: string; alt: string }[];
+  images: CarouselItem[];
   aspect?: string;
   prevLabel: string;
   nextLabel: string;
@@ -46,15 +50,28 @@ export function PhotoCarousel({
       <div
         className={`${aspect} relative overflow-hidden rounded-2xl bg-brand-900`}
       >
-        <Image
-          key={current.src}
-          src={current.src}
-          alt={current.alt}
-          fill
-          sizes="(min-width: 1024px) 60vw, 100vw"
-          className="object-cover"
-          priority={index === 0}
-        />
+        {current.type === "video" ? (
+          <video
+            key={current.src}
+            src={current.src}
+            controls
+            playsInline
+            preload="metadata"
+            className="h-full w-full object-cover"
+          >
+            <track kind="captions" />
+          </video>
+        ) : (
+          <Image
+            key={current.src}
+            src={current.src}
+            alt={current.alt}
+            fill
+            sizes="(min-width: 1024px) 60vw, 100vw"
+            className="object-cover"
+            priority={index === 0}
+          />
+        )}
 
         {images.length > 1 && (
           <>
@@ -78,7 +95,7 @@ export function PhotoCarousel({
                 <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
-            <div className="absolute bottom-3 right-3 rounded-full bg-black/50 px-2.5 py-1 text-xs font-medium text-white">
+            <div className="pointer-events-none absolute bottom-3 right-3 rounded-full bg-black/50 px-2.5 py-1 text-xs font-medium text-white">
               {index + 1} / {images.length}
             </div>
           </>

@@ -9,7 +9,7 @@ import { QuickBookWidget } from "@/components/QuickBookWidget";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema, tourServiceSchema } from "@/lib/schema";
 import { siteUrl } from "@/lib/business";
-import { findPhotos } from "@/lib/findPhotos";
+import { findMedia } from "@/lib/findMedia";
 import { getTourBySlug, tours } from "@/data/tours";
 
 type Locale = "en" | "es";
@@ -50,12 +50,12 @@ export default async function TourDetailPage({
   const t = await getTranslations("common");
   const tTours = await getTranslations("tours");
 
-  const photoPaths = findPhotos("tours", tour.slug);
-  const photos = photoPaths.map((src, i) => ({
-    src,
+  const media = findMedia("tours", tour.slug);
+  const photos = media.map((item, i) => ({
+    ...item,
     alt:
-      photoPaths.length > 1
-        ? `${tour.heroImageAlt[l]} (${i + 1}/${photoPaths.length})`
+      media.length > 1
+        ? `${tour.heroImageAlt[l]} (${i + 1}/${media.length})`
         : tour.heroImageAlt[l],
   }));
 

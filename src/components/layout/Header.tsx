@@ -11,10 +11,6 @@ import { Container } from "@/components/ui/Container";
 
 type LinkHref = ComponentProps<typeof Link>["href"];
 
-// Kept intentionally short — Spanish labels run noticeably longer than
-// English ("Preguntas Frecuentes" vs "FAQ"), and this bar has to fit both
-// without wrapping. Gallery and Blog stay reachable via the footer and
-// internal links/sitemap rather than crowding the primary nav.
 const navItems: { href: StaticPathnames; labelKey: string }[] = [
   { href: "/surf-lessons", labelKey: "surfLessons" },
   { href: "/tours", labelKey: "tours" },
@@ -22,12 +18,6 @@ const navItems: { href: StaticPathnames; labelKey: string }[] = [
   { href: "/about", labelKey: "about" },
   { href: "/location", labelKey: "location" },
   { href: "/faq", labelKey: "faq" },
-];
-
-// Shown only in the mobile menu, where vertical space isn't tight.
-const mobileOnlyNavItems: { href: StaticPathnames; labelKey: string }[] = [
-  { href: "/gallery", labelKey: "gallery" },
-  { href: "/blog", labelKey: "blog" },
 ];
 
 export function Header() {
@@ -129,7 +119,7 @@ export function Header() {
           className="border-t border-brand-100 bg-sand-50 xl:hidden"
         >
           <Container className="flex flex-col gap-1 py-4">
-            {[...navItems, ...mobileOnlyNavItems].map((item) => (
+            {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}

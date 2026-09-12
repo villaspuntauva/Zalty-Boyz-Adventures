@@ -2,14 +2,22 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { Container } from "@/components/ui/Container";
+import { CTAButton } from "@/components/ui/Button";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { HeroMedia } from "@/components/HeroMedia";
+import { YouTubeEmbed } from "@/components/YouTubeEmbed";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { siteUrl, business } from "@/lib/business";
 import { team } from "@/data/team";
 
 type Locale = "en" | "es";
+
+// A real Zalty Boyz surf vlog, picked from their own channel
+// (youtube.com/@zaltyboyz6720) via YouTube's oEmbed API.
+const FEATURED_YOUTUBE_VIDEO_ID = "HI3V08zGKyA";
+const FEATURED_YOUTUBE_VIDEO_TITLE =
+  "Surfing the perfect lefts of Boca Barranca | ZALTY BOYZ VLOG #8";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -71,41 +79,6 @@ export default async function AboutPage({
       </section>
 
       <section className="py-16 sm:py-20">
-        <Container className="grid gap-10 lg:grid-cols-2 lg:items-center">
-          <PlaceholderImage
-            src="/images/about/team.jpg"
-            alt={
-              l === "es"
-                ? "El equipo de Zalty Boyz en la playa de Puerto Viejo"
-                : "The Zalty Boyz team on the beach in Puerto Viejo"
-            }
-            aspect="aspect-[4/3]"
-          />
-          <div>
-            <h2 className="font-heading text-2xl font-bold text-ink-900 sm:text-3xl">
-              {t("howItStarted.title")}
-            </h2>
-            <div className="mt-3 space-y-4 text-ink-700">
-              {t.raw("howItStarted.paragraphs").map((paragraph: string) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
-            {business.social.youtube && (
-              <a
-                href={business.social.youtube}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-700 hover:text-brand-800"
-              >
-                {t("howItStarted.youtubeCta")}
-                <span aria-hidden="true">→</span>
-              </a>
-            )}
-          </div>
-        </Container>
-      </section>
-
-      <section className="py-16 sm:py-20">
         <Container>
           <h2 className="text-center font-heading text-3xl font-bold text-ink-900 sm:text-4xl">
             {t("team.title")}
@@ -137,6 +110,51 @@ export default async function AboutPage({
                 </div>
               </div>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-brand-50 py-16 sm:py-20">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+            <div>
+              {business.social.youtube ? (
+                <YouTubeEmbed
+                  videoId={FEATURED_YOUTUBE_VIDEO_ID}
+                  title={FEATURED_YOUTUBE_VIDEO_TITLE}
+                />
+              ) : (
+                <PlaceholderImage
+                  alt={
+                    l === "es"
+                      ? "El equipo de Zalty Boyz en la playa de Puerto Viejo"
+                      : "The Zalty Boyz team on the beach in Puerto Viejo"
+                  }
+                  aspect="aspect-video"
+                />
+              )}
+              {business.social.youtube && (
+                <div className="mt-4 flex justify-center">
+                  <CTAButton
+                    href={business.social.youtube}
+                    external
+                    variant="secondary"
+                  >
+                    {t("howItStarted.youtubeCta")}
+                  </CTAButton>
+                </div>
+              )}
+            </div>
+            <div>
+              <h2 className="font-heading text-2xl font-bold text-ink-900 sm:text-3xl">
+                {t("howItStarted.title")}
+              </h2>
+              <div className="mt-3 space-y-4 text-ink-700">
+                {t.raw("howItStarted.paragraphs").map((paragraph: string) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
           </div>
         </Container>
       </section>

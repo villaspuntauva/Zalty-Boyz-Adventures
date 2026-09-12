@@ -8,20 +8,23 @@ export type InquiryState = {
 };
 
 /**
- * Sends the inquiry via Resend if RESEND_API_KEY is configured, otherwise
- * logs it server-side and reports that email isn't set up yet.
+ * Sends the inquiry via Resend if RESEND_API_KEY and CONTACT_TO_EMAIL are
+ * both configured, otherwise logs it server-side and reports that email
+ * isn't set up yet.
  *
  * TODO(client): create a Resend account (or swap in your preferred email
  * provider), set RESEND_API_KEY and CONTACT_TO_EMAIL as environment
- * variables, and this starts sending for real with no code changes.
+ * variables, and this starts sending for real with no code changes. There's
+ * no business.email to fall back on — the site currently has no public
+ * inbox, WhatsApp is the primary contact channel.
  */
 async function sendInquiryEmail(fields: Record<string, string>) {
   const apiKey = process.env.RESEND_API_KEY;
-  const toEmail = process.env.CONTACT_TO_EMAIL ?? business.email;
+  const toEmail = process.env.CONTACT_TO_EMAIL;
 
-  if (!apiKey) {
+  if (!apiKey || !toEmail) {
     console.warn(
-      "[contact] RESEND_API_KEY not set — inquiry logged but not emailed:",
+      "[contact] RESEND_API_KEY/CONTACT_TO_EMAIL not set — inquiry logged but not emailed:",
       fields,
     );
     return { sent: false };

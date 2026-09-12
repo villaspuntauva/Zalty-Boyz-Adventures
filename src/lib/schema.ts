@@ -31,7 +31,6 @@ export function localBusinessSchema(locale: Locale) {
     image: `${siteUrl}/opengraph-image`,
     url: siteUrl,
     telephone: business.phone,
-    email: business.email,
     priceRange: business.priceRange,
     address: {
       "@type": "PostalAddress",

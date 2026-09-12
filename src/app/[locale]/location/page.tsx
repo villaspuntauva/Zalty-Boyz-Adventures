@@ -4,6 +4,7 @@ import { routing } from "@/i18n/routing";
 import { Container } from "@/components/ui/Container";
 import { CTAButton } from "@/components/ui/Button";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
+import { PlaceholderVideo } from "@/components/ui/PlaceholderVideo";
 import { ScrollCarousel } from "@/components/ui/ScrollCarousel";
 import { HeroMedia } from "@/components/HeroMedia";
 import { SurfForecastWidget } from "@/components/SurfForecastWidget";
@@ -80,6 +81,21 @@ export default async function LocationPage({
       <section className="py-16 sm:py-20">
         <Container>
           <h2 className="font-heading text-2xl font-bold text-ink-900 sm:text-3xl">
+            {t("video.title")}
+          </h2>
+          <div className="mt-6">
+            <PlaceholderVideo
+              src="/images/location/cocles-video.mp4"
+              aspect="aspect-[16/9]"
+              className="border border-brand-100"
+            />
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-brand-50 py-16 sm:py-20">
+        <Container>
+          <h2 className="font-heading text-2xl font-bold text-ink-900 sm:text-3xl">
             {t("map.title")}
           </h2>
           <div className="mt-6 aspect-[16/9] w-full overflow-hidden rounded-2xl border border-brand-100">
@@ -94,7 +110,7 @@ export default async function LocationPage({
         </Container>
       </section>
 
-      <section className="bg-brand-50 py-16 sm:py-20">
+      <section className="py-16 sm:py-20">
         <Container>
           <h2 className="font-heading text-2xl font-bold text-ink-900 sm:text-3xl">
             {t("beaches.title")}
@@ -136,7 +152,7 @@ export default async function LocationPage({
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="bg-brand-50 py-16 sm:py-20">
         <Container className="text-center">
           <h2 className="font-heading text-2xl font-bold text-ink-900 sm:text-3xl">
             {t("forecast.title")}
