@@ -155,47 +155,41 @@ export default async function SurfLessonsPage({
                 </li>
               ))}
             </ul>
+
+            <h2 className="mt-10 font-heading text-xl font-bold text-ink-900">
+              {t("pricing.title")}
+            </h2>
+            <div className="mt-3 grid gap-4 sm:grid-cols-2">
+              {(["group", "private"] as const).map((plan) => (
+                <div
+                  key={plan}
+                  className="rounded-xl border border-brand-100 bg-white p-4"
+                >
+                  <p className="text-sm font-semibold text-brand-600">
+                    {t(`pricing.${plan}.title`)}
+                  </p>
+                  <p className="mt-1 text-2xl font-extrabold text-ink-900">
+                    {t(`pricing.${plan}.price`)}
+                  </p>
+                  <ul className="mt-3 space-y-1">
+                    {t.raw(`pricing.${plan}.items`).map((item: string) => (
+                      <li key={item} className="flex gap-2 text-sm text-ink-700">
+                        <span aria-hidden="true" className="mt-0.5 text-brand-600">
+                          ✓
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <p className="mt-3 text-sm text-ink-700/70">{t("pricing.note")}</p>
           </div>
 
           <div className="lg:sticky lg:top-24">
             <QuickBookWidget />
           </div>
-        </Container>
-      </section>
-
-      <section className="py-16 sm:py-20">
-        <Container>
-          <h2 className="text-center font-heading text-3xl font-bold text-ink-900 sm:text-4xl">
-            {t("pricing.title")}
-          </h2>
-          <div className="mx-auto mt-10 grid max-w-3xl gap-6 sm:grid-cols-2">
-            {(["group", "private"] as const).map((plan) => (
-              <div
-                key={plan}
-                className="rounded-2xl border border-brand-100 bg-white p-6 shadow-sm"
-              >
-                <h3 className="font-heading text-xl font-bold text-ink-900">
-                  {t(`pricing.${plan}.title`)}
-                </h3>
-                <p className="mt-1 text-3xl font-extrabold text-brand-700">
-                  {t(`pricing.${plan}.price`)}
-                </p>
-                <ul className="mt-4 space-y-2">
-                  {t.raw(`pricing.${plan}.items`).map((item: string) => (
-                    <li key={item} className="flex gap-2 text-sm text-ink-700">
-                      <span aria-hidden="true" className="mt-0.5 text-brand-600">
-                        ✓
-                      </span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          <p className="mx-auto mt-6 max-w-3xl text-center text-sm text-ink-700/70">
-            {t("pricing.note")}
-          </p>
         </Container>
       </section>
 

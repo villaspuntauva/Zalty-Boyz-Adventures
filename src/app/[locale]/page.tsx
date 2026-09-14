@@ -48,7 +48,7 @@ export default async function HomePage({
 
   return (
     <>
-      <section className="relative isolate overflow-hidden pb-20 pt-16 sm:pb-28 sm:pt-24">
+      <section className="relative isolate overflow-hidden pb-12 pt-16 sm:pb-28 sm:pt-24">
         <HeroMedia
           imageSrc="/images/home/hero-surf-class.webp"
           imageAlt={
@@ -83,10 +83,21 @@ export default async function HomePage({
               </div>
             </div>
 
-            <div className="lg:justify-self-end">
+            {/* Stacking this inside the photo's grid row on mobile forced
+                the hero section (and the background photo covering it) to
+                stretch to the combined height of the text + form, cropping
+                the photo down to an unrecognizable sliver. Below `lg` it
+                renders instead in its own section after the photo. */}
+            <div className="hidden lg:block lg:justify-self-end">
               <QuickBookWidget />
             </div>
           </div>
+        </Container>
+      </section>
+
+      <section aria-label="Check availability" className="bg-white pb-10 pt-2 lg:hidden">
+        <Container>
+          <QuickBookWidget />
         </Container>
       </section>
 

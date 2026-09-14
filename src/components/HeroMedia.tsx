@@ -10,7 +10,7 @@ import Image from "next/image";
  * The video is hidden for users who've asked for reduced motion — see the
  * `.hero-video` rule in globals.css — falling back to the image/gradient.
  *
- * The image uses `priority` (skips lazy-loading) because it's the largest
+ * The image uses `preload` (skips lazy-loading) because it's the largest
  * above-the-fold element on the homepage — lazy-loading it would delay
  * Largest Contentful Paint.
  */
@@ -42,9 +42,9 @@ export function HeroMedia({
             src={imageSrc}
             alt={imageAlt ?? ""}
             fill
-            priority
+            preload
             sizes="100vw"
-            className="object-cover"
+            className="object-cover object-[32%_center]"
           />
         )
       )}
