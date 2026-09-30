@@ -66,73 +66,75 @@ export default async function ToursPage({
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20">
-        <Container>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {tours.map((tour) => (
-              <div
-                key={tour.slug}
-                className="flex flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm"
-              >
-                <div className="relative">
-                  <PlaceholderImage
-                    src={`/images/tours/${tour.slug}.jpg`}
-                    alt={tour.heroImageAlt[l]}
-                    aspect="aspect-[16/10]"
-                    className="rounded-none"
-                  />
-                  {tour.pricing && (
-                    <span className="absolute bottom-3 right-3 rounded-full bg-white/95 px-3 py-1 text-sm font-bold text-brand-700 shadow-sm">
-                      {tCommon("from")} ${tour.pricing.priceFromNumber}
-                    </span>
-                  )}
+      <div className="bg-[#9ed6a5]">
+        <section className="py-16 sm:py-20">
+          <Container>
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {tours.map((tour) => (
+                <div
+                  key={tour.slug}
+                  className="flex flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm"
+                >
+                  <div className="relative">
+                    <PlaceholderImage
+                      src={`/images/tours/${tour.slug}.jpg`}
+                      alt={tour.heroImageAlt[l]}
+                      aspect="aspect-[16/10]"
+                      className="rounded-none"
+                    />
+                    {tour.pricing && (
+                      <span className="absolute bottom-3 right-3 rounded-full bg-white/95 px-3 py-1 text-sm font-bold text-brand-700 shadow-sm">
+                        {tCommon("from")} ${tour.pricing.priceFromNumber}
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex flex-1 flex-col p-6">
+                    <h2 className="font-heading text-xl font-bold text-ink-900">
+                      {tour.name[l]}
+                    </h2>
+                    <p className="mt-2 flex-1 text-sm text-ink-700">
+                      {tour.shortDescription[l]}
+                    </p>
+                    <dl className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-brand-700">
+                      <div>
+                        <dt className="inline font-semibold">{tCommon("duration")}: </dt>
+                        <dd className="inline">{tour.durationLabel[l]}</dd>
+                      </div>
+                      <div>
+                        <dt className="inline font-semibold">{tCommon("difficulty")}: </dt>
+                        <dd className="inline">{tour.difficulty[l]}</dd>
+                      </div>
+                    </dl>
+                    <Link
+                      href={{ pathname: "/tours/[slug]", params: { slug: tour.slug } }}
+                      className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:text-brand-800"
+                    >
+                      {tCommon("learnMore")}
+                      <span aria-hidden="true">→</span>
+                    </Link>
+                  </div>
                 </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <h2 className="font-heading text-xl font-bold text-ink-900">
-                    {tour.name[l]}
-                  </h2>
-                  <p className="mt-2 flex-1 text-sm text-ink-700">
-                    {tour.shortDescription[l]}
-                  </p>
-                  <dl className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-brand-700">
-                    <div>
-                      <dt className="inline font-semibold">{tCommon("duration")}: </dt>
-                      <dd className="inline">{tour.durationLabel[l]}</dd>
-                    </div>
-                    <div>
-                      <dt className="inline font-semibold">{tCommon("difficulty")}: </dt>
-                      <dd className="inline">{tour.difficulty[l]}</dd>
-                    </div>
-                  </dl>
-                  <Link
-                    href={{ pathname: "/tours/[slug]", params: { slug: tour.slug } }}
-                    className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:text-brand-800"
-                  >
-                    {tCommon("learnMore")}
-                    <span aria-hidden="true">→</span>
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+              ))}
+            </div>
+          </Container>
+        </section>
 
-      <section className="bg-brand-50 py-16 sm:py-20">
-        <Container className="text-center">
-          <h2 className="font-heading text-3xl font-bold text-ink-900 sm:text-4xl">
-            {t("packagesNote.title")}
-          </h2>
-          <p className="mx-auto mt-3 max-w-xl text-ink-700">
-            {t("packagesNote.body")}
-          </p>
-          <div className="mt-8 flex justify-center">
-            <CTAButton href="/packages" variant="primary">
-              {t("packagesNote.cta")}
-            </CTAButton>
-          </div>
-        </Container>
-      </section>
+        <section className="py-16 sm:py-20">
+          <Container className="text-center">
+            <h2 className="font-heading text-3xl font-bold text-ink-900 sm:text-4xl">
+              {t("packagesNote.title")}
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-ink-700">
+              {t("packagesNote.body")}
+            </p>
+            <div className="mt-8 flex justify-center">
+              <CTAButton href="/packages" variant="primary">
+                {t("packagesNote.cta")}
+              </CTAButton>
+            </div>
+          </Container>
+        </section>
+      </div>
     </>
   );
 }

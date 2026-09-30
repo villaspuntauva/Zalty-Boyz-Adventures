@@ -74,93 +74,95 @@ export default async function PackagesPage({
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20">
-        <Container className="grid gap-8 lg:grid-cols-3">
-          {packages.map((pkg) => {
-            const includedTours = pkg.includesTourSlugs
-              .map((slug) => getTourBySlug(slug))
-              .filter((tour): tour is NonNullable<typeof tour> => Boolean(tour));
+      <div className="bg-[#9ed6a5]">
+        <section className="py-16 sm:py-20">
+          <Container className="grid gap-8 lg:grid-cols-3">
+            {packages.map((pkg) => {
+              const includedTours = pkg.includesTourSlugs
+                .map((slug) => getTourBySlug(slug))
+                .filter((tour): tour is NonNullable<typeof tour> => Boolean(tour));
 
-            return (
-              <div
-                key={pkg.slug}
-                className="flex flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm"
-              >
-                <PlaceholderImage
-                  src={`/images/packages/${pkg.slug}.jpg`}
-                  alt={pkg.name[l]}
-                  aspect="aspect-[16/10]"
-                  className="rounded-none"
-                />
-                <div className="flex flex-1 flex-col p-6">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-brand-600">
-                    {pkg.durationLabel[l]} · {pkg.goodFor[l]}
-                  </p>
-                  <h2 className="mt-2 font-heading text-xl font-bold text-ink-900">
-                    {pkg.name[l]}
-                  </h2>
-                  <p className="mt-2 flex-1 text-sm text-ink-700">
-                    {pkg.shortDescription[l]}
-                  </p>
+              return (
+                <div
+                  key={pkg.slug}
+                  className="flex flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm"
+                >
+                  <PlaceholderImage
+                    src={`/images/packages/${pkg.slug}.jpg`}
+                    alt={pkg.name[l]}
+                    aspect="aspect-[16/10]"
+                    className="rounded-none"
+                  />
+                  <div className="flex flex-1 flex-col p-6">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-brand-600">
+                      {pkg.durationLabel[l]} · {pkg.goodFor[l]}
+                    </p>
+                    <h2 className="mt-2 font-heading text-xl font-bold text-ink-900">
+                      {pkg.name[l]}
+                    </h2>
+                    <p className="mt-2 flex-1 text-sm text-ink-700">
+                      {pkg.shortDescription[l]}
+                    </p>
 
-                  <ul className="mt-4 space-y-1.5 text-sm text-ink-700">
-                    {pkg.includesSurfLessons && (
-                      <li className="flex gap-2">
-                        <span aria-hidden="true" className="text-brand-600">✓</span>
-                        {l === "es" ? "Clases de surf" : "Surf lessons"}
-                      </li>
-                    )}
-                    {includedTours.map((tour) => (
-                      <li key={tour.slug} className="flex items-center justify-between gap-2">
-                        <span className="flex gap-2">
+                    <ul className="mt-4 space-y-1.5 text-sm text-ink-700">
+                      {pkg.includesSurfLessons && (
+                        <li className="flex gap-2">
                           <span aria-hidden="true" className="text-brand-600">✓</span>
-                          {tour.name[l]}
-                        </span>
-                        {tour.pricing && (
-                          <span className="shrink-0 rounded-full bg-brand-50 px-2 py-0.5 text-xs font-semibold text-brand-700">
-                            {tCommon("from")} ${tour.pricing.priceFromNumber}
+                          {l === "es" ? "Clases de surf" : "Surf lessons"}
+                        </li>
+                      )}
+                      {includedTours.map((tour) => (
+                        <li key={tour.slug} className="flex items-center justify-between gap-2">
+                          <span className="flex gap-2">
+                            <span aria-hidden="true" className="text-brand-600">✓</span>
+                            {tour.name[l]}
                           </span>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
+                          {tour.pricing && (
+                            <span className="shrink-0 rounded-full bg-brand-50 px-2 py-0.5 text-xs font-semibold text-brand-700">
+                              {tCommon("from")} ${tour.pricing.priceFromNumber}
+                            </span>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
 
-                  <CTAButton
-                    href={whatsappLink(
-                      `${tWhatsapp("prefilledMessage")} (${pkg.name[l]})`,
-                    )}
-                    external
-                    variant="whatsapp"
-                    className="mt-6"
-                  >
-                    {tCommon("bookNow")}
-                  </CTAButton>
+                    <CTAButton
+                      href={whatsappLink(
+                        `${tWhatsapp("prefilledMessage")} (${pkg.name[l]})`,
+                      )}
+                      external
+                      variant="whatsapp"
+                      className="mt-6"
+                    >
+                      {tCommon("bookNow")}
+                    </CTAButton>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </Container>
-      </section>
+              );
+            })}
+          </Container>
+        </section>
 
-      <section className="bg-brand-50 py-16 sm:py-20">
-        <Container className="text-center">
-          <h2 className="font-heading text-3xl font-bold text-ink-900 sm:text-4xl">
-            {t("customNote.title")}
-          </h2>
-          <p className="mx-auto mt-3 max-w-xl text-ink-700">
-            {t("customNote.body")}
-          </p>
-          <div className="mt-8 flex justify-center">
-            <CTAButton
-              href={whatsappLink(tWhatsapp("prefilledMessage"))}
-              external
-              variant="whatsapp"
-            >
-              {t("customNote.cta")}
-            </CTAButton>
-          </div>
-        </Container>
-      </section>
+        <section className="py-16 sm:py-20">
+          <Container className="text-center">
+            <h2 className="font-heading text-3xl font-bold text-ink-900 sm:text-4xl">
+              {t("customNote.title")}
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-ink-700">
+              {t("customNote.body")}
+            </p>
+            <div className="mt-8 flex justify-center">
+              <CTAButton
+                href={whatsappLink(tWhatsapp("prefilledMessage"))}
+                external
+                variant="whatsapp"
+              >
+                {t("customNote.cta")}
+              </CTAButton>
+            </div>
+          </Container>
+        </section>
+      </div>
     </>
   );
 }
