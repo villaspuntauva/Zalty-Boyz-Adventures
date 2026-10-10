@@ -9,8 +9,10 @@ type Locale = "en" | "es";
 export async function Testimonials({ locale }: { locale: Locale }) {
   const t = await getTranslations("testimonials");
 
+  // No vertical padding of its own: it sits between two padded homepage
+  // sections, whose padding already provides the gap on each side.
   return (
-    <section aria-labelledby="testimonials-heading" className="py-16 sm:py-20">
+    <section aria-labelledby="testimonials-heading">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wide text-brand-600">

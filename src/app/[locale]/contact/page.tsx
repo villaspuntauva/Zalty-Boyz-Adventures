@@ -45,7 +45,7 @@ export default async function ContactPage({
         ])}
       />
 
-      <section className="bg-brand-800 py-16 text-white sm:py-20">
+      <section className="bg-brand-800 py-24 text-white sm:py-36">
         <Container>
           <p className="text-sm font-semibold uppercase tracking-widest text-brand-100">
             {t("hero.eyebrow")}

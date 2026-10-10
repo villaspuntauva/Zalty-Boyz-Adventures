@@ -18,6 +18,18 @@ export type Package = {
  */
 export const packages: Package[] = [
   {
+    slug: "surf-and-relax",
+    name: { en: "Surf & Relax", es: "Surf y Relax" },
+    shortDescription: {
+      en: "Daily surf lessons paired with massages — built for travelers focused on surfing without the extra planning.",
+      es: "Clases de surf diarias combinadas con masajes — pensado para viajeros enfocados en surfear sin planificación extra.",
+    },
+    durationLabel: { en: "1 day", es: "1 día" },
+    goodFor: { en: "Surf-focused travelers", es: "Viajeros enfocados en el surf" },
+    includesTourSlugs: ["massage"],
+    includesSurfLessons: true,
+  },
+  {
     slug: "weekend-taste",
     name: { en: "Weekend Taste of Puerto Viejo", es: "Fin de Semana Sabor Puerto Viejo" },
     shortDescription: {
@@ -36,21 +48,9 @@ export const packages: Package[] = [
       en: "A full week combining surf lessons, kayak or paddle board, a night wildlife walk, a waterfall hike, and the fruit farm — with rest days built in.",
       es: "Una semana completa que combina clases de surf, kayak o paddle board, una caminata nocturna de fauna, una cascada y la finca de frutas — con días de descanso incluidos.",
     },
-    durationLabel: { en: "7 days", es: "7 días" },
+    durationLabel: { en: "5 days – 1 week", es: "5 días – 1 semana" },
     goodFor: { en: "Travelers who want to see it all", es: "Viajeros que quieren verlo todo" },
     includesTourSlugs: ["kayak-tour", "night-tour", "waterfall-tour", "fruit-farm-tour", "massage"],
-    includesSurfLessons: true,
-  },
-  {
-    slug: "surf-and-relax",
-    name: { en: "Surf & Relax", es: "Surf y Relax" },
-    shortDescription: {
-      en: "Daily surf lessons paired with massages — built for travelers focused on surfing without the extra planning.",
-      es: "Clases de surf diarias combinadas con masajes — pensado para viajeros enfocados en surfear sin planificación extra.",
-    },
-    durationLabel: { en: "3–5 days", es: "3–5 días" },
-    goodFor: { en: "Surf-focused travelers", es: "Viajeros enfocados en el surf" },
-    includesTourSlugs: ["massage"],
     includesSurfLessons: true,
   },
 ];

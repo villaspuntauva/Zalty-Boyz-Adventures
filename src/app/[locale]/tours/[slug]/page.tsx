@@ -79,7 +79,7 @@ export default async function TourDetailPage({
         })}
       />
 
-      <section className="bg-brand-800 py-16 text-white sm:py-20">
+      <section className="bg-brand-800 py-24 text-white sm:py-36">
         <Container>
           <h1 className="max-w-3xl font-heading text-4xl font-extrabold leading-tight sm:text-5xl">
             {tour.name[l]}
@@ -90,7 +90,7 @@ export default async function TourDetailPage({
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="bg-[#eef9ef] py-16 sm:py-20">
         <Container className="grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:items-start">
           <div>
             {photos.length > 0 ? (

@@ -78,13 +78,13 @@
     "hero": {
       "eyebrow": "Puerto Viejo, Costa Rica",
       "title": "Aprende a Surfear. Explora la Selva. Vive el Caribe.",
-      "subtitle": "Clases de surf en grupos pequeños y tours de aventura de selva a mar en Puerto Viejo de Talamanca — con surfistas locales que conocen mejor que nadie estas olas y senderos.",
+      "subtitle": "Clases de surf y tours de aventura de selva a mar en Puerto Viejo de Talamanca — con surfistas locales que conocen mejor que nadie estas olas y senderos.",
       "primaryCta": "Escríbenos por WhatsApp",
       "secondaryCta": "Ver Clases de Surf"
     },
     "trustBar": {
       "localGuides": "Guías locales certificados",
-      "smallGroups": "Grupos pequeños, atención personal",
+      "smallGroups": "Máximo 4 por instructor, atención personal",
       "allLevels": "Todos los niveles son bienvenidos",
       "fastReplies": "Respuestas rápidas por WhatsApp"
     },
@@ -107,7 +107,7 @@
     },
     "packagesTeaser": {
       "eyebrow": "Mejor Valor",
-      "title": "Reserva una Semana o Fin de Semana Completo, de Una Vez",
+      "title": "Reserva una Semana o Fin de Semana Completo",
       "body": "Combina clases de surf, tours e incluso un masaje de nuestra empresa aliada en una sola reserva — ideal si estás planeando tu viaje desde el extranjero.",
       "cta": "Ver Paquetes"
     },
@@ -159,7 +159,7 @@
     "whatToExpect": {
       "title": "Qué esperar",
       "items": [
-        "Grupos pequeños (máximo 4 estudiantes por instructor) o clases privadas 1 a 1",
+        "Clases grupales (máximo 4 estudiantes por instructor) o clases privadas 1 a 1",
         "Todo el equipo incluido: tabla soft-top, rashguard y protector solar biodegradable",
         "Clases programadas según la mejor marea y oleaje del día",
         "Fotos/video de tu sesión bajo pedido"
@@ -195,7 +195,7 @@
     "hero": {
       "eyebrow": "Tours y Excursiones",
       "title": "Aventuras de Selva a Mar",
-      "subtitle": "Más allá de las clases de surf, ofrecemos tours en grupos pequeños por Puerto Viejo y Talamanca — en el agua, en la selva y de noche."
+      "subtitle": "Más allá de las clases de surf, ofrecemos tours para grupos de cualquier tamaño por Puerto Viejo y Talamanca — en el agua, en la selva y de noche."
     },
     "packagesNote": {
       "title": "¿Quieres combinar varios?",
@@ -209,10 +209,15 @@
       "title": "Paquetes de Aventura de Varios Días",
       "subtitle": "No te preocupes por planear cada actividad — somos tus planificadores de aventuras del Caribe. Elige un paquete de clases de surf, tours y relajación, y nosotros nos encargamos del resto."
     },
-    "customNote": {
-      "title": "¿No ves la combinación que buscas?",
-      "body": "Cada paquete a continuación se puede ajustar. Cuéntanos tus fechas de viaje, tamaño de grupo e intereses por WhatsApp y armamos un itinerario a tu medida — tú solo relájate y disfruta.",
-      "cta": "Armar Mi Propio Paquete"
+    "builder": {
+      "title": "¿No ves la combinación que quieres?",
+      "body": "Arma tu propio paquete. Toca todo lo que te gustaría hacer y envíanos tu selección por WhatsApp — armamos un itinerario a la medida de tus fechas y tu grupo.",
+      "surfLessons": "Clases de Surf",
+      "selected": "{count} seleccionados",
+      "clear": "Borrar",
+      "cta": "Enviar mi selección",
+      "emptyCta": "Toca para seleccionar",
+      "message": "¡Hola Zalty Boyz! Quisiera armar un paquete personalizado con:"
     }
   },
   "about": {
@@ -238,9 +243,6 @@
       "eyebrow": "Encuéntranos",
       "title": "Dónde Estamos y Dónde Surfeamos",
       "subtitle": "Con base en Puerto Viejo de Talamanca, dando clases en las mejores playas para principiantes de esta zona del Caribe."
-    },
-    "video": {
-      "title": "Un Vistazo a Playa Cocles"
     },
     "map": {
       "title": "Nuestra Ubicación"

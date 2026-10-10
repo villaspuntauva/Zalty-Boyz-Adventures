@@ -78,13 +78,13 @@
     "hero": {
       "eyebrow": "Puerto Viejo, Costa Rica",
       "title": "Learn to Surf. Explore the Jungle. Feel the Caribbean.",
-      "subtitle": "Small-group surf lessons and jungle-to-ocean adventure tours in Puerto Viejo de Talamanca — run by local surfers who know these waves and trails best.",
+      "subtitle": "Surf lessons and jungle-to-ocean adventure tours in Puerto Viejo de Talamanca — run by local surfers who know these waves and trails best.",
       "primaryCta": "WhatsApp Us to Book",
       "secondaryCta": "See Surf Lessons"
     },
     "trustBar": {
       "localGuides": "Local, certified guides",
-      "smallGroups": "Small groups, personal attention",
+      "smallGroups": "Max 4 per instructor, personal attention",
       "allLevels": "All levels welcome",
       "fastReplies": "Fast WhatsApp replies"
     },
@@ -107,7 +107,7 @@
     },
     "packagesTeaser": {
       "eyebrow": "Best Value",
-      "title": "Book a Full Week or Weekend, Once",
+      "title": "Book a Full Week or Weekend",
       "body": "Combine surf lessons, tours, and even a massage from our partner into one easy booking — perfect for planning a trip from abroad.",
       "cta": "See Packages"
     },
@@ -131,7 +131,7 @@
     "hero": {
       "eyebrow": "Our Specialty",
       "title": "Surf Lessons in Puerto Viejo & Cocles",
-      "subtitle": "Small-group and private surf lessons for complete beginners through intermediate surfers, on Puerto Viejo's warm, forgiving beach breaks."
+      "subtitle": "Group and private surf lessons for complete beginners through intermediate surfers, on Puerto Viejo's warm, forgiving beach breaks."
     },
     "intro": {
       "title": "Why learn to surf with us",
@@ -159,7 +159,7 @@
     "whatToExpect": {
       "title": "What to expect",
       "items": [
-        "Small groups (max 4 students per instructor) or private 1-on-1 lessons",
+        "Group lessons (max 4 students per instructor) or private 1-on-1 lessons",
         "All equipment included: soft-top board, rash guard, and reef-safe sunscreen",
         "Lessons timed to the best tide and swell conditions that day",
         "Photos/video of your session on request"
@@ -195,7 +195,7 @@
     "hero": {
       "eyebrow": "Tours & Excursions",
       "title": "Jungle-to-Ocean Adventures",
-      "subtitle": "Beyond surf lessons, we run small-group tours across Puerto Viejo and Talamanca — on the water, in the rainforest, and after dark."
+      "subtitle": "Beyond surf lessons, we run tours for groups of any size across Puerto Viejo and Talamanca — on the water, in the rainforest, and after dark."
     },
     "packagesNote": {
       "title": "Want to combine a few?",
@@ -209,10 +209,15 @@
       "title": "Multi-Day Adventure Packages",
       "subtitle": "No need to stress or plan out every activity — we're your one-stop Caribbean adventure planners. Pick a bundle of surf lessons, tours, and relaxation, and we'll take care of the rest."
     },
-    "customNote": {
+    "builder": {
       "title": "Don't see the mix you want?",
-      "body": "Every package below can be adjusted. Tell us your travel dates, group size, and interests on WhatsApp and we'll put together a custom itinerary — just sit back, relax, and enjoy the ride.",
-      "cta": "Build My Own Package"
+      "body": "Build your own package. Tap everything you'd like to do, then send your picks to us on WhatsApp — we'll put together a custom itinerary around your dates and group.",
+      "surfLessons": "Surf Lessons",
+      "selected": "{count} selected",
+      "clear": "Clear",
+      "cta": "Send My Picks",
+      "emptyCta": "Tap to select",
+      "message": "Hi Zalty Boyz! I'd like to build a custom package with:"
     }
   },
   "about": {
@@ -238,9 +243,6 @@
       "eyebrow": "Find Us",
       "title": "Where We Are & Where We Surf",
       "subtitle": "Based in Puerto Viejo de Talamanca, teaching across the best beginner-friendly beaches on this stretch of Caribbean coast."
-    },
-    "video": {
-      "title": "A Look at Cocles Beach"
     },
     "map": {
       "title": "Our Location"

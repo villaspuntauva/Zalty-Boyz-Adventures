@@ -51,8 +51,12 @@ export default async function ToursPage({
         ])}
       />
 
-      <section className="relative isolate overflow-hidden py-16 text-white sm:py-20">
-        <HeroMedia videoSrc="/images/tours/hero.mp4" />
+      <section className="relative isolate overflow-hidden py-24 text-white [text-shadow:0_2px_12px_rgb(0_0_0/0.45)] sm:py-36">
+        <HeroMedia
+          videoSrc="/images/tours/hero.mp4"
+          waveClassName="text-[#eef9ef]"
+          overlay="light"
+        />
         <Container>
           <p className="text-sm font-semibold uppercase tracking-widest text-brand-100">
             {t("hero.eyebrow")}
@@ -66,7 +70,7 @@ export default async function ToursPage({
         </Container>
       </section>
 
-      <div className="bg-[#9ed6a5]">
+      <div className="bg-[#eef9ef]">
         <section className="py-16 sm:py-20">
           <Container>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

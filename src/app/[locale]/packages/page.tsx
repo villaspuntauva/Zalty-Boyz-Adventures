@@ -5,11 +5,13 @@ import { Container } from "@/components/ui/Container";
 import { CTAButton } from "@/components/ui/Button";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { HeroMedia } from "@/components/HeroMedia";
+import { PackageBuilder, type BuilderItem } from "@/components/PackageBuilder";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { siteUrl, whatsappLink } from "@/lib/business";
 import { packages } from "@/data/packages";
-import { getTourBySlug } from "@/data/tours";
+import { getTourBySlug, tours } from "@/data/tours";
+import { findMedia } from "@/lib/findMedia";
 
 type Locale = "en" | "es";
 
@@ -43,6 +45,26 @@ export default async function PackagesPage({
   const tCommon = await getTranslations("common");
   const tWhatsapp = await getTranslations("whatsapp");
 
+  // Group lesson rate — matches the pricing on the Surf Lessons page.
+  const surfLessonPriceFrom = 60;
+
+  const firstPhoto = (dir: string, slug: string) =>
+    findMedia(dir, slug).find((item) => item.type === "image")?.src ?? null;
+  const builderItems: BuilderItem[] = [
+    {
+      id: "surf-lessons",
+      name: t("builder.surfLessons"),
+      image: firstPhoto("surf-lessons", "lesson"),
+      priceFrom: surfLessonPriceFrom,
+    },
+    ...tours.map((tour) => ({
+      id: tour.slug,
+      name: tour.name[l],
+      image: firstPhoto("tours", tour.slug),
+      priceFrom: tour.pricing?.priceFromNumber,
+    })),
+  ];
+
   return (
     <>
       <JsonLd
@@ -52,9 +74,11 @@ export default async function PackagesPage({
         ])}
       />
 
-      <section className="relative isolate overflow-hidden py-16 text-white sm:py-20">
+      <section className="relative isolate overflow-hidden py-24 text-white [text-shadow:0_2px_12px_rgb(0_0_0/0.5)] sm:py-36">
         <HeroMedia
           imageSrc="/images/packages/hero.jpg"
+          waveClassName="text-[#eef9ef]"
+          overlay="none"
           imageAlt={
             l === "es"
               ? "Estudiantes de surf caminando por la playa con una tabla en Puerto Viejo"
@@ -74,8 +98,8 @@ export default async function PackagesPage({
         </Container>
       </section>
 
-      <div className="bg-[#9ed6a5]">
-        <section className="py-16 sm:py-20">
+      <div className="bg-[#eef9ef]">
+        <section className="pt-16 sm:pt-20">
           <Container className="grid gap-8 lg:grid-cols-3">
             {packages.map((pkg) => {
               const includedTours = pkg.includesTourSlugs
@@ -106,9 +130,14 @@ export default async function PackagesPage({
 
                     <ul className="mt-4 space-y-1.5 text-sm text-ink-700">
                       {pkg.includesSurfLessons && (
-                        <li className="flex gap-2">
-                          <span aria-hidden="true" className="text-brand-600">✓</span>
-                          {l === "es" ? "Clases de surf" : "Surf lessons"}
+                        <li className="flex items-center justify-between gap-2">
+                          <span className="flex gap-2">
+                            <span aria-hidden="true" className="text-brand-600">✓</span>
+                            {l === "es" ? "Clases de surf" : "Surf lessons"}
+                          </span>
+                          <span className="shrink-0 rounded-full bg-brand-50 px-2 py-0.5 text-xs font-semibold text-brand-700">
+                            {tCommon("from")} ${surfLessonPriceFrom}
+                          </span>
                         </li>
                       )}
                       {includedTours.map((tour) => (
@@ -143,25 +172,19 @@ export default async function PackagesPage({
           </Container>
         </section>
 
-        <section className="py-16 sm:py-20">
-          <Container className="text-center">
-            <h2 className="font-heading text-3xl font-bold text-ink-900 sm:text-4xl">
-              {t("customNote.title")}
-            </h2>
-            <p className="mx-auto mt-3 max-w-xl text-ink-700">
-              {t("customNote.body")}
-            </p>
-            <div className="mt-8 flex justify-center">
-              <CTAButton
-                href={whatsappLink(tWhatsapp("prefilledMessage"))}
-                external
-                variant="whatsapp"
-              >
-                {t("customNote.cta")}
-              </CTAButton>
-            </div>
-          </Container>
-        </section>
+        <PackageBuilder
+          items={builderItems}
+          labels={{
+            title: t("builder.title"),
+            body: t("builder.body"),
+            from: tCommon("from"),
+            selected: t.raw("builder.selected"),
+            clear: t("builder.clear"),
+            cta: t("builder.cta"),
+            emptyCta: t("builder.emptyCta"),
+            message: t("builder.message"),
+          }}
+        />
       </div>
     </>
   );

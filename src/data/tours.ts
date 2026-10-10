@@ -208,8 +208,8 @@ export const tours: Tour[] = [
       es: ["Buena opción en un día de descanso o con niños", "Avísanos con anticipación sobre alergias a frutas"],
     },
     heroImageAlt: {
-      en: "Farmer showing exotic tropical fruit on a farm tour near Puerto Viejo",
-      es: "Agricultor mostrando fruta tropical exótica en un tour de finca cerca de Puerto Viejo",
+      en: "Fresh jackfruit, pineapple, and watermelon stacked at a tropical fruit stand",
+      es: "Yaca, piña y sandía frescas apiladas en un puesto de frutas tropicales",
     },
   },
   {
@@ -236,8 +236,8 @@ export const tours: Tour[] = [
       es: ["Ideal para surfistas que ya superaron el nivel de principiante", "Las condiciones varían — elegimos el mejor día contigo"],
     },
     heroImageAlt: {
-      en: "Surfer paddling out at Isla Uvita near Limón, Costa Rica",
-      es: "Surfista remando en Isla Uvita cerca de Limón, Costa Rica",
+      en: "Isla Uvita seen from the coast of Limón, Costa Rica",
+      es: "Isla Uvita vista desde la costa de Limón, Costa Rica",
     },
   },
   {

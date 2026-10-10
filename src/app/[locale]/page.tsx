@@ -112,7 +112,7 @@ export default async function HomePage({
             ].map((item) => (
               <li
                 key={item}
-                className="rounded-xl bg-brand-50 px-3 py-4 text-sm font-medium text-brand-800"
+                className="flex items-center justify-center rounded-xl bg-brand-50 px-3 py-4 text-sm font-medium text-brand-800"
               >
                 {item}
               </li>
@@ -154,11 +154,11 @@ export default async function HomePage({
               body={t("toursTeaser.body")}
               cta={t("toursTeaser.cta")}
               href="/tours"
-              imageSrc="/images/home/tours-teaser.jpg"
+              imageSrc="/images/tours/kayak-tour.jpg"
               imageAlt={
                 locale === "es"
-                  ? "Kayak y cascada en la selva de Talamanca"
-                  : "Kayaking and a waterfall in the Talamanca rainforest"
+                  ? "Grupo en kayak y paddle board por un río en la selva de Talamanca"
+                  : "Group kayaking and paddle boarding down a jungle river in Talamanca"
               }
               priceLabel={`${tCommon("from")} $45`}
             />
@@ -168,11 +168,11 @@ export default async function HomePage({
               body={t("packagesTeaser.body")}
               cta={t("packagesTeaser.cta")}
               href="/packages"
-              imageSrc="/images/home/packages-teaser.jpg"
+              imageSrc="/images/surf-lessons/surf13.webp"
               imageAlt={
                 locale === "es"
-                  ? "Collage de actividades incluidas en un paquete de aventura"
-                  : "Collage of activities included in an adventure package"
+                  ? "Estudiante de surf con rashguard de Zalty Boyz cargando una tabla por la playa en Puerto Viejo"
+                  : "Surf student in a Zalty Boyz rash guard carrying a board across the beach in Puerto Viejo"
               }
             />
           </div>
@@ -197,7 +197,7 @@ export default async function HomePage({
 
           <div className="mx-auto mt-8 max-w-3xl">
             <PlaceholderVideo
-              src="/videos/cedric-surfing.mp4"
+              src="/images/gallery/cocles5.mp4"
               label={
                 locale === "es"
                   ? "Video de Cedric surfeando — próximamente"

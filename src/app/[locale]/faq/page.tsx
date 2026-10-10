@@ -58,7 +58,7 @@ export default async function FaqPage({
         )}
       />
 
-      <section className="relative isolate overflow-hidden py-16 text-white sm:py-20">
+      <section className="relative isolate overflow-hidden py-24 text-white sm:py-36">
         <HeroMedia
           imageSrc="/images/faq/hero.jpg"
           imageAlt={
