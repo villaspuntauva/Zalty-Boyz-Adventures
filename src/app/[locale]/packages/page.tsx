@@ -76,13 +76,12 @@ export default async function PackagesPage({
 
       <section className="relative isolate overflow-hidden py-24 text-white [text-shadow:0_2px_12px_rgb(0_0_0/0.5)] sm:py-36">
         <HeroMedia
-          imageSrc="/images/packages/hero.jpg"
+          imageSrc="/images/packages/hero-kayak.jpg"
           waveClassName="text-[#eef9ef]"
-          overlay="none"
           imageAlt={
             l === "es"
-              ? "Estudiantes de surf caminando por la playa con una tabla en Puerto Viejo"
-              : "Surf students walking down the beach with a board in Puerto Viejo"
+              ? "Vista aérea de paddle boards y kayaks por un río en la selva de Talamanca"
+              : "Aerial view of paddle boards and kayaks on a jungle river in Talamanca"
           }
         />
         <Container>

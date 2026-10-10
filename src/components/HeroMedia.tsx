@@ -7,6 +7,9 @@ import Image from "next/image";
  * if both are given. With neither, this renders an ocean/jungle gradient
  * so the layout and copy can still be reviewed.
  *
+ * There's deliberately no tint over the photo/video — pages put a
+ * text-shadow on the heading copy instead so it stays legible.
+ *
  * The video is hidden for users who've asked for reduced motion — see the
  * `.hero-video` rule in globals.css — falling back to the image/gradient.
  *
@@ -19,24 +22,18 @@ export function HeroMedia({
   imageAlt,
   videoSrc,
   waveClassName = "text-sand-50",
-  overlay = "default",
 }: {
   imageSrc?: string;
   imageAlt?: string;
   videoSrc?: string;
   /** Text-color class for the bottom wave, to match the section below. */
   waveClassName?: string;
-  /**
-   * Tint over the photo/video: "light" lets it show through brighter,
-   * "none" removes the tint entirely (pair with a text-shadow on the copy).
-   */
-  overlay?: "default" | "light" | "none";
 }) {
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden bg-gradient-to-br from-brand-700 via-brand-600 to-brand-900">
       {videoSrc ? (
         <video
-          className={`hero-video absolute inset-0 h-full w-full object-cover ${overlay === "default" ? "opacity-60" : "opacity-100"}`}
+          className="hero-video absolute inset-0 h-full w-full object-cover"
           autoPlay
           muted
           loop
@@ -56,21 +53,6 @@ export function HeroMedia({
             className="object-cover object-[32%_center]"
           />
         )
-      )}
-      {(imageSrc || videoSrc) && overlay !== "none" && (
-        // Flat tint under the directional gradient below, so heading/CTA
-        // text stays legible no matter what a future replacement photo
-        // looks like in the top-left where the copy sits.
-        <div className={`absolute inset-0 ${overlay === "light" ? "bg-brand-900/15" : "bg-brand-900/35"}`} />
-      )}
-      {overlay !== "none" && (
-        <div
-          className={`absolute inset-0 bg-gradient-to-t to-transparent ${
-            overlay === "light"
-              ? "from-brand-900/45 via-transparent"
-              : "from-brand-900/80 via-brand-900/20"
-          }`}
-        />
       )}
       <svg
         aria-hidden="true"

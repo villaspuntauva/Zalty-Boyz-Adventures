@@ -56,7 +56,7 @@ export default async function AboutPage({
         ])}
       />
 
-      <section className="relative isolate overflow-hidden py-24 text-white sm:py-36">
+      <section className="relative isolate overflow-hidden py-24 text-white [text-shadow:0_2px_12px_rgb(0_0_0/0.5)] sm:py-36">
         <HeroMedia
           imageSrc="/images/about/hero.jpg"
           imageAlt={
@@ -90,7 +90,7 @@ export default async function AboutPage({
                 className="flex flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm"
               >
                 <PlaceholderImage
-                  src={`/images/about/team-${member.slug}.jpg`}
+                  src={`/images/about/${member.photo ?? `team-${member.slug}.jpg`}`}
                   alt={member.photoAlt[l]}
                   aspect="aspect-[4/5]"
                   className="rounded-none"

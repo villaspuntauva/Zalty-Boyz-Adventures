@@ -55,7 +55,7 @@ export default async function LocationPage({
         ])}
       />
 
-      <section className="relative isolate overflow-hidden py-24 text-white sm:py-36">
+      <section className="relative isolate overflow-hidden py-24 text-white [text-shadow:0_2px_12px_rgb(0_0_0/0.5)] sm:py-36">
         <HeroMedia
           imageSrc="/images/location/hero.jpg"
           imageAlt={

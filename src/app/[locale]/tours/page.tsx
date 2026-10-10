@@ -51,11 +51,10 @@ export default async function ToursPage({
         ])}
       />
 
-      <section className="relative isolate overflow-hidden py-24 text-white [text-shadow:0_2px_12px_rgb(0_0_0/0.45)] sm:py-36">
+      <section className="relative isolate overflow-hidden py-24 text-white [text-shadow:0_2px_12px_rgb(0_0_0/0.5)] sm:py-36">
         <HeroMedia
           videoSrc="/images/tours/hero.mp4"
           waveClassName="text-[#eef9ef]"
-          overlay="light"
         />
         <Container>
           <p className="text-sm font-semibold uppercase tracking-widest text-brand-100">

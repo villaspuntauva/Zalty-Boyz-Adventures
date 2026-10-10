@@ -6,6 +6,8 @@ export type TeamMember = {
   role: Localized<string>;
   bio: Localized<string[]>;
   photoAlt: Localized<string>;
+  /** Photo filename in public/images/about/; defaults to `team-${slug}.jpg`. */
+  photo?: string;
 };
 
 export const team: TeamMember[] = [
@@ -28,9 +30,10 @@ export const team: TeamMember[] = [
         "En 2019 fue elegido para representar a su país, Costa Rica, en la selección nacional de los ISA World Surfing Games realizados en Huntington Beach, California.",
       ],
     },
+    photo: "team-cedric-surfing.jpg",
     photoAlt: {
-      en: "Cedric McCrackin, founder and head surf instructor of Zalty Boyz",
-      es: "Cedric McCrackin, fundador e instructor principal de surf de Zalty Boyz",
+      en: "Cedric McCrackin, founder and head surf instructor of Zalty Boyz, surfing a wave at Cocles",
+      es: "Cedric McCrackin, fundador e instructor principal de surf de Zalty Boyz, surfeando una ola en Cocles",
     },
   },
   {
