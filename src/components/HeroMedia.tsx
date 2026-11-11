@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 
 /**
  * Background layer for hero sections. Pass `imageSrc` for a static photo
@@ -20,12 +20,18 @@ import Image from "next/image";
  */
 export function HeroMedia({
   imageSrc,
+  mobileImageSrc,
   imageAlt,
   videoSrc,
   waveClassName = "text-sand-50",
   scrim = true,
 }: {
   imageSrc?: string;
+  /**
+   * Optional different photo for phones/tablets (below the `lg` breakpoint),
+   * for when the desktop photo crops badly into a tall, narrow screen.
+   */
+  mobileImageSrc?: string;
   imageAlt?: string;
   videoSrc?: string;
   /** Darken the media so overlaid copy stays legible. Defaults to true. */
@@ -47,7 +53,14 @@ export function HeroMedia({
           <source src={videoSrc} type="video/mp4" />
         </video>
       ) : (
-        imageSrc && (
+        imageSrc &&
+        (mobileImageSrc ? (
+          <ArtDirectedImage
+            desktopSrc={imageSrc}
+            mobileSrc={mobileImageSrc}
+            alt={imageAlt ?? ""}
+          />
+        ) : (
           <Image
             src={imageSrc}
             alt={imageAlt ?? ""}
@@ -56,7 +69,7 @@ export function HeroMedia({
             sizes="100vw"
             className="object-cover object-[32%_center]"
           />
-        )
+        ))
       )}
       {scrim && (
         <div
@@ -76,5 +89,47 @@ export function HeroMedia({
         />
       </svg>
     </div>
+  );
+}
+
+/**
+ * Desktop/mobile photo pair via <picture>, so each screen downloads only its
+ * own photo. `preload` can't be used here (it would fetch both), so it uses
+ * eager loading + fetchPriority="high" — see "Art direction" in the
+ * next/image docs.
+ * The 1024px breakpoint matches Tailwind's `lg`, where the hero layout
+ * switches to two columns.
+ */
+function ArtDirectedImage({
+  desktopSrc,
+  mobileSrc,
+  alt,
+}: {
+  desktopSrc: string;
+  mobileSrc: string;
+  alt: string;
+}) {
+  const common = { alt, fill: true, sizes: "100vw" };
+  const {
+    props: { srcSet: desktop },
+  } = getImageProps({ ...common, src: desktopSrc });
+  const {
+    props: { srcSet: mobile, ...rest },
+  } = getImageProps({ ...common, src: mobileSrc });
+
+  return (
+    <picture>
+      <source media="(min-width: 1024px)" srcSet={desktop} />
+      {/* eslint-disable-next-line jsx-a11y/alt-text -- alt is in `rest` */}
+      <img
+        {...rest}
+        srcSet={mobile}
+        // Above-the-fold LCP image: don't lazy-load. Safe inside <picture>,
+        // which only ever fetches the one matching source.
+        loading="eager"
+        fetchPriority="high"
+        className="object-cover object-center lg:object-[32%_center]"
+      />
+    </picture>
   );
 }

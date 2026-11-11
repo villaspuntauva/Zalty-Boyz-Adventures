@@ -76,8 +76,8 @@ export const team: TeamMember[] = [
       ],
     },
     photoAlt: {
-      en: "Julie Hickey, \"Zalty Mama\" — massage therapist and yoga instructor",
-      es: "Julie Hickey, \"Zalty Mama\" — masajista e instructora de yoga",
+      en: "Julie Hickey, \"Zalty Mama\", giving a massage in her open-air jungle massage space",
+      es: "Julie Hickey, \"Zalty Mama\", dando un masaje en su espacio de masajes al aire libre en la selva",
     },
   },
 ];

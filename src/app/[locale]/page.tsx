@@ -51,10 +51,11 @@ export default async function HomePage({
       <section className="relative isolate overflow-hidden pb-12 pt-16 sm:pb-28 sm:pt-24">
         <HeroMedia
           imageSrc="/images/home/hero-surf-class.webp"
+          mobileImageSrc="/images/gallery/cocles3.webp"
           imageAlt={
             locale === "es"
-              ? "Clase de surf en Puerto Viejo, Costa Rica"
-              : "Surf lesson in Puerto Viejo, Costa Rica"
+              ? "Surfista en una ola en Puerto Viejo, Costa Rica"
+              : "Surfer riding a wave in Puerto Viejo, Costa Rica"
           }
         />
         <Container>

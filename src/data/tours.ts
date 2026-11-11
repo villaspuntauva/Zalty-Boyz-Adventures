@@ -274,11 +274,11 @@ export const tours: Tour[] = [
       ],
     },
     pricing: {
-      priceFromNumber: 60,
+      priceFromNumber: 80,
       plans: [
         {
           label: { en: "Massage", es: "Masaje" },
-          price: { en: "From $60", es: "Desde $60" },
+          price: { en: "From $80", es: "Desde $80" },
         },
       ],
       note: {
