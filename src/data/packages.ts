@@ -45,12 +45,12 @@ export const packages: Package[] = [
     slug: "full-week-explorer",
     name: { en: "Full Week Explorer", es: "Explorador de Semana Completa" },
     shortDescription: {
-      en: "A full week combining surf lessons, kayak or paddle board, a night wildlife walk, a waterfall hike, and the fruit farm — with rest days built in.",
-      es: "Una semana completa que combina clases de surf, kayak o paddle board, una caminata nocturna de fauna, una cascada y la finca de frutas — con días de descanso incluidos.",
+      en: "A full week combining surf lessons, kayak or paddle board, a night tour with exotic fruit tasting, and a waterfall hike — with rest days built in.",
+      es: "Una semana completa que combina clases de surf, kayak o paddle board, un tour nocturno con degustación de frutas exóticas y una cascada — con días de descanso incluidos.",
     },
     durationLabel: { en: "5 days – 1 week", es: "5 días – 1 semana" },
     goodFor: { en: "Travelers who want to see it all", es: "Viajeros que quieren verlo todo" },
-    includesTourSlugs: ["kayak-tour", "night-tour", "waterfall-tour", "fruit-farm-tour", "massage"],
+    includesTourSlugs: ["kayak-tour", "night-tour", "waterfall-tour", "massage"],
     includesSurfLessons: true,
   },
 ];

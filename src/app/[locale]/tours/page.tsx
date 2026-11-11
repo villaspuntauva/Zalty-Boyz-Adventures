@@ -90,6 +90,11 @@ export default async function ToursPage({
                         {tCommon("from")} ${tour.pricing.priceFromNumber}
                       </span>
                     )}
+                    {!tour.pricing && tour.pricingOnRequest && (
+                      <span className="absolute bottom-3 right-3 rounded-full bg-white/95 px-3 py-1 text-sm font-bold text-brand-700 shadow-sm">
+                        {tCommon("priceOnRequest")}
+                      </span>
+                    )}
                   </div>
                   <div className="flex flex-1 flex-col p-6">
                     <h2 className="font-heading text-xl font-bold text-ink-900">

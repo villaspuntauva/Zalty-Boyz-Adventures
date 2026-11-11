@@ -22,6 +22,11 @@ export type Tour = {
   heroImageAlt: Localized<string>;
   /** Confirmed client pricing. Omitted for tours where it isn't set yet. */
   pricing?: TourPricing;
+  /**
+   * For tours priced case by case (group size, transport, etc.): shown in
+   * place of a price, with a "message us for pricing" WhatsApp button.
+   */
+  pricingOnRequest?: Localized<string>;
 };
 
 /**
@@ -100,6 +105,21 @@ export const tours: Tour[] = [
       en: ["Paddle board & paddle", "Life jacket", "Basic instruction", "Local guide"],
       es: ["Tabla de paddle y remo", "Chaleco salvavidas", "Instrucción básica", "Guía local"],
     },
+    // TODO(client): only the "from $50" starting price is confirmed; add a
+    // private rate here (like the kayak tour) once it's set.
+    pricing: {
+      priceFromNumber: 50,
+      plans: [
+        {
+          label: { en: "Per person", es: "Por persona" },
+          price: { en: "From $50", es: "Desde $50" },
+        },
+      ],
+      note: {
+        en: "Message us on WhatsApp for private session rates.",
+        es: "Escríbenos por WhatsApp para tarifas de sesión privada.",
+      },
+    },
     goodToKnow: {
       en: ["Comfortable swimwear recommended", "Great to pair with a surf lesson day off"],
       es: ["Se recomienda ropa de baño cómoda", "Ideal para combinar con un día libre de surf"],
@@ -111,22 +131,22 @@ export const tours: Tour[] = [
   },
   {
     slug: "night-tour",
-    name: { en: "Night Wildlife Tour", es: "Tour Nocturno de Fauna" },
+    name: { en: "Night Tour & Exotic Fruit Farm", es: "Tour Nocturno y Finca de Frutas Exóticas" },
     shortDescription: {
-      en: "After-dark wildlife walk on our own private jungle and fruit farm property.",
-      es: "Caminata nocturna de fauna en nuestra propia finca privada de selva y frutas.",
+      en: "Taste exotic fruit on our private farm, then head into the jungle after dark to spot nighttime wildlife.",
+      es: "Prueba frutas exóticas en nuestra finca privada y luego adéntrate en la selva de noche para ver fauna nocturna.",
     },
     description: {
-      en: "Once the sun goes down, we go looking for what's lurking in the shadows on our own private jungle and exotic fruit farm property. This is where we can see snakes, tarantulas, frogs, and plenty more nighttime wildlife.",
-      es: "Una vez que se pone el sol, salimos a buscar lo que se esconde entre las sombras en nuestra propia finca privada de selva y frutas exóticas. Aquí es donde podemos ver serpientes, tarántulas, ranas y mucha más fauna nocturna.",
+      en: "We start on our own private jungle and exotic fruit farm, tasting tropical fruits you likely won't recognize — from cacao straight off the tree to seasonal exotics. Then, once the sun goes down, we go looking for what's lurking in the shadows on the same property. This is where we can see snakes, tarantulas, frogs, and plenty more nighttime wildlife.",
+      es: "Comenzamos en nuestra propia finca privada de selva y frutas exóticas, probando frutas tropicales que probablemente no reconocerás — desde cacao recién cortado hasta exóticas de temporada. Luego, una vez que se pone el sol, salimos a buscar lo que se esconde entre las sombras en la misma finca. Aquí es donde podemos ver serpientes, tarántulas, ranas y mucha más fauna nocturna.",
     },
     durationLabel: { en: "Approx. 2 hours", es: "Aprox. 2 horas" },
     durationIso: "PT2H",
     groupSize: { en: "2–10 people", es: "2–10 personas" },
     difficulty: { en: "Easy walk", es: "Caminata fácil" },
     included: {
-      en: ["Gear", "Transportation"],
-      es: ["Equipo", "Transporte"],
+      en: ["Gear", "Transportation", "Fruit tasting"],
+      es: ["Equipo", "Transporte", "Degustación de frutas"],
     },
     pricing: {
       priceFromNumber: 45,
@@ -145,10 +165,12 @@ export const tours: Tour[] = [
       en: [
         "Wear closed shoes and long pants; insect repellent recommended",
         "Not recommended for guests with a severe fear of insects/reptiles",
+        "Let us know about any fruit allergies in advance",
       ],
       es: [
         "Usa zapato cerrado y pantalón largo; se recomienda repelente de insectos",
         "No recomendado para personas con miedo severo a insectos/reptiles",
+        "Avísanos con anticipación sobre alergias a frutas",
       ],
     },
     heroImageAlt: {
@@ -185,34 +207,6 @@ export const tours: Tour[] = [
     },
   },
   {
-    slug: "fruit-farm-tour",
-    name: { en: "Exotic Fruit Farm Tour", es: "Tour de Finca de Frutas Exóticas" },
-    shortDescription: {
-      en: "Taste tropical fruit at a local farm.",
-      es: "Prueba frutas tropicales en una finca local.",
-    },
-    description: {
-      en: "Visit a local farm to see and taste tropical fruits you likely won't recognize — from cacao straight off the tree to seasonal exotics — guided by farmers who know the land. A relaxed, family-friendly experience.",
-      es: "Visita una finca local para ver y probar frutas tropicales que probablemente no reconocerás — desde cacao recién cortado hasta exóticas de temporada — guiado por agricultores que conocen la tierra. Una experiencia relajada, ideal para familias.",
-    },
-    durationLabel: { en: "Approx. 2 hours", es: "Aprox. 2 horas" },
-    durationIso: "PT2H",
-    groupSize: { en: "2–12 people", es: "2–12 personas" },
-    difficulty: { en: "Easy — family friendly", es: "Fácil — ideal para familias" },
-    included: {
-      en: ["Farm guide", "Fruit tasting", "Cacao demonstration"],
-      es: ["Guía de la finca", "Degustación de frutas", "Demostración de cacao"],
-    },
-    goodToKnow: {
-      en: ["Great option on a rest day or with young kids", "Let us know about any fruit allergies in advance"],
-      es: ["Buena opción en un día de descanso o con niños", "Avísanos con anticipación sobre alergias a frutas"],
-    },
-    heroImageAlt: {
-      en: "Fresh jackfruit, pineapple, and watermelon stacked at a tropical fruit stand",
-      es: "Yaca, piña y sandía frescas apiladas en un puesto de frutas tropicales",
-    },
-  },
-  {
     slug: "mini-surf-trip",
     name: { en: "Mini Surf Trip: Isla Uvita & Cahuita", es: "Mini Viaje de Surf: Isla Uvita y Cahuita" },
     shortDescription: {
@@ -235,6 +229,10 @@ export const tours: Tour[] = [
       en: ["Best for surfers past the first-timer stage", "Conditions vary — we'll pick the best day with you"],
       es: ["Ideal para surfistas que ya superaron el nivel de principiante", "Las condiciones varían — elegimos el mejor día contigo"],
     },
+    pricingOnRequest: {
+      en: "This trip takes more organizing, so the price depends on how many people are coming and the trip expenses (transport, boats, and so on). Message us with your group size and dates and we'll send you a quote.",
+      es: "Este viaje requiere más organización, así que el precio depende de cuántas personas vienen y de los gastos del viaje (transporte, botes, etc.). Escríbenos con el tamaño de tu grupo y tus fechas y te enviamos una cotización.",
+    },
     heroImageAlt: {
       en: "Isla Uvita seen from the coast of Limón, Costa Rica",
       es: "Isla Uvita vista desde la costa de Limón, Costa Rica",
@@ -244,12 +242,12 @@ export const tours: Tour[] = [
     slug: "massage",
     name: { en: "Massage", es: "Masaje" },
     shortDescription: {
-      en: "Unwind with a massage from our trusted local partner.",
-      es: "Relájate con un masaje de nuestra aliada local de confianza.",
+      en: "Thai, deep tissue, Watsu, craniosacral, or Reiki from our trusted local partner.",
+      es: "Masaje tailandés, tejido profundo, Watsu, craneosacral o Reiki con nuestra aliada local de confianza.",
     },
     description: {
-      en: "After a day of surfing and exploring, unwind with a massage from our trusted local partner — bookable on its own or added to any package. Our massage services are run by a trusted local therapist in Puerto Viejo, a service we're proud to offer alongside our own tours because we know the quality firsthand.",
-      es: "Después de un día de surf y exploración, relájate con un masaje de nuestra aliada local de confianza — disponible solo o agregado a cualquier paquete. Nuestros servicios de masaje están a cargo de una terapeuta local de confianza en Puerto Viejo, un servicio que nos enorgullece ofrecer junto a nuestros tours porque conocemos su calidad de primera mano.",
+      en: "After a day of surfing and exploring, unwind with a massage from our trusted local partner — bookable on its own or added to any package. Our massage services are run by a trusted local therapist in Puerto Viejo, a service we're proud to offer alongside our own tours because we know the quality firsthand. Choose from Thai massage, deep tissue, Watsu (a floating water massage), craniosacral therapy, or Reiki.",
+      es: "Después de un día de surf y exploración, relájate con un masaje de nuestra aliada local de confianza — disponible solo o agregado a cualquier paquete. Nuestros servicios de masaje están a cargo de una terapeuta local de confianza en Puerto Viejo, un servicio que nos enorgullece ofrecer junto a nuestros tours porque conocemos su calidad de primera mano. Elige entre masaje tailandés, tejido profundo, Watsu (masaje flotando en el agua), terapia craneosacral o Reiki.",
     },
     // TODO(client): confirm actual session length; "by appointment" avoids
     // stating a specific duration that hasn't been confirmed.
@@ -258,8 +256,22 @@ export const tours: Tour[] = [
     groupSize: { en: "1–2 people", es: "1–2 personas" },
     difficulty: { en: "For all guests", es: "Para todos los huéspedes" },
     included: {
-      en: ["Professional local massage therapist"],
-      es: ["Terapeuta de masajes profesional local"],
+      en: [
+        "Professional local massage therapist",
+        "Thai massage",
+        "Deep tissue massage",
+        "Watsu (water massage)",
+        "Craniosacral therapy",
+        "Reiki",
+      ],
+      es: [
+        "Terapeuta de masajes profesional local",
+        "Masaje tailandés",
+        "Masaje de tejido profundo",
+        "Watsu (masaje en el agua)",
+        "Terapia craneosacral",
+        "Reiki",
+      ],
     },
     goodToKnow: {
       en: [
@@ -272,8 +284,8 @@ export const tours: Tour[] = [
       ],
     },
     heroImageAlt: {
-      en: "Relaxing massage space near Puerto Viejo",
-      es: "Espacio de masajes relajante cerca de Puerto Viejo",
+      en: "Therapist giving a massage in an open-air jungle massage space in Puerto Viejo",
+      es: "Terapeuta dando un masaje en un espacio al aire libre rodeado de selva en Puerto Viejo",
     },
   },
 ];

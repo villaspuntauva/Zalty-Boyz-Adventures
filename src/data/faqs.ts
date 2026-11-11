@@ -62,8 +62,8 @@ export const faqs: Faq[] = [
       es: "¿Puerto Viejo es apto para familias para estas actividades?",
     },
     answer: {
-      en: "Many of our tours — kayaking, paddle boarding, the fruit farm, and beginner surf lessons — are great for families. The night wildlife walk and waterfall hike are best for kids comfortable with a bit more walking. Let us know ages and we'll recommend the right mix.",
-      es: "Muchos de nuestros tours — kayak, paddle board, la finca de frutas y clases de surf para principiantes — son ideales para familias. La caminata nocturna y la cascada son mejores para niños cómodos con un poco más de caminata. Cuéntanos las edades y te recomendamos la mejor combinación.",
+      en: "Many of our tours — kayaking, paddle boarding, and beginner surf lessons — are great for families. The night tour & fruit farm and waterfall hike are best for kids comfortable with a bit more walking. Let us know ages and we'll recommend the right mix.",
+      es: "Muchos de nuestros tours — kayak, paddle board y clases de surf para principiantes — son ideales para familias. El tour nocturno con finca de frutas y la cascada son mejores para niños cómodos con un poco más de caminata. Cuéntanos las edades y te recomendamos la mejor combinación.",
     },
   },
 ];

@@ -18,6 +18,9 @@ type Locale = "en" | "es";
 const FEATURED_YOUTUBE_VIDEO_ID = "HI3V08zGKyA";
 const FEATURED_YOUTUBE_VIDEO_TITLE =
   "Surfing the perfect lefts of Boca Barranca | ZALTY BOYZ VLOG #8";
+// "Watch Us on YouTube" button target — the Zalty Boyz vlog playlist.
+const YOUTUBE_PLAYLIST_URL =
+  "https://www.youtube.com/playlist?list=PLKBO6F4qxWlFSkMLNzQCpC_pGKztDKCgX";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -136,7 +139,7 @@ export default async function AboutPage({
               {business.social.youtube && (
                 <div className="mt-4 flex justify-center">
                   <CTAButton
-                    href={business.social.youtube}
+                    href={YOUTUBE_PLAYLIST_URL}
                     external
                     variant="secondary"
                   >

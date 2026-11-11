@@ -48,6 +48,16 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
+  // The fruit farm tour was merged into the night tour.
+  async redirects() {
+    return [
+      {
+        source: "/:locale(en|es)/tours/fruit-farm-tour",
+        destination: "/:locale/tours/night-tour",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

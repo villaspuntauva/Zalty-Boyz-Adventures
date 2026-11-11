@@ -56,18 +56,19 @@ export default async function HomePage({
               ? "Clase de surf en Puerto Viejo, Costa Rica"
               : "Surf lesson in Puerto Viejo, Costa Rica"
           }
+          scrim
         />
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div className="text-white">
-              <div className="[text-shadow:0_2px_12px_rgb(0_0_0/0.5)]">
-                <p className="text-sm font-semibold uppercase tracking-widest text-brand-100">
+              <div className="[text-shadow:0_2px_4px_rgb(0_0_0/0.6),0_4px_24px_rgb(0_0_0/0.5)]">
+                <p className="text-sm font-semibold uppercase tracking-widest text-white">
                   {t("hero.eyebrow")}
                 </p>
                 <h1 className="mt-3 font-heading text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
                   {t("hero.title")}
                 </h1>
-                <p className="mt-5 max-w-xl text-lg text-brand-50/90">
+                <p className="mt-5 max-w-xl text-lg font-medium text-white">
                   {t("hero.subtitle")}
                 </p>
               </div>

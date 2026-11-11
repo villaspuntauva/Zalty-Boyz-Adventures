@@ -8,7 +8,8 @@ import { PhotoCarousel } from "@/components/ui/PhotoCarousel";
 import { QuickBookWidget } from "@/components/QuickBookWidget";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema, tourServiceSchema } from "@/lib/schema";
-import { siteUrl } from "@/lib/business";
+import { siteUrl, whatsappLink } from "@/lib/business";
+import { CTAButton } from "@/components/ui/Button";
 import { findMedia } from "@/lib/findMedia";
 import { getTourBySlug, tours } from "@/data/tours";
 
@@ -161,6 +162,28 @@ export default async function TourDetailPage({
                     {tour.pricing.note[l]}
                   </p>
                 )}
+              </>
+            )}
+
+            {!tour.pricing && tour.pricingOnRequest && (
+              <>
+                <h2 className="mt-10 font-heading text-xl font-bold text-ink-900">
+                  {t("pricing")}
+                </h2>
+                <div className="mt-3 rounded-xl border border-brand-100 bg-white p-5">
+                  <p className="text-ink-700">{tour.pricingOnRequest[l]}</p>
+                  <div className="mt-4">
+                    <CTAButton
+                      href={whatsappLink(
+                        t("pricingWhatsappMessage", { tour: tour.name[l] }),
+                      )}
+                      external
+                      variant="whatsapp"
+                    >
+                      {t("messageForPricing")}
+                    </CTAButton>
+                  </div>
+                </div>
               </>
             )}
 

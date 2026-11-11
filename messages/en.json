@@ -30,6 +30,9 @@
     "included": "What's included",
     "goodToKnow": "Good to know",
     "pricing": "Pricing",
+    "priceOnRequest": "Message for pricing",
+    "messageForPricing": "Message us for pricing",
+    "pricingWhatsappMessage": "Hi! I'm interested in the {tour}. Can you send me pricing for my group?",
     "previousPhoto": "Previous photo",
     "nextPhoto": "Next photo",
     "goToPhoto": "Go to photo {number} of {total}",
@@ -71,12 +74,12 @@
     "quickLinks": "Quick Links",
     "getInTouch": "Get in Touch",
     "followUs": "Follow Us",
-    "location": "Puerto Viejo de Talamanca, Limón, Costa Rica",
+    "location": "Puerto Viejo, Limón, Costa Rica",
     "rights": "All rights reserved."
   },
   "home": {
     "hero": {
-      "eyebrow": "Puerto Viejo, Costa Rica",
+      "eyebrow": "Puerto Viejo, Limón, Costa Rica",
       "title": "Learn to Surf. Explore the Jungle. Feel the Caribbean.",
       "subtitle": "Surf lessons and jungle-to-ocean adventure tours in Puerto Viejo de Talamanca — run by local surfers who know these waves and trails best.",
       "primaryCta": "WhatsApp Us to Book",
@@ -300,7 +303,7 @@
     },
     "info": {
       "title": "Find us",
-      "location": "Puerto Viejo de Talamanca, Limón, Costa Rica"
+      "location": "Puerto Viejo, Limón, Costa Rica"
     }
   }
 }

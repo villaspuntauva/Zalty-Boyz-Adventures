@@ -30,6 +30,9 @@
     "included": "Qué incluye",
     "goodToKnow": "Bueno saber",
     "pricing": "Precios",
+    "priceOnRequest": "Consulta el precio",
+    "messageForPricing": "Escríbenos por el precio",
+    "pricingWhatsappMessage": "¡Hola! Me interesa el {tour}. ¿Me pueden enviar el precio para mi grupo?",
     "previousPhoto": "Foto anterior",
     "nextPhoto": "Siguiente foto",
     "goToPhoto": "Ir a la foto {number} de {total}",
@@ -71,12 +74,12 @@
     "quickLinks": "Enlaces Rápidos",
     "getInTouch": "Contáctanos",
     "followUs": "Síguenos",
-    "location": "Puerto Viejo de Talamanca, Limón, Costa Rica",
+    "location": "Puerto Viejo, Limón, Costa Rica",
     "rights": "Todos los derechos reservados."
   },
   "home": {
     "hero": {
-      "eyebrow": "Puerto Viejo, Costa Rica",
+      "eyebrow": "Puerto Viejo, Limón, Costa Rica",
       "title": "Aprende a Surfear. Explora la Selva. Vive el Caribe.",
       "subtitle": "Clases de surf y tours de aventura de selva a mar en Puerto Viejo de Talamanca — con surfistas locales que conocen mejor que nadie estas olas y senderos.",
       "primaryCta": "Escríbenos por WhatsApp",
@@ -300,7 +303,7 @@
     },
     "info": {
       "title": "Encuéntranos",
-      "location": "Puerto Viejo de Talamanca, Limón, Costa Rica"
+      "location": "Puerto Viejo, Limón, Costa Rica"
     }
   }
 }

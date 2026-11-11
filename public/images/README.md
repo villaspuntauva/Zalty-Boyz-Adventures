@@ -20,11 +20,12 @@ update the path in code to match).
 | `surf-lessons/lesson.jpg` | Surf Lessons page — intro photo |
 | `tours/kayak-tour.jpg` | Kayak Tour — card + detail page + gallery |
 | `tours/paddle-board.jpg` | Paddle Board (SUP) — card + detail page + gallery |
-| `tours/night-tour.jpg` | Night Wildlife Tour — card + detail page + gallery |
+| `tours/night-tour.jpg` | Night Tour & Exotic Fruit Farm — card + detail page + gallery |
 | `tours/waterfall-tour.jpg` | Waterfall Tour — card + detail page + gallery |
-| `tours/fruit-farm-tour.jpg` | Exotic Fruit Farm Tour — card + detail page + gallery |
+| `tours/night-tour-4.jpg` | Night Tour & Exotic Fruit Farm — gallery (fruit photo) |
 | `tours/mini-surf-trip.jpg` | Mini Surf Trip (Isla Uvita & Cahuita) — card + detail page + gallery |
 | `tours/massage.jpg` | Massage — card + detail page + gallery (folded into Tours) |
+| `tours/massage-2.jpg` | Massage — gallery (portrait) |
 | `packages/hero-kayak.jpg` | Packages page — hero banner background |
 | `packages/weekend-taste.jpg` | "Weekend Taste of Puerto Viejo" package card |
 | `packages/full-week-explorer.jpg` | "Full Week Explorer" package card |
