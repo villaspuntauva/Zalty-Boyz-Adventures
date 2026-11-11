@@ -273,14 +273,27 @@ export const tours: Tour[] = [
         "Reiki",
       ],
     },
+    pricing: {
+      priceFromNumber: 60,
+      plans: [
+        {
+          label: { en: "Massage", es: "Masaje" },
+          price: { en: "From $60", es: "Desde $60" },
+        },
+      ],
+      note: {
+        en: "Price varies by massage type and length — message us on WhatsApp for exact rates.",
+        es: "El precio varía según el tipo y la duración del masaje — escríbenos por WhatsApp para tarifas exactas.",
+      },
+    },
     goodToKnow: {
       en: [
         "Can be booked on its own or added to any package",
-        "Message us to confirm current availability and pricing",
+        "Message us to confirm availability and exact pricing",
       ],
       es: [
         "Se puede reservar sola o agregar a cualquier paquete",
-        "Escríbenos para confirmar disponibilidad y precios actuales",
+        "Escríbenos para confirmar disponibilidad y precios exactos",
       ],
     },
     heroImageAlt: {

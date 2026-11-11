@@ -7,9 +7,9 @@ import Image from "next/image";
  * if both are given. With neither, this renders an ocean/jungle gradient
  * so the layout and copy can still be reviewed.
  *
- * By default there's no tint over the photo/video — pages put a
- * text-shadow on the heading copy instead. Pass `scrim` to add a dark
- * gradient behind the copy when the photo is too busy for that alone.
+ * A dark gradient (`scrim`, on by default) sits over the photo/video so
+ * the white heading copy stays legible; pages also add a text-shadow.
+ * Pass `scrim={false}` for a hero whose photo is already dark enough.
  *
  * The video is hidden for users who've asked for reduced motion — see the
  * `.hero-video` rule in globals.css — falling back to the image/gradient.
@@ -23,12 +23,12 @@ export function HeroMedia({
   imageAlt,
   videoSrc,
   waveClassName = "text-sand-50",
-  scrim = false,
+  scrim = true,
 }: {
   imageSrc?: string;
   imageAlt?: string;
   videoSrc?: string;
-  /** Darken the left side of the media so overlaid copy stays legible. */
+  /** Darken the media so overlaid copy stays legible. Defaults to true. */
   scrim?: boolean;
   /** Text-color class for the bottom wave, to match the section below. */
   waveClassName?: string;
@@ -61,7 +61,7 @@ export function HeroMedia({
       {scrim && (
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/30 lg:bg-gradient-to-r lg:from-black/70 lg:via-black/40 lg:to-transparent"
+          className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/30 to-black/20 lg:bg-gradient-to-r lg:from-black/55 lg:via-black/30 lg:to-transparent"
         />
       )}
       <svg

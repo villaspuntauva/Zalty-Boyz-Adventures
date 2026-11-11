@@ -56,7 +56,6 @@ export default async function HomePage({
               ? "Clase de surf en Puerto Viejo, Costa Rica"
               : "Surf lesson in Puerto Viejo, Costa Rica"
           }
-          scrim
         />
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
