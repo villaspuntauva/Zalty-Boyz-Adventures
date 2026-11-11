@@ -10,6 +10,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema, tourServiceSchema } from "@/lib/schema";
 import { siteUrl, whatsappLink } from "@/lib/business";
 import { CTAButton } from "@/components/ui/Button";
+import { HeroMedia } from "@/components/HeroMedia";
 import { findMedia } from "@/lib/findMedia";
 import { getTourBySlug, tours } from "@/data/tours";
 
@@ -80,12 +81,28 @@ export default async function TourDetailPage({
         })}
       />
 
-      <section className="bg-brand-800 py-24 text-white sm:py-36">
+      <section
+        className={
+          tour.heroVideo
+            ? "relative isolate overflow-hidden py-24 text-white [text-shadow:0_2px_4px_rgb(0_0_0/0.6),0_4px_24px_rgb(0_0_0/0.5)] sm:py-36"
+            : "bg-brand-800 py-24 text-white sm:py-36"
+        }
+      >
+        {tour.heroVideo && (
+          <HeroMedia
+            videoSrc={tour.heroVideo}
+            videoStart={tour.heroVideoStart}
+            videoEnd={tour.heroVideoEnd}
+            waveClassName="text-[#eef9ef]"
+          />
+        )}
         <Container>
           <h1 className="max-w-3xl font-heading text-4xl font-extrabold leading-tight sm:text-5xl">
             {tour.name[l]}
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-brand-50/90">
+          <p
+            className={`mt-4 max-w-2xl text-lg ${tour.heroVideo ? "font-medium text-white" : "text-brand-50/90"}`}
+          >
             {tour.shortDescription[l]}
           </p>
         </Container>

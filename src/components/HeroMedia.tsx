@@ -1,4 +1,5 @@
 import Image, { getImageProps } from "next/image";
+import { HeroVideo } from "./HeroVideo";
 
 /**
  * Background layer for hero sections. Pass `imageSrc` for a static photo
@@ -23,6 +24,8 @@ export function HeroMedia({
   mobileImageSrc,
   imageAlt,
   videoSrc,
+  videoStart,
+  videoEnd,
   waveClassName = "text-sand-50",
   scrim = true,
 }: {
@@ -34,6 +37,9 @@ export function HeroMedia({
   mobileImageSrc?: string;
   imageAlt?: string;
   videoSrc?: string;
+  /** Optional segment (seconds) of the video to play and loop. */
+  videoStart?: number;
+  videoEnd?: number;
   /** Darken the media so overlaid copy stays legible. Defaults to true. */
   scrim?: boolean;
   /** Text-color class for the bottom wave, to match the section below. */
@@ -42,16 +48,7 @@ export function HeroMedia({
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden bg-gradient-to-br from-brand-700 via-brand-600 to-brand-900">
       {videoSrc ? (
-        <video
-          className="hero-video absolute inset-0 h-full w-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          aria-hidden="true"
-        >
-          <source src={videoSrc} type="video/mp4" />
-        </video>
+        <HeroVideo src={videoSrc} start={videoStart} end={videoEnd} />
       ) : (
         imageSrc &&
         (mobileImageSrc ? (

@@ -20,6 +20,11 @@ export type Tour = {
   included: Localized<string[]>;
   goodToKnow: Localized<string[]>;
   heroImageAlt: Localized<string>;
+  /** Optional autoplaying background video for the tour page header. */
+  heroVideo?: string;
+  /** Optional segment of `heroVideo` to loop, in seconds. */
+  heroVideoStart?: number;
+  heroVideoEnd?: number;
   /** Confirmed client pricing. Omitted for tours where it isn't set yet. */
   pricing?: TourPricing;
   /**
@@ -205,6 +210,9 @@ export const tours: Tour[] = [
       en: "Waterfall in the Talamanca rainforest near Puerto Viejo",
       es: "Cascada en la selva de Talamanca cerca de Puerto Viejo",
     },
+    heroVideo: "/images/tours/waterfall-tour-hero.mp4",
+    heroVideoStart: 2,
+    heroVideoEnd: 8,
   },
   {
     slug: "mini-surf-trip",
