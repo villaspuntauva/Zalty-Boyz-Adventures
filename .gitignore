@@ -45,6 +45,7 @@ public/images/**/*.mov
 !public/images/tours/kayak-tour-3.mp4
 !public/images/tours/paddle-board-3.mp4
 !public/images/location/cocles-video.mp4
+!public/images/tours/waterfall-tour-hero.mp4
 public/images/tours/kayak[0-9].webp
 public/images/tours/nighttour[0-9].webp
 public/images/surf-lessons/surf[0-9].webp
