@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { staticPageMetadata } from "@/lib/metadata";
 import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { LegalDocumentView } from "@/components/LegalDocumentView";
@@ -16,8 +17,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const l = locale as Locale;
-  return { title: privacyPolicy.title[l], description: privacyPolicy.intro[l].slice(0, 155) };
+  return staticPageMetadata(locale as "en" | "es", "/privacy-policy");
 }
 
 export default async function Page({

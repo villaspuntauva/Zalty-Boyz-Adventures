@@ -16,6 +16,58 @@ export const faqs: Faq[] = [
       es: "No — la mayoría de nuestros estudiantes son principiantes totales. Adaptamos cada clase a tu nivel, desde tu primera vez parándote en una tabla hasta coaching más avanzado.",
     },
   },
+  // Price/schedule answers repeat figures from src/data/tours.ts,
+  // src/data/yoga.ts and the surf-lessons messages — update them together.
+  {
+    question: {
+      en: "How much do surf lessons cost in Puerto Viejo?",
+      es: "¿Cuánto cuestan las clases de surf en Puerto Viejo?",
+    },
+    answer: {
+      en: "Group surf lessons are $60 and private 1-on-1 lessons are $70. Both last about 2 hours and include transportation and all surf equipment; group lessons also include a snack. Message us on WhatsApp to confirm rates for your group.",
+      es: "Las clases de surf grupales cuestan $60 y las privadas 1 a 1 cuestan $70. Ambas duran unas 2 horas e incluyen transporte y todo el equipo de surf; las grupales también incluyen un snack. Escríbenos por WhatsApp para confirmar tarifas para tu grupo.",
+    },
+  },
+  {
+    question: {
+      en: "Where do the surf lessons take place?",
+      es: "¿Dónde son las clases de surf?",
+    },
+    answer: {
+      en: "We're based in Cocles, just outside Puerto Viejo de Talamanca on Costa Rica's Caribbean coast. We pick you up in our Zalty Tuk Tuk and take you to whichever beach has the best conditions that day — usually Cocles, Punta Uva, or Playa Grande.",
+      es: "Estamos en Cocles, a las afueras de Puerto Viejo de Talamanca, en el Caribe de Costa Rica. Te recogemos en nuestro Zalty Tuk Tuk y te llevamos a la playa con las mejores condiciones del día — normalmente Cocles, Punta Uva o Playa Grande.",
+    },
+  },
+  {
+    question: {
+      en: "What's included in a surf lesson, and how big are the groups?",
+      es: "¿Qué incluye una clase de surf y qué tan grandes son los grupos?",
+    },
+    answer: {
+      en: "Every lesson includes a soft-top surfboard, rash guard, reef-safe sunscreen, and transportation. Group lessons have a maximum of 4 students per instructor, and you can request photos or video of your session.",
+      es: "Cada clase incluye tabla de surf soft-top, licra, bloqueador solar amigable con los arrecifes y transporte. Las clases grupales tienen un máximo de 4 estudiantes por instructor, y puedes pedir fotos o video de tu sesión.",
+    },
+  },
+  {
+    question: {
+      en: "What tours do you offer, and how much do they cost?",
+      es: "¿Qué tours ofrecen y cuánto cuestan?",
+    },
+    answer: {
+      en: "Our tours include a Cocles River kayak tour (from $50), paddle boarding (from $50), a night wildlife tour with exotic fruit tasting (from $45), a jungle waterfall hike (from $45), and a mini surf trip to Isla Uvita and Cahuita (priced by group). Massages with Julie Hickey start at $85.",
+      es: "Nuestros tours incluyen kayak por el río Cocles (desde $50), paddle board (desde $50), un tour nocturno de fauna con degustación de frutas exóticas (desde $45), una caminata a una cascada en la selva (desde $45) y un mini viaje de surf a Isla Uvita y Cahuita (precio según el grupo). Los masajes con Julie Hickey empiezan en $85.",
+    },
+  },
+  {
+    question: {
+      en: "Do you offer yoga classes?",
+      es: "¿Ofrecen clases de yoga?",
+    },
+    answer: {
+      en: "Yes — Julie Hickey teaches weekly yoga at One Love Wellness, at the same spot as Zalty Boyz in Cocles: Vinyasa Hatha Flow on Tuesdays, Breathe With Me Kundalini on Wednesdays, and Vinyasa Flow on Thursdays, all at 9:00 AM. Drop-in classes are $15, private classes are $60, and class packages are available.",
+      es: "Sí — Julie Hickey imparte yoga semanal en One Love Wellness, en el mismo lugar que Zalty Boyz en Cocles: Vinyasa Hatha Flow los martes, Breathe With Me Kundalini los miércoles y Vinyasa Flow los jueves, todas a las 9:00 AM. La clase suelta cuesta $15, la privada $60, y hay paquetes de clases disponibles.",
+    },
+  },
   {
     question: {
       en: "What should I bring to a surf lesson or tour?",

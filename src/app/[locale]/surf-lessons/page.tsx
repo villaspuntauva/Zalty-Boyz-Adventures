@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { staticPageMetadata } from "@/lib/metadata";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { Container } from "@/components/ui/Container";
@@ -11,6 +12,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema, tourServiceSchema } from "@/lib/schema";
 import { siteUrl, whatsappLink } from "@/lib/business";
 import { findMedia } from "@/lib/findMedia";
+import { getPathname } from "@/i18n/navigation";
 
 type Locale = "en" | "es";
 
@@ -24,11 +26,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "surfLessons" });
-  return {
-    title: t("hero.title"),
-    description: t("hero.subtitle"),
-  };
+  return staticPageMetadata(locale as "en" | "es", "/surf-lessons");
 }
 
 export default async function SurfLessonsPage({
@@ -63,8 +61,8 @@ export default async function SurfLessonsPage({
     <>
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: `${siteUrl}/${locale}` },
-          { name: t("hero.title"), url: `${siteUrl}/${locale}/surf-lessons` },
+          { name: locale === "es" ? "Inicio" : "Home", url: `${siteUrl}/${locale}` },
+          { name: t("hero.title"), url: `${siteUrl}${getPathname({ locale: locale as "en" | "es", href: "/surf-lessons" })}` },
         ])}
       />
       <JsonLd
@@ -73,6 +71,8 @@ export default async function SurfLessonsPage({
           name: t("hero.title"),
           description: t("hero.subtitle"),
           slug: "surf-lessons",
+          type: "Service",
+          url: `${siteUrl}${getPathname({ locale: l, href: "/surf-lessons" })}`,
           durationIso: "PT2H",
           priceFrom: 60,
         })}
@@ -184,7 +184,7 @@ export default async function SurfLessonsPage({
                 </div>
               ))}
             </div>
-            <p className="mt-3 text-sm text-ink-700/70">{t("pricing.note")}</p>
+            <p className="mt-3 text-sm text-ink-700/85">{t("pricing.note")}</p>
           </div>
 
           <div className="lg:sticky lg:top-24">

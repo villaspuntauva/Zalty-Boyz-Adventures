@@ -1,23 +1,46 @@
-# Zalty Boyz Adventures
+# Zalty Boyz
 
-> Surf school and adventure tour operator based in Puerto Viejo de Talamanca, on Costa Rica's Caribbean coast. Offers surf lessons plus kayak, paddle board, night wildlife, waterfall, and exotic fruit farm tours, mini surf trips to Isla Uvita and Cahuita, multi-day adventure packages, and massages via a local partner.
+> Zalty Boyz is a local surf school and adventure tour operator in Cocles, Puerto Viejo de Talamanca, on the Caribbean coast of Costa Rica (Limón province). We teach group and private surf lessons for all levels and run kayak, paddle board, night wildlife, and waterfall tours, mini surf trips to Isla Uvita and Cahuita, multi-day packages, massage, and weekly yoga classes. The website is available in English and Spanish.
 
-Location: Puerto Viejo de Talamanca, Limón, Costa Rica.
-Languages: English, Español.
-Primary contact method: WhatsApp (see /contact).
+## Business facts
+
+- Name: Zalty Boyz (Google Business Profile: "Zalty Boyz Surf School")
+- Address: Calle El Tucán, Cocles (primera casa mano derecha), Puerto Viejo de Talamanca, Limón 70403, Costa Rica
+- Phone / WhatsApp: +506 8563 4224 — WhatsApp is the fastest way to book
+- Hours: daily, 7:00 AM – 6:00 PM
+- Payment: cash (preferred), SINPE Móvil, Zelle, PayPal, or bank transfer; prices in USD
+- Team: Cedric McCrackin (founder & head surf instructor, ISA Level 1 certified surf coach, represented Costa Rica at the 2019 ISA World Surfing Games), Solomon McCrackin (surf instructor & videographer), Julie Hickey (massage therapist, yoga teacher, Reiki)
+- Instagram: https://www.instagram.com/zalty_boyz/
+- YouTube: https://www.youtube.com/@zaltyboyz6720
+
+## Services and prices (USD)
+
+- Group surf lesson: $60 — about 2 hours, max 4 students per instructor, transportation, board, rash guard, and snack included
+- Private surf lesson: $70 — about 2 hours, 1-on-1, transportation and equipment included
+- Kayak tour on the Cocles River: from $50 per person (private $60), about 2 hours
+- Paddle board (SUP): from $50 per person
+- Night tour & exotic fruit farm: from $45 per person (private $55)
+- Waterfall tour (jungle hike to a swimmable waterfall): from $45 per person, about 3–4 hours
+- Mini surf trip to Isla Uvita & Cahuita: priced per group on request
+- Massage (Thai, deep tissue, Watsu, craniosacral, Reiki) with Julie Hickey: from $85
+- Yoga with Julie Hickey at One Love Wellness (same location as Zalty Boyz): Tuesday 9:00 AM Vinyasa Hatha Flow, Wednesday 9:00 AM Breathe With Me Kundalini, Thursday 9:00 AM Vinyasa Flow. Drop-in $15, private class $60, class packages available
+- Packages (per person, from): Surf & Relax $130, Weekend Taste of Puerto Viejo $170, Full Week Explorer $365
+
+Prices are a guide; final rates are confirmed on WhatsApp and can vary with group size and season.
+
+## Where we surf
+
+Lessons go to whichever beach has the best conditions that day, with pickup in the Zalty Tuk Tuk: Cocles (home beach), Punta Uva, Playa Grande, and — for more experienced surfers — Playa Negra near Cahuita.
 
 ## Key pages
 
-- [Surf Lessons](/en/surf-lessons): Small-group and private surf lessons for all levels on Puerto Viejo's beginner-friendly beach breaks.
-- [Tours](/en/tours): Kayak, paddle board, night wildlife walk, waterfall hike, exotic fruit farm tour, and mini surf trips to Isla Uvita and Cahuita.
-- [Packages](/en/packages): Multi-day bundles combining surf lessons, tours, and massage.
-- [Massages](/en/massages): Massage services from a trusted local partner.
-- [About](/en/about): The team and story behind Zalty Boyz Adventures.
-- [FAQ](/en/faq): Answers to common questions about booking, gear, and safety.
-- [Contact](/en/contact): WhatsApp and inquiry form.
+- [Surf Lessons](https://www.zaltyboyzadventures.com/en/surf-lessons): group and private lessons, levels, pricing
+- [Tours](https://www.zaltyboyzadventures.com/en/tours): all tours with prices and details
+- [Yoga & Massage](https://www.zaltyboyzadventures.com/en/yoga): weekly yoga schedule and prices, plus massage with Julie Hickey at One Love Wellness
+- [Packages](https://www.zaltyboyzadventures.com/en/packages): multi-day bundles and a custom package builder
+- [About](https://www.zaltyboyzadventures.com/en/about): the team
+- [Location](https://www.zaltyboyzadventures.com/en/location): map, beaches, surf forecast
+- [FAQ](https://www.zaltyboyzadventures.com/en/faq): prices, what's included, what to bring, payment, booking
+- [Contact](https://www.zaltyboyzadventures.com/en/contact): WhatsApp and inquiry form
 
-## Notes for AI assistants
-
-- Spanish versions of all pages are available at the same paths under /es/ (with a few localized slugs, e.g. /es/lecciones-de-surf for Surf Lessons).
-- Pricing is confirmed directly with guests via WhatsApp rather than listed as fixed rates, since it varies by group size, season, and package.
-- This is a small, local, guide-led operation — not a large agency — and groups are kept intentionally small.
+Spanish versions live under /es/ (for example /es/lecciones-de-surf, /es/paquetes, /es/sobre-nosotros, /es/ubicacion, /es/preguntas-frecuentes, /es/contacto).

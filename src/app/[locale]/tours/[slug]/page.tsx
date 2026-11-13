@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { getPathname } from "@/i18n/navigation";
+import { pageMetadata, toMetaDescription } from "@/lib/metadata";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
@@ -33,10 +35,14 @@ export async function generateMetadata({
   const tour = getTourBySlug(slug);
   if (!tour) return {};
   const l = locale as Locale;
-  return {
-    title: tour.name[l],
-    description: tour.shortDescription[l],
-  };
+  const place = "Puerto Viejo, Costa Rica";
+  return pageMetadata({
+    locale: l,
+    href: { pathname: "/tours/[slug]", params: { slug: tour.slug } },
+    // Long names (e.g. the Mini Surf Trip) already carry their location.
+    title: tour.name[l].length > 30 ? tour.name[l] : `${tour.name[l]} in ${place}`,
+    description: toMetaDescription(tour.description[l]),
+  });
 }
 
 export default async function TourDetailPage({
@@ -71,8 +77,8 @@ export default async function TourDetailPage({
     <>
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: `${siteUrl}/${locale}` },
-          { name: tTours("hero.title"), url: `${siteUrl}/${locale}/tours` },
+          { name: locale === "es" ? "Inicio" : "Home", url: `${siteUrl}/${locale}` },
+          { name: tTours("hero.title"), url: `${siteUrl}${getPathname({ locale: locale as "en" | "es", href: "/tours" })}` },
           { name: tour.name[l], url: `${siteUrl}/${locale}/tours/${tour.slug}` },
         ])}
       />
@@ -84,6 +90,7 @@ export default async function TourDetailPage({
           slug: tour.slug,
           durationIso: tour.durationIso,
           priceFrom: tour.pricing?.priceFromNumber,
+          type: tour.slug === "massage" ? "Service" : "TouristTrip",
         })}
       />
 
@@ -192,7 +199,7 @@ export default async function TourDetailPage({
                   ))}
                 </div>
                 {tour.pricing.note && (
-                  <p className="mt-3 text-sm text-ink-700/70">
+                  <p className="mt-3 text-sm text-ink-700/85">
                     {tour.pricing.note[l]}
                   </p>
                 )}

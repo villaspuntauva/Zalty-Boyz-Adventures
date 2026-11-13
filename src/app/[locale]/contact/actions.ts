@@ -5,6 +5,11 @@ import { business } from "@/lib/business";
 export type InquiryState = {
   status: "idle" | "success" | "error";
   message?: string;
+  /**
+   * On a send failure, the visitor's inquiry as plain text so the form can
+   * offer a one-tap WhatsApp fallback instead of losing the lead.
+   */
+  fallbackText?: string;
 };
 
 /**
@@ -78,6 +83,17 @@ export async function submitInquiry(
     return { status: "error", message: "invalid_email" };
   }
 
+  const asText = () =>
+    [
+      `Hi! I'm ${name}.`,
+      dates && `Dates: ${dates}`,
+      interest && `Interested in: ${interest}`,
+      message,
+      `Email: ${email}${phone ? ` · Phone: ${phone}` : ""}`,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
   try {
     const result = await sendInquiryEmail({
       name,
@@ -89,12 +105,12 @@ export async function submitInquiry(
     });
 
     if (!result.sent) {
-      return { status: "error", message: "not_configured" };
+      return { status: "error", message: "not_configured", fallbackText: asText() };
     }
 
     return { status: "success" };
   } catch (error) {
     console.error("[contact] Failed to send inquiry email:", error);
-    return { status: "error", message: "send_failed" };
+    return { status: "error", message: "send_failed", fallbackText: asText() };
   }
 }

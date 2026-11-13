@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { getPathname } from "@/i18n/navigation";
+import { staticPageMetadata } from "@/lib/metadata";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { Container } from "@/components/ui/Container";
@@ -18,11 +20,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "contact" });
-  return {
-    title: t("hero.title"),
-    description: t("hero.subtitle"),
-  };
+  return staticPageMetadata(locale as "en" | "es", "/contact");
 }
 
 export default async function ContactPage({
@@ -40,8 +38,8 @@ export default async function ContactPage({
     <>
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: `${siteUrl}/${locale}` },
-          { name: t("hero.title"), url: `${siteUrl}/${locale}/contact` },
+          { name: locale === "es" ? "Inicio" : "Home", url: `${siteUrl}/${locale}` },
+          { name: t("hero.title"), url: `${siteUrl}${getPathname({ locale: locale as "en" | "es", href: "/contact" })}` },
         ])}
       />
 

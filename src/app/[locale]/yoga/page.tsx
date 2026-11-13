@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
+import { getPathname } from "@/i18n/navigation";
+import { staticPageMetadata } from "@/lib/metadata";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { Container } from "@/components/ui/Container";
 import { HeroMedia } from "@/components/HeroMedia";
 import { YogaSection } from "@/components/YogaSection";
+import { MassageSection } from "@/components/MassageSection";
 import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, tourServiceSchema } from "@/lib/schema";
+import { yogaDropInPrice } from "@/data/yoga";
 import { siteUrl } from "@/lib/business";
 
 type Locale = "en" | "es";
@@ -20,11 +24,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "yoga" });
-  return {
-    title: t("title"),
-    description: t("hero.subtitle"),
-  };
+  return staticPageMetadata(locale as "en" | "es", "/yoga");
 }
 
 export default async function YogaPage({
@@ -42,9 +42,20 @@ export default async function YogaPage({
     <>
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: `${siteUrl}/${locale}` },
-          { name: t("title"), url: `${siteUrl}/${locale}/yoga` },
+          { name: locale === "es" ? "Inicio" : "Home", url: `${siteUrl}/${locale}` },
+          { name: t("title"), url: `${siteUrl}${getPathname({ locale: locale as "en" | "es", href: "/yoga" })}` },
         ])}
+      />
+      <JsonLd
+        data={tourServiceSchema({
+          locale: l,
+          name: t("title"),
+          description: t("hero.subtitle"),
+          slug: "yoga",
+          type: "Service",
+          url: `${siteUrl}/${locale}/yoga`,
+          priceFrom: yogaDropInPrice,
+        })}
       />
 
       <section className="relative isolate overflow-hidden py-24 text-white [text-shadow:0_2px_4px_rgb(0_0_0/0.6),0_4px_24px_rgb(0_0_0/0.5)] sm:py-36">
@@ -66,6 +77,7 @@ export default async function YogaPage({
 
       <div className="bg-[#eef9ef] pb-16 sm:pb-20">
         <YogaSection locale={l} />
+        <MassageSection locale={l} />
       </div>
     </>
   );

@@ -3,6 +3,7 @@
 import { useActionState, useId } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { whatsappLink } from "@/lib/business";
 import { submitInquiry, type InquiryState } from "@/app/[locale]/contact/actions";
 
 const initialState: InquiryState = { status: "idle" };
@@ -26,6 +27,7 @@ export function ContactForm() {
     { value: "tours", label: t("interestOptions.tours") },
     { value: "packages", label: t("interestOptions.packages") },
     { value: "massage", label: t("interestOptions.massage") },
+    { value: "yoga", label: t("interestOptions.yoga") },
     { value: "other", label: t("interestOptions.other") },
   ];
 
@@ -136,9 +138,19 @@ export function ContactForm() {
       </div>
 
       {state.status === "error" && (
-        <p role="alert" className="text-sm font-medium text-accent-600">
-          {t("error")}
-        </p>
+        <div role="alert" className="space-y-3">
+          <p className="text-sm font-medium text-accent-600">{t("error")}</p>
+          {state.fallbackText && (
+            <a
+              href={whatsappLink(state.fallbackText)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full items-center justify-center rounded-full bg-[#15803d] px-6 py-3 text-sm font-semibold text-white hover:bg-[#166534]"
+            >
+              {t("sendOnWhatsapp")}
+            </a>
+          )}
+        </div>
       )}
 
       <button
@@ -148,7 +160,7 @@ export function ContactForm() {
       >
         {t("submit")}
       </button>
-      <p className="text-center text-xs text-ink-700/70">
+      <p className="text-center text-xs text-ink-700/85">
         {t.rich("privacyNotice", {
           privacy: (chunks) => (
             <Link href="/privacy-policy" className="underline underline-offset-2">

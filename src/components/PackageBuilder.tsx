@@ -142,12 +142,12 @@ export function PackageBuilder({
               href={whatsappLink(message)}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#25D366] px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#1fb958]"
+              className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#15803d] px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#166534]"
             >
               {labels.cta}
             </a>
           ) : (
-            <span className="inline-flex min-h-11 items-center px-2 text-sm text-ink-700/70">
+            <span className="inline-flex min-h-11 items-center px-2 text-sm text-ink-700/85">
               {labels.emptyCta}
             </span>
           )}

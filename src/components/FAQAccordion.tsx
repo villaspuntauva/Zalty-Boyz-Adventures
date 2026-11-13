@@ -23,7 +23,7 @@ export function FAQAccordion({
 
         return (
           <div key={item.question[locale]}>
-            <h3>
+            <h2>
               <button
                 id={buttonId}
                 type="button"
@@ -37,17 +37,18 @@ export function FAQAccordion({
                   {isOpen ? "−" : "+"}
                 </span>
               </button>
-            </h3>
-            {isOpen && (
-              <div
-                id={panelId}
-                role="region"
-                aria-labelledby={buttonId}
-                className="px-5 pb-4 text-sm text-ink-700 sm:px-6"
-              >
-                {item.answer[locale]}
-              </div>
-            )}
+            </h2>
+            {/* Always rendered (just hidden when closed) so every answer is
+                in the HTML for search engines and AI crawlers. */}
+            <div
+              id={panelId}
+              role="region"
+              aria-labelledby={buttonId}
+              hidden={!isOpen}
+              className="px-5 pb-4 text-sm text-ink-700 sm:px-6"
+            >
+              {item.answer[locale]}
+            </div>
           </div>
         );
       })}

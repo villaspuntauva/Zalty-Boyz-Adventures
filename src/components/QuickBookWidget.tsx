@@ -108,11 +108,11 @@ export function QuickBookWidget() {
 
       <button
         type="submit"
-        className="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3.5 text-base font-semibold text-white transition-colors hover:bg-[#1fb958]"
+        className="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-[#15803d] px-6 py-3.5 text-base font-semibold text-white transition-colors hover:bg-[#166534]"
       >
         {t("submit")}
       </button>
-      <p className="mt-2 text-center text-xs text-ink-700/70">
+      <p className="mt-2 text-center text-xs text-ink-700/85">
         {t("disclaimer")}
       </p>
     </form>

@@ -9,7 +9,7 @@ export type YogaClass = {
 /** Weekly yoga schedule at One Love Wellness, taught by Julie Hickey. */
 export const yogaClasses: YogaClass[] = [
   {
-    day: { en: "Monday", es: "Lunes" },
+    day: { en: "Tuesday", es: "Martes" },
     time: "9:00 AM",
     name: { en: "Vinyasa Hatha Flow", es: "Vinyasa Hatha Flow" },
   },

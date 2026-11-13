@@ -9,7 +9,7 @@ import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloatingButton } from "@/components/WhatsAppFloatingButton";
 import { JsonLd } from "@/components/JsonLd";
 import { CookieConsent } from "@/components/CookieConsent";
-import { organizationSchema, localBusinessSchema } from "@/lib/schema";
+import { organizationSchema, localBusinessSchema, websiteSchema } from "@/lib/schema";
 import { siteUrl, business } from "@/lib/business";
 import "../globals.css";
 
@@ -38,10 +38,6 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
 
-  const languages = Object.fromEntries(
-    routing.locales.map((l) => [l, `${siteUrl}/${l}`]),
-  );
-
   return {
     metadataBase: new URL(siteUrl),
     title: {
@@ -49,15 +45,12 @@ export async function generateMetadata({
       template: `%s | ${t("siteName")}`,
     },
     description: business.description[locale as "en" | "es"],
-    alternates: {
-      canonical: `${siteUrl}/${locale}`,
-      languages: { ...languages, "x-default": `${siteUrl}/en` },
-    },
+    // Canonical + hreflang are set per page (src/lib/metadata.ts) — setting
+    // them here would make every page inherit the home page's URL.
     openGraph: {
       siteName: t("siteName"),
       type: "website",
       locale: locale === "es" ? "es_CR" : "en_US",
-      url: `${siteUrl}/${locale}`,
       // Image comes from the opengraph-image.tsx file convention below.
     },
     twitter: {
@@ -94,6 +87,7 @@ export default async function LocaleLayout({
           {t("skipToContent")}
         </a>
         <JsonLd data={organizationSchema()} />
+        <JsonLd data={websiteSchema(locale as "en" | "es")} />
         <JsonLd data={localBusinessSchema(locale as "en" | "es")} />
         <NextIntlClientProvider>
           <Header />

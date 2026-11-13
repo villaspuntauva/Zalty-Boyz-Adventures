@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { staticPageMetadata } from "@/lib/metadata";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
@@ -9,6 +10,8 @@ import { QuickBookWidget } from "@/components/QuickBookWidget";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { PlaceholderVideo } from "@/components/ui/PlaceholderVideo";
 import { Testimonials } from "@/components/Testimonials";
+import { packages } from "@/data/packages";
+import { yogaDropInPrice } from "@/data/yoga";
 import { whatsappLink } from "@/lib/business";
 
 type Locale = "en" | "es";
@@ -23,15 +26,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "home" });
-  const tMeta = await getTranslations({ locale, namespace: "meta" });
-  return {
-    // Next's title.template (set in the locale layout) only applies to
-    // child route segments, not to page.tsx sharing the layout's own
-    // segment — so the home page builds its full title explicitly.
-    title: `${t("hero.title")} | ${tMeta("siteName")}`,
-    description: t("hero.subtitle"),
-  };
+  return staticPageMetadata(locale as "en" | "es", "/");
 }
 
 export default async function HomePage({
@@ -45,6 +40,7 @@ export default async function HomePage({
   const t = await getTranslations("home");
   const tWhatsapp = await getTranslations("whatsapp");
   const tCommon = await getTranslations("common");
+  const lowestPackagePrice = Math.min(...packages.map((p) => p.priceFromPerPerson));
 
   return (
     <>
@@ -171,11 +167,56 @@ export default async function HomePage({
               body={t("packagesTeaser.body")}
               cta={t("packagesTeaser.cta")}
               href="/packages"
+              priceLabel={`${tCommon("from")} $${lowestPackagePrice}`}
               imageSrc="/images/surf-lessons/surf13.webp"
               imageAlt={
                 locale === "es"
                   ? "Estudiante de surf con rashguard de Zalty Boyz cargando una tabla por la playa en Puerto Viejo"
                   : "Surf student in a Zalty Boyz rash guard carrying a board across the beach in Puerto Viejo"
+              }
+            />
+          </div>
+
+          {/* Second row: links every remaining main page from the home page. */}
+          <div className="mt-8 grid gap-8 lg:grid-cols-3">
+            <ServiceCard
+              eyebrow={t("wellnessTeaser.eyebrow")}
+              title={t("wellnessTeaser.title")}
+              body={t("wellnessTeaser.body")}
+              cta={t("wellnessTeaser.cta")}
+              href="/yoga"
+              priceLabel={`${tCommon("from")} $${yogaDropInPrice}`}
+              imageSrc="/images/about/team-julie.jpg"
+              imageAlt={
+                locale === "es"
+                  ? "Julie Hickey dando un masaje en su espacio al aire libre en la selva en Cocles"
+                  : "Julie Hickey giving a massage in her open-air jungle space in Cocles"
+              }
+            />
+            <ServiceCard
+              eyebrow={t("aboutTeaser.eyebrow")}
+              title={t("aboutTeaser.title")}
+              body={t("aboutTeaser.body")}
+              cta={t("aboutTeaser.cta")}
+              href="/about"
+              imageSrc="/images/about/team-cedric-surfing.jpg"
+              imageAlt={
+                locale === "es"
+                  ? "Cedric McCrackin, fundador de Zalty Boyz, surfeando una ola en Cocles"
+                  : "Cedric McCrackin, founder of Zalty Boyz, surfing a wave at Cocles"
+              }
+            />
+            <ServiceCard
+              eyebrow={t("locationTeaser.eyebrow")}
+              title={t("locationTeaser.title")}
+              body={t("locationTeaser.body")}
+              cta={t("locationTeaser.cta")}
+              href="/location"
+              imageSrc="/images/location/cocles.jpg"
+              imageAlt={
+                locale === "es"
+                  ? "Playa Cocles en Puerto Viejo, Costa Rica"
+                  : "Cocles Beach in Puerto Viejo, Costa Rica"
               }
             />
           </div>
@@ -254,7 +295,7 @@ function ServiceCard({
   title: string;
   body: string;
   cta: string;
-  href: "/surf-lessons" | "/tours" | "/packages";
+  href: "/surf-lessons" | "/tours" | "/packages" | "/yoga" | "/about" | "/location";
   imageSrc: string;
   imageAlt: string;
   priceLabel?: string;

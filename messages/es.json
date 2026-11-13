@@ -116,8 +116,26 @@
     "packagesTeaser": {
       "eyebrow": "Mejor Valor",
       "title": "Reserva una Semana o Fin de Semana Completo",
-      "body": "Combina clases de surf, tours e incluso un masaje de nuestra empresa aliada en una sola reserva — ideal si estás planeando tu viaje desde el extranjero.",
+      "body": "Combina clases de surf, tours e incluso un masaje con Julie Hickey en una sola reserva — ideal si estás planeando tu viaje desde el extranjero.",
       "cta": "Ver Paquetes"
+    },
+    "wellnessTeaser": {
+      "eyebrow": "Relájate y Recupérate",
+      "title": "Yoga y Masajes en One Love Wellness",
+      "body": "Yoga semanal de Vinyasa y Kundalini, además de masajes tailandés, de tejido profundo y Watsu con Julie Hickey — en el mismo lugar que Zalty Boyz en Cocles.",
+      "cta": "Ver Yoga y Masajes"
+    },
+    "aboutTeaser": {
+      "eyebrow": "Conoce al Equipo",
+      "title": "Surfistas Locales, Nacidos Aquí",
+      "body": "Conoce a Cedric, Solomon y Julie — la familia local detrás de Zalty Boyz, liderada por un instructor certificado por la ISA que ha surfeado con la selección de Costa Rica.",
+      "cta": "Sobre Nosotros"
+    },
+    "locationTeaser": {
+      "eyebrow": "Encuéntranos",
+      "title": "En Cocles, Puerto Viejo",
+      "body": "Mira dónde estamos en el mapa, cómo llegar y el pronóstico de surf en vivo de Cocles antes de reservar.",
+      "cta": "Ubicación y Pronóstico"
     },
     "socialProof": {
       "title": "La confianza de viajeros de todo el mundo",
@@ -299,13 +317,15 @@
         "tours": "Tours",
         "packages": "Paquete de varios días",
         "massage": "Masaje",
+        "yoga": "Yoga",
         "other": "Aún no estoy seguro/a"
       },
       "message": "Cuéntanos más",
       "privacyNotice": "Al enviar este formulario, aceptas nuestra <privacy>Política de Privacidad</privacy>.",
       "submit": "Enviar Consulta",
       "success": "¡Gracias! Recibimos tu mensaje y te responderemos pronto por WhatsApp o correo.",
-      "error": "Algo salió mal al enviar tu mensaje. Por favor intenta por WhatsApp."
+      "error": "Algo salió mal al enviar tu mensaje. Por favor intenta por WhatsApp.",
+      "sendOnWhatsapp": "Enviar este mensaje por WhatsApp"
     },
     "info": {
       "title": "Encuéntranos",
@@ -314,12 +334,19 @@
   },
   "yoga": {
     "hero": {
-      "eyebrow": "Clases de Yoga",
-      "subtitle": "Yoga semanal con Julie Hickey en One Love Wellness — en el mismo lugar que Zalty Boyz en Cocles. Clases sueltas bienvenidas."
+      "eyebrow": "Yoga y Masajes",
+      "subtitle": "Clases semanales de yoga y masajes con Julie Hickey en One Love Wellness — en el mismo lugar que Zalty Boyz en Cocles. Clases sueltas bienvenidas."
     },
     "eyebrow": "Clases de Yoga",
     "aboutTitle": "Sobre las clases",
-    "title": "Yoga en One Love Wellness",
+    "massage": {
+      "title": "Masajes",
+      "withTherapist": "Tratamientos con",
+      "cta": "Reservar un Masaje",
+      "details": "Detalles del masaje",
+      "whatsappMessage": "¡Hola! Me gustaría reservar un masaje. ¿Qué horarios tienen disponibles?"
+    },
+    "title": "Yoga y Masajes en One Love Wellness",
     "body": "Clases semanales de yoga en <place>One Love Wellness</place> — en el mismo lugar que Zalty Boyz en Cocles, para estirarte antes o después de surfear.",
     "taughtBy": "Las clases las imparte",
     "dropIns": "Clases sueltas bienvenidas",

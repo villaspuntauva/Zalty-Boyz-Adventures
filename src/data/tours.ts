@@ -261,12 +261,12 @@ export const tours: Tour[] = [
     slug: "massage",
     name: { en: "Massage", es: "Masaje" },
     shortDescription: {
-      en: "Thai, deep tissue, Watsu, craniosacral, or Reiki from our trusted local partner.",
-      es: "Masaje tailandés, tejido profundo, Watsu, craneosacral o Reiki con nuestra aliada local de confianza.",
+      en: "Thai, deep tissue, Watsu, craniosacral, or Reiki with Julie Hickey, our own \"Zalty Mama\".",
+      es: "Masaje tailandés, tejido profundo, Watsu, craneosacral o Reiki con Julie Hickey, nuestra \"Zalty Mama\".",
     },
     description: {
-      en: "After a day of surfing and exploring, unwind with a massage from our trusted local partner — bookable on its own or added to any package. Our massage services are run by a trusted local therapist in Puerto Viejo, a service we're proud to offer alongside our own tours because we know the quality firsthand. Choose from Thai massage, deep tissue, Watsu (a floating water massage), craniosacral therapy, or Reiki.",
-      es: "Después de un día de surf y exploración, relájate con un masaje de nuestra aliada local de confianza — disponible solo o agregado a cualquier paquete. Nuestros servicios de masaje están a cargo de una terapeuta local de confianza en Puerto Viejo, un servicio que nos enorgullece ofrecer junto a nuestros tours porque conocemos su calidad de primera mano. Elige entre masaje tailandés, tejido profundo, Watsu (masaje flotando en el agua), terapia craneosacral o Reiki.",
+      en: "After a day of surfing and exploring, unwind with a massage from Julie Hickey — bookable on its own or added to any package. Julie is a well-known, expert massage therapist, Reiki master, and Watsu practitioner in Puerto Viejo (and the mother of Zalty Boyz founders Cedric and Solomon), so we know the quality firsthand. Choose from Thai massage, deep tissue, Watsu (a floating water massage), craniosacral therapy, or Reiki.",
+      es: "Después de un día de surf y exploración, relájate con un masaje de Julie Hickey — disponible solo o agregado a cualquier paquete. Julie es una masajista experta y reconocida, maestra de Reiki y practicante de Watsu en Puerto Viejo (y la madre de Cedric y Solomon, fundadores de Zalty Boyz), así que conocemos su calidad de primera mano. Elige entre masaje tailandés, tejido profundo, Watsu (masaje flotando en el agua), terapia craneosacral o Reiki.",
     },
     // TODO(client): confirm actual session length; "by appointment" avoids
     // stating a specific duration that hasn't been confirmed.
@@ -276,7 +276,7 @@ export const tours: Tour[] = [
     difficulty: { en: "For all guests", es: "Para todos los huéspedes" },
     included: {
       en: [
-        "Professional local massage therapist",
+        "Massage by Julie Hickey",
         "Thai massage",
         "Deep tissue massage",
         "Watsu (water massage)",
@@ -284,7 +284,7 @@ export const tours: Tour[] = [
         "Reiki",
       ],
       es: [
-        "Terapeuta de masajes profesional local",
+        "Masaje con Julie Hickey",
         "Masaje tailandés",
         "Masaje de tejido profundo",
         "Watsu (masaje en el agua)",
@@ -293,11 +293,11 @@ export const tours: Tour[] = [
       ],
     },
     pricing: {
-      priceFromNumber: 80,
+      priceFromNumber: 85,
       plans: [
         {
           label: { en: "Massage", es: "Masaje" },
-          price: { en: "From $80", es: "Desde $80" },
+          price: { en: "From $85", es: "Desde $85" },
         },
       ],
       note: {
@@ -316,8 +316,8 @@ export const tours: Tour[] = [
       ],
     },
     heroImageAlt: {
-      en: "Therapist giving a massage in an open-air jungle massage space in Puerto Viejo",
-      es: "Terapeuta dando un masaje en un espacio al aire libre rodeado de selva en Puerto Viejo",
+      en: "Julie Hickey giving a massage in her open-air jungle massage space in Puerto Viejo",
+      es: "Julie Hickey dando un masaje en su espacio al aire libre rodeado de selva en Puerto Viejo",
     },
     practitioner: {
       slug: "julie",

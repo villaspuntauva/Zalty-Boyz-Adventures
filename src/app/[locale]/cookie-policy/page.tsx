@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { staticPageMetadata } from "@/lib/metadata";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { Container } from "@/components/ui/Container";
@@ -15,8 +16,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "cookies.policy" });
-  return { title: t("title"), description: t("intro") };
+  return staticPageMetadata(locale as "en" | "es", "/cookie-policy");
 }
 
 type CookieRow = { name: string; purpose: string; duration: string };
@@ -35,7 +35,7 @@ export default async function CookiePolicyPage({
     <section className="bg-[#eef9ef] py-16 sm:py-20">
       <Container className="max-w-3xl">
         <h1 className="font-heading text-4xl font-extrabold text-ink-900">{t("title")}</h1>
-        <p className="mt-2 text-sm text-ink-700/70">{t("updated")}</p>
+        <p className="mt-2 text-sm text-ink-700/85">{t("updated")}</p>
         <p className="mt-6 text-ink-700">{t("intro")}</p>
 
         <h2 className="mt-10 font-heading text-xl font-bold text-ink-900">{t("whatTitle")}</h2>

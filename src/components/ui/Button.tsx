@@ -9,7 +9,8 @@ const variantClasses: Record<Variant, string> = {
     "bg-brand-600 text-white hover:bg-brand-700 focus-visible:bg-brand-700",
   secondary:
     "bg-white text-brand-700 border border-brand-300 hover:bg-brand-50",
-  whatsapp: "bg-[#25D366] text-white hover:bg-[#1fb958]",
+  // Darker than WhatsApp's #25D366 so white text passes WCAG AA contrast.
+  whatsapp: "bg-[#15803d] text-white hover:bg-[#166534]",
   ghost: "bg-transparent text-inherit hover:bg-black/5",
 };
 

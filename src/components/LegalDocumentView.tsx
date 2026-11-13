@@ -17,7 +17,7 @@ export function LegalDocumentView({
       ? {
           title: "Contacto",
           body: `${business.legalName} · ${business.address.streetAddress}, ${business.address.addressLocality}, ${business.address.addressRegion}, Costa Rica · Tel./WhatsApp: ${business.phone}`,
-          message: `¡Hola! Tengo una pregunta sobre su ${doc.title.es}.`,
+          message: `¡Hola! Tengo una pregunta sobre: ${doc.title.es}.`,
         }
       : {
           title: "Contact us",
@@ -31,7 +31,7 @@ export function LegalDocumentView({
         <h1 className="font-heading text-4xl font-extrabold text-ink-900">
           {doc.title[locale]}
         </h1>
-        <p className="mt-2 text-sm text-ink-700/70">{doc.updated[locale]}</p>
+        <p className="mt-2 text-sm text-ink-700/85">{doc.updated[locale]}</p>
         <p className="mt-6 text-ink-700">{doc.intro[locale]}</p>
 
         {doc.sections.map((section, i) => (

@@ -51,6 +51,7 @@ export async function Testimonials({ locale }: { locale: Locale }) {
               >
                 <div>
                   <div
+                    role="img"
                     aria-label={`${review.rating} out of 5 stars`}
                     className="flex gap-0.5 text-accent-500"
                   >
@@ -74,7 +75,7 @@ export async function Testimonials({ locale }: { locale: Locale }) {
                 <figcaption className="mt-4 text-sm font-semibold text-ink-900">
                   {review.author}
                   {review.location && (
-                    <span className="font-normal text-ink-700/70">
+                    <span className="font-normal text-ink-700/85">
                       {" "}
                       · {review.location}
                     </span>

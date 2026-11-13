@@ -34,8 +34,8 @@ export const packages: Package[] = [
     goodFor: { en: "Surf-focused travelers", es: "Viajeros enfocados en el surf" },
     includesTourSlugs: ["massage"],
     includesSurfLessons: true,
-    // Surf lesson $60 + massage $80 = $140
-    priceFromPerPerson: 125,
+    // Surf lesson $60 + massage $85 = $145
+    priceFromPerPerson: 130,
   },
   {
     slug: "weekend-taste",
@@ -48,8 +48,8 @@ export const packages: Package[] = [
     goodFor: { en: "Short trips & weekend visitors", es: "Viajes cortos y visitantes de fin de semana" },
     includesTourSlugs: ["waterfall-tour", "massage"],
     includesSurfLessons: true,
-    // Surf $60 + waterfall $45 + massage $80 = $185
-    priceFromPerPerson: 165,
+    // Surf $60 + waterfall $45 + massage $85 = $190
+    priceFromPerPerson: 170,
   },
   {
     slug: "full-week-explorer",
@@ -62,7 +62,7 @@ export const packages: Package[] = [
     goodFor: { en: "Travelers who want to see it all", es: "Viajeros que quieren verlo todo" },
     includesTourSlugs: ["kayak-tour", "night-tour", "waterfall-tour", "massage"],
     includesSurfLessons: true,
-    // 3 surf lessons $180 + kayak $50 + night $45 + waterfall $45 + massage $80 = $400
-    priceFromPerPerson: 360,
+    // 3 surf lessons $180 + kayak $50 + night $45 + waterfall $45 + massage $85 = $405
+    priceFromPerPerson: 365,
   },
 ];

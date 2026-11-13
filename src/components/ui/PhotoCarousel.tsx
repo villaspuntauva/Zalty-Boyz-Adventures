@@ -103,7 +103,7 @@ export function PhotoCarousel({
       </div>
 
       {images.length > 1 && (
-        <div className="mt-3 flex justify-center gap-1.5">
+        <div className="mt-1 flex justify-center">
           {images.map((image, i) => (
             <button
               key={image.src}
@@ -111,10 +111,16 @@ export function PhotoCarousel({
               onClick={() => setIndex(i)}
               aria-label={photoLabel(i)}
               aria-current={i === index}
-              className={`h-2 w-2 rounded-full transition-colors ${
-                i === index ? "bg-brand-700" : "bg-brand-200"
-              }`}
-            />
+              // 24px tap target (WCAG 2.5.8) around a small visual dot.
+              className="group flex h-6 w-6 items-center justify-center"
+            >
+              <span
+                aria-hidden="true"
+                className={`h-2 w-2 rounded-full transition-colors ${
+                  i === index ? "bg-brand-700" : "bg-brand-200 group-hover:bg-brand-400"
+                }`}
+              />
+            </button>
           ))}
         </div>
       )}

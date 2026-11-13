@@ -214,10 +214,10 @@ export const termsAndConditions: LegalDocument = {
       title: { en: "Prices and payment", es: "Precios y pago" },
       paragraphs: {
         en: [
-          "Prices on this website are in US dollars, per person unless stated otherwise, and are a guide only — \"from\" prices and package prices can vary with group size, season, transport, and the options you choose. The price we confirm with you when you book is the one that applies. We'll tell you the accepted payment methods, and whether a deposit is needed, when we confirm your booking.",
+          "Prices on this website are in US dollars, per person unless stated otherwise, and are a guide only — \"from\" prices and package prices can vary with group size, season, transport, and the options you choose. The price we confirm with you when you book is the one that applies. We accept cash (preferred), SINPE Móvil, Zelle, PayPal, and bank transfer, and we'll tell you whether a deposit is needed when we confirm your booking.",
         ],
         es: [
-          "Los precios en este sitio están en dólares estadounidenses, por persona salvo que se indique lo contrario, y son solo una referencia — los precios \"desde\" y los de los paquetes pueden variar según el tamaño del grupo, la temporada, el transporte y las opciones que elijas. Aplica el precio que te confirmemos al reservar. Te indicaremos los métodos de pago aceptados, y si se requiere un depósito, al confirmar tu reserva.",
+          "Los precios en este sitio están en dólares estadounidenses, por persona salvo que se indique lo contrario, y son solo una referencia — los precios \"desde\" y los de los paquetes pueden variar según el tamaño del grupo, la temporada, el transporte y las opciones que elijas. Aplica el precio que te confirmemos al reservar. Aceptamos efectivo (preferido), SINPE Móvil, Zelle, PayPal y transferencia bancaria, y te indicaremos si se requiere un depósito al confirmar tu reserva.",
         ],
       },
     },
