@@ -17,6 +17,10 @@ export const routing = defineRouting({
       en: "/tours/[slug]",
       es: "/tours/[slug]",
     },
+    "/yoga": {
+      en: "/yoga",
+      es: "/yoga",
+    },
     "/packages": {
       en: "/packages",
       es: "/paquetes",
@@ -32,6 +36,18 @@ export const routing = defineRouting({
     "/faq": {
       en: "/faq",
       es: "/preguntas-frecuentes",
+    },
+    "/privacy-policy": {
+      en: "/privacy-policy",
+      es: "/politica-de-privacidad",
+    },
+    "/terms": {
+      en: "/terms",
+      es: "/terminos-y-condiciones",
+    },
+    "/cookie-policy": {
+      en: "/cookie-policy",
+      es: "/politica-de-cookies",
     },
     "/contact": {
       en: "/contact",

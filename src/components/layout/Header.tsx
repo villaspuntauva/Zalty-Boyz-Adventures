@@ -14,6 +14,7 @@ type LinkHref = ComponentProps<typeof Link>["href"];
 const navItems: { href: StaticPathnames; labelKey: string }[] = [
   { href: "/surf-lessons", labelKey: "surfLessons" },
   { href: "/tours", labelKey: "tours" },
+  { href: "/yoga", labelKey: "yoga" },
   { href: "/packages", labelKey: "packages" },
   { href: "/about", labelKey: "about" },
   { href: "/location", labelKey: "location" },

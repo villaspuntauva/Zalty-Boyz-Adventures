@@ -8,11 +8,15 @@ const staticPaths = [
   "/",
   "/surf-lessons",
   "/tours",
+  "/yoga",
   "/packages",
   "/about",
   "/location",
   "/faq",
   "/contact",
+  "/privacy-policy",
+  "/terms",
+  "/cookie-policy",
 ] as const;
 
 function alternates(pathname: (typeof staticPaths)[number]) {

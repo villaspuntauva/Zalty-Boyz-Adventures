@@ -2,6 +2,7 @@
 
 import { useActionState, useId } from "react";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { submitInquiry, type InquiryState } from "@/app/[locale]/contact/actions";
 
 const initialState: InquiryState = { status: "idle" };
@@ -147,6 +148,15 @@ export function ContactForm() {
       >
         {t("submit")}
       </button>
+      <p className="text-center text-xs text-ink-700/70">
+        {t.rich("privacyNotice", {
+          privacy: (chunks) => (
+            <Link href="/privacy-policy" className="underline underline-offset-2">
+              {chunks}
+            </Link>
+          ),
+        })}
+      </p>
     </form>
   );
 }

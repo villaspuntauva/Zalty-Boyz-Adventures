@@ -10,6 +10,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { siteUrl, business } from "@/lib/business";
 import { team } from "@/data/team";
+import { Link } from "@/i18n/navigation";
 
 type Locale = "en" | "es";
 
@@ -90,7 +91,8 @@ export default async function AboutPage({
             {team.map((member) => (
               <div
                 key={member.slug}
-                className="flex flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm"
+                id={member.slug}
+                className="flex scroll-mt-24 flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm"
               >
                 <PlaceholderImage
                   src={`/images/about/${member.photo ?? `team-${member.slug}.jpg`}`}
@@ -110,6 +112,24 @@ export default async function AboutPage({
                       <p key={paragraph}>{paragraph}</p>
                     ))}
                   </div>
+                  {member.links && (
+                    <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
+                      {member.links.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={
+                            link.href === "/yoga"
+                              ? "/yoga"
+                              : { pathname: "/tours/[slug]", params: { slug: "massage" } }
+                          }
+                          className="inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:text-brand-800"
+                        >
+                          {link.label[l]}
+                          <span aria-hidden="true">→</span>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}

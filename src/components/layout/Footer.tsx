@@ -3,11 +3,13 @@ import { getTranslations, getLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { StaticPathnames } from "@/i18n/routing";
 import { Container } from "@/components/ui/Container";
+import { CookieSettingsButton } from "@/components/CookieConsent";
 import { business } from "@/lib/business";
 
 const links: { href: StaticPathnames; labelKey: string }[] = [
   { href: "/surf-lessons", labelKey: "surfLessons" },
   { href: "/tours", labelKey: "tours" },
+  { href: "/yoga", labelKey: "yoga" },
   { href: "/packages", labelKey: "packages" },
   { href: "/about", labelKey: "about" },
   { href: "/location", labelKey: "location" },
@@ -111,11 +113,23 @@ export async function Footer() {
       </Container>
 
       <div className="border-t border-brand-800">
-        <Container className="flex flex-col items-center justify-between gap-2 py-6 text-xs text-brand-200 sm:flex-row">
+        <Container className="flex flex-col items-center justify-between gap-2 pt-6 pb-24 text-xs text-brand-200 sm:flex-row sm:pb-6">
           <p>
             © {new Date().getFullYear()} {business.name}. {t("rights")}
           </p>
-          <p className="text-brand-300">{locale === "en" ? "EN" : "ES"}</p>
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+            <Link href="/privacy-policy" className="hover:text-white">
+              {t("privacyPolicy")}
+            </Link>
+            <Link href="/terms" className="hover:text-white">
+              {t("terms")}
+            </Link>
+            <Link href="/cookie-policy" className="hover:text-white">
+              {t("cookiePolicy")}
+            </Link>
+            <CookieSettingsButton label={t("cookieSettings")} />
+            <p className="text-brand-300">{locale === "en" ? "EN" : "ES"}</p>
+          </div>
         </Container>
       </div>
     </footer>

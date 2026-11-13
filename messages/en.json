@@ -6,6 +6,7 @@
     "home": "Home",
     "surfLessons": "Surf Lessons",
     "tours": "Tours",
+    "yoga": "Yoga",
     "packages": "Packages",
     "about": "About",
     "location": "Location",
@@ -75,6 +76,10 @@
     "getInTouch": "Get in Touch",
     "followUs": "Follow Us",
     "location": "Puerto Viejo, Limón, Costa Rica",
+    "privacyPolicy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "cookiePolicy": "Cookie Policy",
+    "cookieSettings": "Cookie settings",
     "rights": "All rights reserved."
   },
   "home": {
@@ -297,6 +302,7 @@
         "other": "Not sure yet"
       },
       "message": "Tell us more",
+      "privacyNotice": "By sending this form, you agree to our <privacy>Privacy Policy</privacy>.",
       "submit": "Send Inquiry",
       "success": "Thanks! We've received your message and will reply by WhatsApp or email shortly.",
       "error": "Something went wrong sending your message. Please try WhatsApp instead."
@@ -304,6 +310,75 @@
     "info": {
       "title": "Find us",
       "location": "Puerto Viejo, Limón, Costa Rica"
+    }
+  },
+  "yoga": {
+    "hero": {
+      "eyebrow": "Yoga Classes",
+      "subtitle": "Weekly yoga with Julie Hickey at One Love Wellness — right at the Zalty Boyz spot in Cocles. Drop-ins welcome."
+    },
+    "eyebrow": "Yoga Classes",
+    "aboutTitle": "About the classes",
+    "title": "Yoga at One Love Wellness",
+    "body": "Weekly yoga classes at <place>One Love Wellness</place> — the same spot as Zalty Boyz in Cocles, so you can stretch out before or after your surf.",
+    "taughtBy": "Classes are taught by",
+    "dropIns": "Drop-ins welcome",
+    "classPackages": "Class packages available",
+    "dropInFrom": "Drop-in class",
+    "privateClass": "Private class",
+    "privateAvailable": "Private classes available",
+    "perClass": "per class",
+    "pricingSoon": "Class pricing coming soon — message us for current rates.",
+    "scheduleTitle": "Weekly schedule",
+    "cta": "Ask About Yoga",
+    "whatsappMessage": "Hi! I'm interested in the yoga classes at One Love Wellness. Can you tell me more?",
+    "photoAlt": "Yoga class at One Love Wellness in Cocles, Puerto Viejo",
+    "photosComingSoon": "Photos coming soon"
+  },
+  "cookies": {
+    "banner": {
+      "title": "We use cookies",
+      "body": "With your OK, we use Google Analytics cookies to see how visitors find and use our site, so we can improve it. No advertising cookies.",
+      "policyLink": "Cookie Policy",
+      "accept": "Accept",
+      "decline": "Decline"
+    },
+    "policy": {
+      "title": "Cookie Policy",
+      "updated": "Last updated: November 13, 2026",
+      "intro": "This page explains which cookies the Zalty Boyz Adventures website uses, why, and how you can change your choice at any time.",
+      "whatTitle": "What are cookies?",
+      "whatBody": "Cookies are small text files a website stores in your browser. They let a site remember things between visits — for example, that you've already answered a cookie banner.",
+      "useTitle": "Cookies we use",
+      "useBody": "We only use analytics cookies, and only if you click Accept. They come from Google Analytics and help us understand how many people visit, which pages they view, and how they found us (for example, from a Google search). The information is aggregated and doesn't identify you personally, and IP addresses are anonymized.",
+      "table": {
+        "name": "Cookie",
+        "purpose": "Purpose",
+        "duration": "Duration",
+        "rows": [
+          {
+            "name": "_ga",
+            "purpose": "Google Analytics — distinguishes unique visitors",
+            "duration": "2 years"
+          },
+          {
+            "name": "_ga_<ID>",
+            "purpose": "Google Analytics — keeps track of your current visit",
+            "duration": "2 years"
+          }
+        ]
+      },
+      "notTitle": "What we don't use",
+      "notBody": "We don't use advertising, retargeting, or social-media tracking cookies, and we don't sell your data. Your cookie choice itself is saved in your browser's local storage (not a cookie) so we don't ask you again on every page.",
+      "choiceTitle": "Changing your choice",
+      "choiceBody": "You can accept or decline analytics at any time. If you decline, Google Analytics stops running and its cookies are deleted. You can also block or delete cookies in your browser settings.",
+      "choiceButton": "Open cookie settings",
+      "thirdTitle": "Google Analytics",
+      "thirdBody": "Google processes analytics data on our behalf. To learn how Google uses this information, see",
+      "thirdLink": "How Google uses information from sites that use its services",
+      "contactTitle": "Questions?",
+      "contactBody": "If you have any questions about this policy, message us on",
+      "contactMessage": "Hi! I have a question about your cookie policy."
     }
   }
 }

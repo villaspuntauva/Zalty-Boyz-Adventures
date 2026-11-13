@@ -8,6 +8,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloatingButton } from "@/components/WhatsAppFloatingButton";
 import { JsonLd } from "@/components/JsonLd";
+import { CookieConsent } from "@/components/CookieConsent";
 import { organizationSchema, localBusinessSchema } from "@/lib/schema";
 import { siteUrl, business } from "@/lib/business";
 import "../globals.css";
@@ -101,6 +102,7 @@ export default async function LocaleLayout({
           </main>
           <Footer />
           <WhatsAppFloatingButton />
+          <CookieConsent />
         </NextIntlClientProvider>
       </body>
     </html>

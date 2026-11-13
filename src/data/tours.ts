@@ -32,6 +32,8 @@ export type Tour = {
    * place of a price, with a "message us for pricing" WhatsApp button.
    */
   pricingOnRequest?: Localized<string>;
+  /** Team member (src/data/team.ts) who runs this service, linked from the tour page. */
+  practitioner?: { slug: string; label: Localized<string> };
 };
 
 /**
@@ -52,8 +54,8 @@ export const tours: Tour[] = [
       es: "Un recorrido escénico en kayak por el río hasta la playa, viendo fauna en el camino.",
     },
     description: {
-      en: "We'll take you on a scenic paddle up the Cocles or Punta Uva River, all the way down to the beach. Along the way, we can see all types of wildlife, including monkeys, sloths, iguanas, turtles, and much more.",
-      es: "Te llevamos a remar por el escénico río Cocles o Punta Uva, hasta llegar a la playa. En el camino, podemos ver todo tipo de fauna, incluyendo monos, perezosos, iguanas, tortugas y mucho más.",
+      en: "We'll take you on a scenic paddle up the Cocles River, all the way down to the beach. Along the way, we can see all types of wildlife, including monkeys, sloths, iguanas, turtles, and much more.",
+      es: "Te llevamos a remar por el escénico río Cocles, hasta llegar a la playa. En el camino, podemos ver todo tipo de fauna, incluyendo monos, perezosos, iguanas, tortugas y mucho más.",
     },
     durationLabel: { en: "2 hours", es: "2 horas" },
     durationIso: "PT2H",
@@ -202,6 +204,15 @@ export const tours: Tour[] = [
       en: ["Local guide", "Bottled water", "Fruit snack"],
       es: ["Guía local", "Agua embotellada", "Snack de fruta"],
     },
+    pricing: {
+      priceFromNumber: 45,
+      plans: [
+        {
+          label: { en: "Per person", es: "Por persona" },
+          price: { en: "From $45", es: "Desde $45" },
+        },
+      ],
+    },
     goodToKnow: {
       en: ["Wear hiking shoes or river sandals with grip", "Bring swimwear and a towel"],
       es: ["Usa zapatos de montaña o sandalias de río con buen agarre", "Trae traje de baño y toalla"],
@@ -307,6 +318,10 @@ export const tours: Tour[] = [
     heroImageAlt: {
       en: "Therapist giving a massage in an open-air jungle massage space in Puerto Viejo",
       es: "Terapeuta dando un masaje en un espacio al aire libre rodeado de selva en Puerto Viejo",
+    },
+    practitioner: {
+      slug: "julie",
+      label: { en: "Meet your therapist:", es: "Conoce a tu terapeuta:" },
     },
   },
 ];

@@ -8,6 +8,8 @@ export type TeamMember = {
   photoAlt: Localized<string>;
   /** Photo filename in public/images/about/; defaults to `team-${slug}.jpg`. */
   photo?: string;
+  /** Services this person runs, linked from their About card. */
+  links?: { label: Localized<string>; href: "/tours/massage" | "/yoga" }[];
 };
 
 export const team: TeamMember[] = [
@@ -79,5 +81,9 @@ export const team: TeamMember[] = [
       en: "Julie Hickey, \"Zalty Mama\", giving a massage in her open-air jungle massage space",
       es: "Julie Hickey, \"Zalty Mama\", dando un masaje en su espacio de masajes al aire libre en la selva",
     },
+    links: [
+      { label: { en: "Book a massage", es: "Reserva un masaje" }, href: "/tours/massage" },
+      { label: { en: "Yoga classes", es: "Clases de yoga" }, href: "/yoga" },
+    ],
   },
 ];

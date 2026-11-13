@@ -6,6 +6,7 @@
     "home": "Inicio",
     "surfLessons": "Clases de Surf",
     "tours": "Tours",
+    "yoga": "Yoga",
     "packages": "Paquetes",
     "about": "Nosotros",
     "location": "Ubicación",
@@ -75,6 +76,10 @@
     "getInTouch": "Contáctanos",
     "followUs": "Síguenos",
     "location": "Puerto Viejo, Limón, Costa Rica",
+    "privacyPolicy": "Política de Privacidad",
+    "terms": "Términos y Condiciones",
+    "cookiePolicy": "Política de Cookies",
+    "cookieSettings": "Configuración de cookies",
     "rights": "Todos los derechos reservados."
   },
   "home": {
@@ -297,6 +302,7 @@
         "other": "Aún no estoy seguro/a"
       },
       "message": "Cuéntanos más",
+      "privacyNotice": "Al enviar este formulario, aceptas nuestra <privacy>Política de Privacidad</privacy>.",
       "submit": "Enviar Consulta",
       "success": "¡Gracias! Recibimos tu mensaje y te responderemos pronto por WhatsApp o correo.",
       "error": "Algo salió mal al enviar tu mensaje. Por favor intenta por WhatsApp."
@@ -304,6 +310,75 @@
     "info": {
       "title": "Encuéntranos",
       "location": "Puerto Viejo, Limón, Costa Rica"
+    }
+  },
+  "yoga": {
+    "hero": {
+      "eyebrow": "Clases de Yoga",
+      "subtitle": "Yoga semanal con Julie Hickey en One Love Wellness — en el mismo lugar que Zalty Boyz en Cocles. Clases sueltas bienvenidas."
+    },
+    "eyebrow": "Clases de Yoga",
+    "aboutTitle": "Sobre las clases",
+    "title": "Yoga en One Love Wellness",
+    "body": "Clases semanales de yoga en <place>One Love Wellness</place> — en el mismo lugar que Zalty Boyz en Cocles, para estirarte antes o después de surfear.",
+    "taughtBy": "Las clases las imparte",
+    "dropIns": "Clases sueltas bienvenidas",
+    "classPackages": "Paquetes de clases disponibles",
+    "dropInFrom": "Clase suelta",
+    "privateClass": "Clase privada",
+    "privateAvailable": "Clases privadas disponibles",
+    "perClass": "por clase",
+    "pricingSoon": "Precios de las clases próximamente — escríbenos para conocer las tarifas actuales.",
+    "scheduleTitle": "Horario semanal",
+    "cta": "Pregunta por Yoga",
+    "whatsappMessage": "¡Hola! Me interesan las clases de yoga en One Love Wellness. ¿Me pueden dar más información?",
+    "photoAlt": "Clase de yoga en One Love Wellness en Cocles, Puerto Viejo",
+    "photosComingSoon": "Fotos próximamente"
+  },
+  "cookies": {
+    "banner": {
+      "title": "Usamos cookies",
+      "body": "Con tu permiso, usamos cookies de Google Analytics para ver cómo los visitantes encuentran y usan nuestro sitio, y así mejorarlo. Sin cookies de publicidad.",
+      "policyLink": "Política de Cookies",
+      "accept": "Aceptar",
+      "decline": "Rechazar"
+    },
+    "policy": {
+      "title": "Política de Cookies",
+      "updated": "Última actualización: 13 de noviembre de 2026",
+      "intro": "Esta página explica qué cookies usa el sitio web de Zalty Boyz Adventures, para qué, y cómo puedes cambiar tu elección en cualquier momento.",
+      "whatTitle": "¿Qué son las cookies?",
+      "whatBody": "Las cookies son pequeños archivos de texto que un sitio web guarda en tu navegador. Permiten que el sitio recuerde cosas entre visitas — por ejemplo, que ya respondiste al aviso de cookies.",
+      "useTitle": "Cookies que usamos",
+      "useBody": "Solo usamos cookies analíticas, y solo si haces clic en Aceptar. Provienen de Google Analytics y nos ayudan a entender cuántas personas nos visitan, qué páginas ven y cómo nos encontraron (por ejemplo, desde una búsqueda en Google). La información es agregada, no te identifica personalmente y las direcciones IP se anonimizan.",
+      "table": {
+        "name": "Cookie",
+        "purpose": "Propósito",
+        "duration": "Duración",
+        "rows": [
+          {
+            "name": "_ga",
+            "purpose": "Google Analytics — distingue visitantes únicos",
+            "duration": "2 años"
+          },
+          {
+            "name": "_ga_<ID>",
+            "purpose": "Google Analytics — registra tu visita actual",
+            "duration": "2 años"
+          }
+        ]
+      },
+      "notTitle": "Lo que no usamos",
+      "notBody": "No usamos cookies de publicidad, remarketing ni de seguimiento de redes sociales, y no vendemos tus datos. Tu elección de cookies se guarda en el almacenamiento local de tu navegador (no en una cookie) para no preguntarte de nuevo en cada página.",
+      "choiceTitle": "Cambiar tu elección",
+      "choiceBody": "Puedes aceptar o rechazar las cookies analíticas en cualquier momento. Si las rechazas, Google Analytics deja de funcionar y sus cookies se eliminan. También puedes bloquear o borrar cookies desde la configuración de tu navegador.",
+      "choiceButton": "Abrir configuración de cookies",
+      "thirdTitle": "Google Analytics",
+      "thirdBody": "Google procesa los datos analíticos en nuestro nombre. Para saber cómo Google usa esta información, consulta",
+      "thirdLink": "Cómo usa Google la información de los sitios que usan sus servicios",
+      "contactTitle": "¿Preguntas?",
+      "contactBody": "Si tienes alguna pregunta sobre esta política, escríbenos por",
+      "contactMessage": "¡Hola! Tengo una pregunta sobre su política de cookies."
     }
   }
 }

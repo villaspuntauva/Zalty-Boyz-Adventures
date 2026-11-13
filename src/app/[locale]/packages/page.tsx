@@ -154,6 +154,14 @@ export default async function PackagesPage({
                       ))}
                     </ul>
 
+                    <p className="mt-6 border-t border-brand-100 pt-4 text-ink-900">
+                      <span className="text-sm text-ink-700">{tCommon("from")} </span>
+                      <span className="font-heading text-3xl font-extrabold">
+                        ${pkg.priceFromPerPerson}
+                      </span>
+                      <span className="text-sm text-ink-700"> {tCommon("perPerson")}</span>
+                    </p>
+
                     <CTAButton
                       href={whatsappLink(
                         `${tWhatsapp("prefilledMessage")} (${pkg.name[l]})`,

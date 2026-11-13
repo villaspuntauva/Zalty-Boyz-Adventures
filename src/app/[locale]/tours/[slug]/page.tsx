@@ -13,6 +13,8 @@ import { CTAButton } from "@/components/ui/Button";
 import { HeroMedia } from "@/components/HeroMedia";
 import { findMedia } from "@/lib/findMedia";
 import { getTourBySlug, tours } from "@/data/tours";
+import { team } from "@/data/team";
+import { Link } from "@/i18n/navigation";
 
 type Locale = "en" | "es";
 
@@ -51,6 +53,10 @@ export default async function TourDetailPage({
 
   const t = await getTranslations("common");
   const tTours = await getTranslations("tours");
+
+  const practitioner = tour.practitioner
+    ? team.find((m) => m.slug === tour.practitioner?.slug)
+    : undefined;
 
   const media = findMedia("tours", tour.slug);
   const photos = media.map((item, i) => ({
@@ -126,6 +132,17 @@ export default async function TourDetailPage({
               />
             )}
             <p className="mt-8 text-ink-700">{tour.description[l]}</p>
+            {practitioner && tour.practitioner && (
+              <p className="mt-4 text-ink-700">
+                {tour.practitioner.label[l]}{" "}
+                <Link
+                  href={{ pathname: "/about", hash: practitioner.slug }}
+                  className="font-semibold text-brand-700 underline underline-offset-2 hover:text-brand-800"
+                >
+                  {practitioner.name}
+                </Link>
+              </p>
+            )}
 
             <dl className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
               <div className="rounded-xl bg-brand-50 p-4">
