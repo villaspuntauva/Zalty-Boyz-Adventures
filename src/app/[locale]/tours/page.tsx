@@ -11,7 +11,7 @@ import { HeroMedia } from "@/components/HeroMedia";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { siteUrl } from "@/lib/business";
-import { tours } from "@/data/tours";
+import { tourPhotoName, tours } from "@/data/tours";
 
 type Locale = "en" | "es";
 
@@ -51,7 +51,8 @@ export default async function ToursPage({
 
       <section className="relative isolate overflow-hidden py-24 text-white [text-shadow:0_2px_4px_rgb(0_0_0/0.6),0_4px_24px_rgb(0_0_0/0.5)] sm:py-36">
         <HeroMedia
-          videoSrc="/images/tours/hero.mp4"
+          videoSrc="/images/tours/tours-puerto-viejo-hero.mp4"
+          videoPoster="/images/tours/tours-puerto-viejo-hero-poster.jpg"
           waveClassName="text-[#eef9ef]"
         />
         <Container>
@@ -78,7 +79,7 @@ export default async function ToursPage({
                 >
                   <div className="relative">
                     <PlaceholderImage
-                      src={`/images/tours/${tour.slug}.jpg`}
+                      src={`/images/tours/${tourPhotoName(tour.slug)}.jpg`}
                       alt={tour.heroImageAlt[l]}
                       aspect="aspect-[16/10]"
                       className="rounded-none"

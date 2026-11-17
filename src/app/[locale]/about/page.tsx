@@ -60,7 +60,7 @@ export default async function AboutPage({
 
       <section className="relative isolate overflow-hidden py-24 text-white [text-shadow:0_2px_4px_rgb(0_0_0/0.6),0_4px_24px_rgb(0_0_0/0.5)] sm:py-36">
         <HeroMedia
-          imageSrc="/images/about/hero.jpg"
+          imageSrc="/images/about/surfer-barrel-wave-caribbean-costa-rica.jpg"
           imageAlt={
             l === "es"
               ? "El equipo de Zalty Boyz en Puerto Viejo"
@@ -93,7 +93,7 @@ export default async function AboutPage({
                 className="flex scroll-mt-24 flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm"
               >
                 <PlaceholderImage
-                  src={`/images/about/${member.photo ?? `team-${member.slug}.jpg`}`}
+                  src={member.photo}
                   alt={member.photoAlt[l]}
                   aspect="aspect-[4/5]"
                   className="rounded-none"

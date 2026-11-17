@@ -6,8 +6,8 @@ export type TeamMember = {
   role: Localized<string>;
   bio: Localized<string[]>;
   photoAlt: Localized<string>;
-  /** Photo filename in public/images/about/; defaults to `team-${slug}.jpg`. */
-  photo?: string;
+  /** Photo path under public/ (falls back to a placeholder if missing). */
+  photo: string;
   /** Services this person runs, linked from their About card. */
   links?: { label: Localized<string>; href: "/tours/massage" | "/yoga" }[];
 };
@@ -32,7 +32,7 @@ export const team: TeamMember[] = [
         "En 2019 fue elegido para representar a su país, Costa Rica, en la selección nacional de los ISA World Surfing Games realizados en Huntington Beach, California.",
       ],
     },
-    photo: "team-cedric-surfing.jpg",
+    photo: "/images/about/cedric-mccrackin-surfing-cocles.jpg",
     photoAlt: {
       en: "Cedric McCrackin, founder and head surf instructor of Zalty Boyz, surfing a wave at Cocles",
       es: "Cedric McCrackin, fundador e instructor principal de surf de Zalty Boyz, surfeando una ola en Cocles",
@@ -55,6 +55,7 @@ export const team: TeamMember[] = [
         "Mejora con cada video que hace, y su ojo detrás de la cámara lo convierte en la persona perfecta para capturar la experiencia de nuestros clientes de surf.",
       ],
     },
+    photo: "/images/about/solomon-mccrackin-surf-instructor.jpg",
     photoAlt: {
       en: "Solomon McCrackin, surf instructor and videographer at Zalty Boyz",
       es: "Solomon McCrackin, instructor de surf y videógrafo de Zalty Boyz",
@@ -77,6 +78,8 @@ export const team: TeamMember[] = [
         "Julie no solo tiene talento sobre una tabla de surf — también es una masajista experta y reconocida, instructora de yoga, maestra de Reiki y practicante de Watsu, y todavía sabe romperla en las olas.",
       ],
     },
+    // Same photo as the massage carousel (tours/massage-puerto-viejo-2.jpg).
+    photo: "/images/tours/massage-puerto-viejo-2.jpg",
     photoAlt: {
       en: "Julie Hickey, \"Zalty Mama\", giving a massage in her open-air jungle massage space",
       es: "Julie Hickey, \"Zalty Mama\", dando un masaje en su espacio de masajes al aire libre en la selva",

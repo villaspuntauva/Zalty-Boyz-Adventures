@@ -14,7 +14,7 @@ import { siteUrl, whatsappLink } from "@/lib/business";
 import { CTAButton } from "@/components/ui/Button";
 import { HeroMedia } from "@/components/HeroMedia";
 import { findMedia } from "@/lib/findMedia";
-import { getTourBySlug, tours } from "@/data/tours";
+import { getTourBySlug, tourPhotoName, tours } from "@/data/tours";
 import { team } from "@/data/team";
 import { Link } from "@/i18n/navigation";
 
@@ -64,7 +64,7 @@ export default async function TourDetailPage({
     ? team.find((m) => m.slug === tour.practitioner?.slug)
     : undefined;
 
-  const media = findMedia("tours", tour.slug);
+  const media = findMedia("tours", tourPhotoName(tour.slug));
   const photos = media.map((item, i) => ({
     ...item,
     alt:
@@ -104,6 +104,7 @@ export default async function TourDetailPage({
         {tour.heroVideo && (
           <HeroMedia
             videoSrc={tour.heroVideo}
+            videoPoster={tour.heroVideoPoster}
             videoStart={tour.heroVideoStart}
             videoEnd={tour.heroVideoEnd}
             waveClassName="text-[#eef9ef]"

@@ -59,9 +59,13 @@ export default async function YogaPage({
       />
 
       <section className="relative isolate overflow-hidden py-24 text-white [text-shadow:0_2px_4px_rgb(0_0_0/0.6),0_4px_24px_rgb(0_0_0/0.5)] sm:py-36">
-        {/* No photo yet — HeroMedia shows its brand gradient. Pass imageSrc
-            once a yoga photo is in public/images/yoga/. */}
-        <HeroMedia waveClassName="text-[#eef9ef]" />
+        <HeroMedia
+          imageSrc="/images/yoga/yoga-class-puerto-viejo-2.jpg"
+          imageAlt={t("photoAlt")}
+          // Keep the instructor (right side of the photo) in frame on phones.
+          imagePosition="object-[72%_center]"
+          waveClassName="text-[#eef9ef]"
+        />
         <Container>
           <p className="text-sm font-semibold uppercase tracking-widest text-white">
             {t("hero.eyebrow")}

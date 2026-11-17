@@ -23,6 +23,9 @@ export const business = {
 
   whatsappNumber: "50685634224",
   phone: "+506 8563 4224",
+  /** Massage bookings go straight to Julie Hickey's WhatsApp. */
+  massageWhatsappNumber: "50687194654",
+  massagePhone: "+506 8719 4654",
   // No public email inbox yet — WhatsApp is the primary contact channel.
   // Add an `email` field back here once a real, working inbox exists.
 
@@ -74,8 +77,13 @@ export const business = {
   googleReviewsUrl: "https://share.google/rXAxaNnweyH8MbOqT",
 } as const;
 
-export function whatsappLink(message: string) {
-  return `https://wa.me/${business.whatsappNumber}?text=${encodeURIComponent(message)}`;
+export function whatsappLink(message: string, number: string = business.whatsappNumber) {
+  return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+}
+
+/** WhatsApp link for massage bookings (Julie's number). */
+export function massageWhatsappLink(message: string) {
+  return whatsappLink(message, business.massageWhatsappNumber);
 }
 
 export const siteUrl =

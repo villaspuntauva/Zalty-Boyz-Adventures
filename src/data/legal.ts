@@ -6,9 +6,7 @@ import type { Localized } from "./types";
  * These are general-purpose templates written for a small Costa Rican surf
  * school / tour operator — NOT legal advice. Before relying on them, have a
  * Costa Rican lawyer review them, and confirm every item marked
- * TODO(client) below matches how the business really operates (especially
- * the cancellation policy, which is a commonly used default, not a policy
- * the client has confirmed).
+ * TODO(client) below matches how the business really operates.
  */
 
 export type LegalSection = {
@@ -191,8 +189,8 @@ export const privacyPolicy: LegalDocument = {
 export const termsAndConditions: LegalDocument = {
   title: { en: "Terms & Conditions", es: "Términos y Condiciones" },
   updated: {
-    en: "Last updated: November 13, 2026",
-    es: "Última actualización: 13 de noviembre de 2026",
+    en: "Last updated: November 17, 2026",
+    es: "Última actualización: 17 de noviembre de 2026",
   },
   intro: {
     en: "These terms apply when you use this website or book a surf lesson, tour, package, massage, or class with Zalty Boyz (\"we\", \"us\"), based in Cocles, Puerto Viejo de Talamanca, Limón, Costa Rica. By using the site or booking with us, you agree to them — please read them, especially the sections on risk and liability.",
@@ -222,20 +220,20 @@ export const termsAndConditions: LegalDocument = {
       },
     },
     {
-      // TODO(client): confirm these cancellation/refund rules match how the
-      // business actually works before going live.
+      // Cancellation policy confirmed by the client: free until 2 days
+      // (48 hours) before, non-refundable after that.
       title: { en: "Cancellations, changes, and refunds", es: "Cancelaciones, cambios y reembolsos" },
       bullets: {
         en: [
-          "If you cancel or change your booking at least 24 hours before the start time, you can reschedule or receive a full refund of anything you've paid.",
-          "Cancellations with less than 24 hours' notice, and no-shows, may be charged in full.",
+          "Cancellation is free up to 2 days (48 hours) before the start time: you can reschedule or receive a full refund of anything you've paid.",
+          "Within 2 days of the start time, bookings are non-refundable. This includes late cancellations and no-shows.",
           "If we cancel because of weather, ocean conditions, or safety concerns, we'll offer you a new date or a full refund.",
           "If you arrive late, we may need to shorten the activity so the next group isn't affected; the full price still applies.",
           "Packages and private trips (such as the Mini Surf Trip) may have different terms, which we'll explain when you book.",
         ],
         es: [
-          "Si cancelas o cambias tu reserva con al menos 24 horas de anticipación, puedes reprogramarla o recibir un reembolso completo de lo que hayas pagado.",
-          "Las cancelaciones con menos de 24 horas de aviso, y las ausencias sin aviso, pueden cobrarse en su totalidad.",
+          "La cancelación es gratuita hasta 2 días (48 horas) antes de la hora de inicio: puedes reprogramar o recibir un reembolso completo de lo que hayas pagado.",
+          "Dentro de los 2 días previos a la hora de inicio, las reservas no son reembolsables. Esto incluye cancelaciones tardías y ausencias sin aviso.",
           "Si cancelamos por clima, condiciones del mar o motivos de seguridad, te ofreceremos una nueva fecha o un reembolso completo.",
           "Si llegas tarde, es posible que debamos acortar la actividad para no afectar al siguiente grupo; se aplica el precio completo.",
           "Los paquetes y viajes privados (como el Mini Viaje de Surf) pueden tener condiciones distintas, que te explicaremos al reservar.",

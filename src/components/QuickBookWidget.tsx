@@ -3,7 +3,7 @@
 import { useId, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { tours } from "@/data/tours";
-import { whatsappLink } from "@/lib/business";
+import { massageWhatsappLink, whatsappLink } from "@/lib/business";
 
 type Locale = "en" | "es";
 
@@ -39,7 +39,9 @@ export function QuickBookWidget() {
       `${t("messageDate")}: ${date || t("messageNotSet")}`,
     ];
 
-    window.open(whatsappLink(lines.join("\n")), "_blank", "noopener,noreferrer");
+    const text = lines.join("\n");
+    const href = activity === "massage" ? massageWhatsappLink(text) : whatsappLink(text);
+    window.open(href, "_blank", "noopener,noreferrer");
   }
 
   return (

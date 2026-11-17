@@ -10,6 +10,8 @@ export type InquiryState = {
    * offer a one-tap WhatsApp fallback instead of losing the lead.
    */
   fallbackText?: string;
+  /** What the visitor picked, so the WhatsApp fallback reaches the right person. */
+  interest?: string;
 };
 
 /**
@@ -105,12 +107,12 @@ export async function submitInquiry(
     });
 
     if (!result.sent) {
-      return { status: "error", message: "not_configured", fallbackText: asText() };
+      return { status: "error", message: "not_configured", fallbackText: asText(), interest };
     }
 
     return { status: "success" };
   } catch (error) {
     console.error("[contact] Failed to send inquiry email:", error);
-    return { status: "error", message: "send_failed", fallbackText: asText() };
+    return { status: "error", message: "send_failed", fallbackText: asText(), interest };
   }
 }

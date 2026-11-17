@@ -35,5 +35,9 @@ export const yogaPrivatePrice: number | undefined = 60;
 /** Slug of the team member (src/data/team.ts) who teaches the classes. */
 export const yogaInstructorSlug = "julie";
 
-/** Photos: drop yoga-1.jpg, yoga-2.jpg, yoga-3.jpg into public/images/yoga/. */
-export const yogaPhotos = ["yoga-1", "yoga-2", "yoga-3"];
+/** Photos in public/images/yoga/ (`.jpg` is added by YogaSection). */
+export const yogaPhotos = [
+  "yoga-class-puerto-viejo-1",
+  "yoga-class-puerto-viejo-2",
+  "yoga-class-puerto-viejo-3",
+];

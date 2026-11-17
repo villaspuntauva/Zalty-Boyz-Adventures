@@ -15,6 +15,8 @@ export type Package = {
    * ~10% bundle discount.
    */
   priceFromPerPerson: number;
+  /** Card photo — reuses a tour/lesson photo rather than a copy of it. */
+  image: string;
 };
 
 /**
@@ -36,6 +38,7 @@ export const packages: Package[] = [
     includesSurfLessons: true,
     // Surf lesson $60 + massage $85 = $145
     priceFromPerPerson: 130,
+    image: "/images/surf-lessons/surf-lesson-puerto-viejo-5.jpg",
   },
   {
     slug: "weekend-taste",
@@ -50,6 +53,7 @@ export const packages: Package[] = [
     includesSurfLessons: true,
     // Surf $60 + waterfall $45 + massage $85 = $190
     priceFromPerPerson: 170,
+    image: "/images/tours/waterfall-tour-puerto-viejo-2.jpg",
   },
   {
     slug: "full-week-explorer",
@@ -64,5 +68,6 @@ export const packages: Package[] = [
     includesSurfLessons: true,
     // 3 surf lessons $180 + kayak $50 + night $45 + waterfall $45 + massage $85 = $405
     priceFromPerPerson: 365,
+    image: "/images/tours/kayak-tour-puerto-viejo-2.jpg",
   },
 ];

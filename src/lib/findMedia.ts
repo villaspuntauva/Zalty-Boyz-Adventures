@@ -8,7 +8,7 @@ export type MediaItem = { src: string; type: "image" | "video" };
  * as the first item, then `${dir}/${slug}-2.jpg`, `${dir}/${slug}-3.jpg`, ...
  * up to `max`. Each slot can be either a photo (`.jpg`) or a video (`.mp4`)
  * — whichever exists — so a carousel can mix both. Only paths that actually
- * exist in public/ are returned, so dropping `kayak-tour-4.mp4` into the
+ * exist in public/ are returned, so dropping `kayak-tour-puerto-viejo-4.mp4` into the
  * folder later is the entire workflow for adding it to that carousel — no
  * code changes needed.
  */

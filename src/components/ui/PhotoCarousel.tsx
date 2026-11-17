@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 
 export type CarouselItem = { src: string; type: "image" | "video"; alt: string };
@@ -12,17 +12,25 @@ export type CarouselItem = { src: string; type: "image" | "video"; alt: string }
  * nothing if the list is empty, so the caller can fall back to
  * PlaceholderImage in that case. Video slides get playback controls
  * instead of autoplay, since this is content the visitor chooses to watch,
- * not background ambiance.
+ * not background ambiance. On touch screens it can also be swiped.
  */
 export function PhotoCarousel({
   images,
   aspect = "aspect-[16/9]",
+  frameClassName = "rounded-2xl",
+  sizes = "(min-width: 1024px) 60vw, 100vw",
+  priority = true,
   prevLabel,
   nextLabel,
   photoLabelTemplate,
 }: {
   images: CarouselItem[];
   aspect?: string;
+  /** Rounding etc. for the photo frame — e.g. "rounded-none" inside a card. */
+  frameClassName?: string;
+  sizes?: string;
+  /** Load the first photo eagerly — only when the carousel is near the top of the page. */
+  priority?: boolean;
   prevLabel: string;
   nextLabel: string;
   /** Raw template with `{number}`/`{total}` placeholders — a function prop
@@ -30,10 +38,9 @@ export function PhotoCarousel({
   photoLabelTemplate: string;
 }) {
   const [index, setIndex] = useState(0);
+  const touchStartX = useRef<number | null>(null);
 
   if (images.length === 0) return null;
-
-  const current = images[index];
 
   function photoLabel(photoIndex: number) {
     return photoLabelTemplate
@@ -48,29 +55,49 @@ export function PhotoCarousel({
   return (
     <div>
       <div
-        className={`${aspect} relative overflow-hidden rounded-2xl bg-brand-900`}
+        className={`${aspect} ${frameClassName} relative touch-pan-y overflow-hidden bg-brand-900`}
+        onTouchStart={(e) => {
+          touchStartX.current = e.touches[0].clientX;
+        }}
+        onTouchEnd={(e) => {
+          if (touchStartX.current === null || images.length < 2) return;
+          const dx = e.changedTouches[0].clientX - touchStartX.current;
+          touchStartX.current = null;
+          // Ignore taps and small drags; swipe left = next, right = previous.
+          if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
+        }}
       >
-        {current.type === "video" ? (
-          <video
-            key={current.src}
-            src={current.src}
-            controls
-            playsInline
-            preload="metadata"
-            className="h-full w-full object-cover"
-          >
-            <track kind="captions" />
-          </video>
-        ) : (
-          <Image
-            key={current.src}
-            src={current.src}
-            alt={current.alt}
-            fill
-            sizes="(min-width: 1024px) 60vw, 100vw"
-            className="object-cover"
-            priority={index === 0}
-          />
+        {/* Every photo stays mounted (hidden ones invisible), so the browser
+            fetches them in the background once the carousel is on screen and
+            switching is instant. Videos only mount while showing. */}
+        {images.map((item, i) =>
+          item.type === "image" ? (
+            <Image
+              key={item.src}
+              src={item.src}
+              alt={i === index ? item.alt : ""}
+              aria-hidden={i !== index}
+              fill
+              sizes={sizes}
+              className={`object-cover transition-opacity duration-300 ${
+                i === index ? "opacity-100" : "opacity-0"
+              }`}
+              priority={priority && i === 0}
+            />
+          ) : (
+            i === index && (
+              <video
+                key={item.src}
+                src={item.src}
+                controls
+                playsInline
+                preload="metadata"
+                className="absolute inset-0 h-full w-full object-cover"
+              >
+                <track kind="captions" />
+              </video>
+            )
+          ),
         )}
 
         {images.length > 1 && (

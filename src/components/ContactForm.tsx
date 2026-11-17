@@ -3,7 +3,7 @@
 import { useActionState, useId } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { whatsappLink } from "@/lib/business";
+import { massageWhatsappLink, whatsappLink } from "@/lib/business";
 import { submitInquiry, type InquiryState } from "@/app/[locale]/contact/actions";
 
 const initialState: InquiryState = { status: "idle" };
@@ -142,7 +142,11 @@ export function ContactForm() {
           <p className="text-sm font-medium text-accent-600">{t("error")}</p>
           {state.fallbackText && (
             <a
-              href={whatsappLink(state.fallbackText)}
+              href={
+                state.interest === "massage"
+                  ? massageWhatsappLink(state.fallbackText)
+                  : whatsappLink(state.fallbackText)
+              }
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex w-full items-center justify-center rounded-full bg-[#15803d] px-6 py-3 text-sm font-semibold text-white hover:bg-[#166534]"

@@ -52,7 +52,7 @@ export default async function LocationPage({
 
       <section className="relative isolate overflow-hidden py-24 text-white [text-shadow:0_2px_4px_rgb(0_0_0/0.6),0_4px_24px_rgb(0_0_0/0.5)] sm:py-36">
         <HeroMedia
-          imageSrc="/images/location/hero.jpg"
+          imageSrc="/images/location/cocles-beach-puerto-viejo.jpg"
           imageAlt={
             l === "es"
               ? "Ola rompiendo junto a un acantilado cubierto de selva en Puerto Viejo"

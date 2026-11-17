@@ -12,6 +12,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema, tourServiceSchema } from "@/lib/schema";
 import { siteUrl, whatsappLink } from "@/lib/business";
 import { findMedia } from "@/lib/findMedia";
+import { surfLessonPhotoName } from "@/data/tours";
 import { getPathname } from "@/i18n/navigation";
 
 type Locale = "en" | "es";
@@ -48,7 +49,7 @@ export default async function SurfLessonsPage({
     l === "es"
       ? "Estudiante de surf principiante practicando pop-up en la playa"
       : "Beginner surf student practicing a pop-up on the beach";
-  const media = findMedia("surf-lessons", "lesson");
+  const media = findMedia("surf-lessons", surfLessonPhotoName);
   const lessonPhotos = media.map((item, i) => ({
     ...item,
     alt:
@@ -80,7 +81,7 @@ export default async function SurfLessonsPage({
 
       <section className="relative isolate overflow-hidden py-24 text-white [text-shadow:0_2px_4px_rgb(0_0_0/0.6),0_4px_24px_rgb(0_0_0/0.5)] sm:py-36">
         <HeroMedia
-          imageSrc="/images/surf-lessons/hero.jpg"
+          imageSrc="/images/surf-lessons/surf-lesson-puerto-viejo-2.jpg"
           imageAlt={
             l === "es"
               ? "Clase de surf en Puerto Viejo, Costa Rica"

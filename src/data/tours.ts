@@ -22,6 +22,8 @@ export type Tour = {
   heroImageAlt: Localized<string>;
   /** Optional autoplaying background video for the tour page header. */
   heroVideo?: string;
+  /** Still frame shown while `heroVideo` loads (or can't autoplay). */
+  heroVideoPoster?: string;
   /** Optional segment of `heroVideo` to loop, in seconds. */
   heroVideoStart?: number;
   heroVideoEnd?: number;
@@ -221,7 +223,8 @@ export const tours: Tour[] = [
       en: "Waterfall in the Talamanca rainforest near Puerto Viejo",
       es: "Cascada en la selva de Talamanca cerca de Puerto Viejo",
     },
-    heroVideo: "/images/tours/waterfall-tour-hero.mp4",
+    heroVideo: "/images/tours/waterfall-tour-puerto-viejo-hero.mp4",
+    heroVideoPoster: "/images/tours/waterfall-tour-puerto-viejo-hero-poster.jpg",
     heroVideoStart: 2,
     heroVideoEnd: 8,
   },
@@ -325,6 +328,19 @@ export const tours: Tour[] = [
     },
   },
 ];
+
+/**
+ * Base filename of a tour's photos in public/images/tours/: the cover photo
+ * is `${name}.jpg`, then `${name}-2.jpg`, `${name}-3.mp4`, ... for its
+ * carousel (see findMedia). The location keeps the filenames descriptive
+ * for image search.
+ */
+export function tourPhotoName(slug: string) {
+  return `${slug}-puerto-viejo`;
+}
+
+/** Base filename of the Surf Lessons photos in public/images/surf-lessons/. */
+export const surfLessonPhotoName = "surf-lesson-puerto-viejo";
 
 export function getTourBySlug(slug: string) {
   return tours.find((tour) => tour.slug === slug);

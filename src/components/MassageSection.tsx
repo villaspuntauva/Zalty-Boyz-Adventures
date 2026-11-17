@@ -2,9 +2,9 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
 import { CTAButton } from "@/components/ui/Button";
-import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
-import { whatsappLink } from "@/lib/business";
-import { getTourBySlug } from "@/data/tours";
+import { PhotoCarousel } from "@/components/ui/PhotoCarousel";
+import { massageWhatsappLink } from "@/lib/business";
+import { getTourBySlug, tourPhotoName } from "@/data/tours";
 import { team } from "@/data/team";
 
 type Locale = "en" | "es";
@@ -27,13 +27,29 @@ export async function MassageSection({ locale }: { locale: Locale }) {
     <section id="massage" className="scroll-mt-24 pt-10 sm:pt-12">
       <Container>
         <div className="grid overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm lg:grid-cols-2">
-          <PlaceholderImage
-            src="/images/tours/massage.jpg"
-            alt={massage.heroImageAlt[locale]}
-            aspect="aspect-[4/3] lg:aspect-auto lg:h-full"
-            className="rounded-none"
-            sizes="(min-width: 1024px) 50vw, 100vw"
-          />
+          <div className="lg:self-center">
+            <PhotoCarousel
+              images={[
+                {
+                  src: `/images/tours/${tourPhotoName("massage")}-2.jpg`,
+                  type: "image",
+                  alt: massage.heroImageAlt[locale],
+                },
+                {
+                  src: `/images/tours/${tourPhotoName("massage")}-3.jpg`,
+                  type: "image",
+                  alt: t("watsuPhotoAlt"),
+                },
+              ]}
+              aspect="aspect-[4/3]"
+              frameClassName="rounded-none"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              priority={false}
+              prevLabel={tCommon("previousPhoto")}
+              nextLabel={tCommon("nextPhoto")}
+              photoLabelTemplate={tCommon.raw("goToPhoto")}
+            />
+          </div>
           <div className="p-6 sm:p-10">
             <h2 className="font-heading text-2xl font-bold text-ink-900">{t("title")}</h2>
             <p className="mt-4 text-ink-700">{massage.shortDescription[locale]}</p>
@@ -67,7 +83,7 @@ export async function MassageSection({ locale }: { locale: Locale }) {
             )}
 
             <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-4">
-              <CTAButton href={whatsappLink(t("whatsappMessage"))} external variant="whatsapp">
+              <CTAButton href={massageWhatsappLink(t("whatsappMessage"))} external variant="whatsapp">
                 {t("cta")}
               </CTAButton>
               <Link

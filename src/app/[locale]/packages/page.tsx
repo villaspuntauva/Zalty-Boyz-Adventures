@@ -12,7 +12,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { siteUrl, whatsappLink } from "@/lib/business";
 import { packages } from "@/data/packages";
-import { getTourBySlug, tours } from "@/data/tours";
+import { getTourBySlug, surfLessonPhotoName, tourPhotoName, tours } from "@/data/tours";
 import { findMedia } from "@/lib/findMedia";
 
 type Locale = "en" | "es";
@@ -52,13 +52,13 @@ export default async function PackagesPage({
     {
       id: "surf-lessons",
       name: t("builder.surfLessons"),
-      image: firstPhoto("surf-lessons", "lesson"),
+      image: firstPhoto("surf-lessons", surfLessonPhotoName),
       priceFrom: surfLessonPriceFrom,
     },
     ...tours.map((tour) => ({
       id: tour.slug,
       name: tour.name[l],
-      image: firstPhoto("tours", tour.slug),
+      image: firstPhoto("tours", tourPhotoName(tour.slug)),
       priceFrom: tour.pricing?.priceFromNumber,
     })),
   ];
@@ -74,7 +74,7 @@ export default async function PackagesPage({
 
       <section className="relative isolate overflow-hidden py-24 text-white [text-shadow:0_2px_4px_rgb(0_0_0/0.6),0_4px_24px_rgb(0_0_0/0.5)] sm:py-36">
         <HeroMedia
-          imageSrc="/images/packages/hero-kayak.jpg"
+          imageSrc="/images/tours/paddle-board-puerto-viejo.jpg"
           waveClassName="text-[#eef9ef]"
           imageAlt={
             l === "es"
@@ -109,7 +109,7 @@ export default async function PackagesPage({
                   className="flex flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm"
                 >
                   <PlaceholderImage
-                    src={`/images/packages/${pkg.slug}.jpg`}
+                    src={pkg.image}
                     alt={pkg.name[l]}
                     aspect="aspect-[16/10]"
                     className="rounded-none"

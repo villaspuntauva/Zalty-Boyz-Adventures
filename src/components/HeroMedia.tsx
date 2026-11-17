@@ -23,7 +23,9 @@ export function HeroMedia({
   imageSrc,
   mobileImageSrc,
   imageAlt,
+  imagePosition = "object-[32%_center]",
   videoSrc,
+  videoPoster,
   videoStart,
   videoEnd,
   waveClassName = "text-sand-50",
@@ -36,7 +38,14 @@ export function HeroMedia({
    */
   mobileImageSrc?: string;
   imageAlt?: string;
+  /** Tailwind object-position class — which part of the photo to keep when cropped. */
+  imagePosition?: string;
   videoSrc?: string;
+  /**
+   * Still frame from the video, shown instantly while the video loads and
+   * in its place when it can't play (Low Power Mode, reduced motion).
+   */
+  videoPoster?: string;
   /** Optional segment (seconds) of the video to play and loop. */
   videoStart?: number;
   videoEnd?: number;
@@ -48,7 +57,21 @@ export function HeroMedia({
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden bg-gradient-to-br from-brand-700 via-brand-600 to-brand-900">
       {videoSrc ? (
-        <HeroVideo src={videoSrc} start={videoStart} end={videoEnd} />
+        <>
+          {videoPoster && (
+            <Image
+              src={videoPoster}
+              alt=""
+              fill
+              preload
+              sizes="100vw"
+              className="object-cover"
+            />
+          )}
+          {/* The still above shows through until the video's first frame
+              paints, so no `poster` attribute (it would download twice). */}
+          <HeroVideo src={videoSrc} start={videoStart} end={videoEnd} />
+        </>
       ) : (
         imageSrc &&
         (mobileImageSrc ? (
@@ -64,7 +87,7 @@ export function HeroMedia({
             fill
             preload
             sizes="100vw"
-            className="object-cover object-[32%_center]"
+            className={`object-cover ${imagePosition}`}
           />
         ))
       )}

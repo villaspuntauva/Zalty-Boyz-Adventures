@@ -58,7 +58,7 @@ export default async function FaqPage({
 
       <section className="relative isolate overflow-hidden py-24 text-white [text-shadow:0_2px_4px_rgb(0_0_0/0.6),0_4px_24px_rgb(0_0_0/0.5)] sm:py-36">
         <HeroMedia
-          imageSrc="/images/faq/hero.jpg"
+          imageSrc="/images/faq/surfer-airborne-puerto-viejo.jpg"
           imageAlt={
             l === "es"
               ? "Surfista saltando la ola en Puerto Viejo"

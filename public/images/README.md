@@ -10,45 +10,43 @@ update the path in code to match).
 
 ## Naming and use
 
+Filenames describe what's in the photo plus where it is (e.g.
+`kayak-tour-puerto-viejo.jpg`) — lowercase, hyphens, real `.jpg`
+extension. Descriptive names help Google Images and AI search tools
+understand the photo; keep that pattern for anything new.
+
 | Path | Used on |
 |---|---|
-| `home/hero-surf-class.webp` | Homepage — full-width hero background |
-| `home/surf-highlight.jpg` | Homepage — "Surf Lessons for Every Level" card |
-| `home/tours-teaser.jpg` | Homepage — "Kayak, paddle board, waterfalls & wildlife" card |
-| `home/packages-teaser.jpg` | Homepage — "Book a Full Week or Weekend" card |
-| `surf-lessons/hero.jpg` | Surf Lessons page — hero banner background |
-| `surf-lessons/lesson.jpg` | Surf Lessons page — intro photo |
-| `tours/kayak-tour.jpg` | Kayak Tour — card + detail page + gallery |
-| `tours/paddle-board.jpg` | Paddle Board (SUP) — card + detail page + gallery |
-| `tours/night-tour.jpg` | Night Tour & Exotic Fruit Farm — card + detail page + gallery |
-| `tours/waterfall-tour.jpg` | Waterfall Tour — card + detail page + gallery |
-| `tours/night-tour-4.jpg` | Night Tour & Exotic Fruit Farm — gallery (fruit photo) |
-| `tours/mini-surf-trip.jpg` | Mini Surf Trip (Isla Uvita & Cahuita) — card + detail page + gallery |
-| `tours/massage.jpg` | Massage — card + detail page + gallery (folded into Tours) |
-| `tours/massage-2.jpg` | Massage — gallery (portrait) |
-| `packages/hero-kayak.jpg` | Packages page — hero banner background |
-| `packages/weekend-taste.jpg` | "Weekend Taste of Puerto Viejo" package card |
-| `packages/full-week-explorer.jpg` | "Full Week Explorer" package card |
-| `packages/surf-and-relax.jpg` | "Surf & Relax" package card |
-| `about/hero.jpg` | About page — hero banner background |
-| `about/team-cedric-surfing.jpg` | About page — Cedric McCrackin's team card |
-| `about/team-solomon.jpg` | About page — Solomon McCrackin's team card |
-| `about/team-julie.jpg` | About page — Julie Hickey's team card |
-| `location/hero.jpg` | Location page — hero banner background |
-| `location/cocles-video.mp4` | Location page — "A Look at Cocles Beach" video, before the map |
-| `faq/hero.jpg` | FAQ page — hero banner background |
-| `location/cocles.jpg` | Location page — Cocles Beach carousel card |
-| `location/punta-uva.jpg` | Location page — Punta Uva carousel card |
-| `location/playa-grande.jpg` | Location page — Playa Grande carousel card |
-| `location/playa-negra.jpg` | Location page — Playa Negra carousel card |
+| `home/surfer-aerial-puerto-viejo-costa-rica.jpg` | Homepage — hero background (desktop) |
+| `about/cedric-mccrackin-surfing-cocles.jpg` | Homepage — hero background (mobile), Cedric's spotlight + About team card |
+| `home/surf-lesson-group-cocles-beach.jpg` | Homepage — "Surf Lessons for Every Level" card |
+| `home/cedric-mccrackin-surfing-cocles.mp4` | Homepage — "Cedric surfing" video |
+| `surf-lessons/surf-lesson-puerto-viejo.jpg` (+ `-2` … `-9`) | Surf Lessons page carousel. `-2` is also the page hero, `-5` the Surf & Relax package card, `-9` a homepage card |
+| `tours/tours-puerto-viejo-hero.mp4` | Tours page — hero video |
+| `tours/kayak-tour-puerto-viejo.jpg` (+ `-2`, `-3.mp4`) | Kayak Tour — card + detail carousel; `-2` is also the Full Week Explorer package card |
+| `tours/paddle-board-puerto-viejo.jpg` (+ `-2`, `-3.mp4`) | Paddle Board — card + detail carousel; also the Packages page hero |
+| `tours/night-tour-puerto-viejo.jpg` (+ `-2` … `-4`) | Night Tour & Exotic Fruit Farm — card + detail carousel |
+| `tours/waterfall-tour-puerto-viejo.jpg` (+ `-2`) | Waterfall Tour — card + detail carousel; `-2` is also the Weekend Taste package card |
+| `tours/waterfall-tour-puerto-viejo-hero.mp4` | Waterfall Tour — header video |
+| `tours/mini-surf-trip-puerto-viejo.jpg` (+ `-2`) | Mini Surf Trip — card + detail carousel |
+| `tours/massage-puerto-viejo.jpg` (+ `-2`, `-3`) | Massage — card + detail carousel. `-2` (Julie massaging) is also Julie's About team card; `-2` and `-3` (Watsu) are the Yoga & Massage page's Massage carousel |
+| `yoga/yoga-class-puerto-viejo-1.jpg` … `-3.jpg` | Yoga & Massage page — "About the classes" photo strip; `-2` is also the page header |
+| `about/surfer-barrel-wave-caribbean-costa-rica.jpg` | About page — hero background |
+| `about/solomon-mccrackin-surf-instructor.jpg` | About page — Solomon's team card (**not added yet**, shows a placeholder) |
+| `location/cocles-beach-puerto-viejo.jpg` | Location page hero + homepage "Find Us" card |
+| `faq/surfer-airborne-puerto-viejo.jpg` | FAQ page — hero background |
 
-Note: `about/team.jpg` (the old "How It Started" photo) is no longer
-used — that section now embeds the real Zalty Boyz YouTube video
-instead of a photo.
+One photo is often used in several places (a tour photo doubles as a
+package card, etc.) — the code points at the same file rather than
+keeping copies, so replace it once and every spot updates.
 
-Each tour and package image is reused in more than one place (its
-listing card and its own page), so one good photo per row above covers
-several spots on the site at once.
+Unused photos that are worth keeping (beach shots, extra surf photos)
+live in `photo-library/` at the repo root — outside `public/`, so they
+aren't deployed. Move one into the right folder here, with a name that
+matches the table above, to put it on the site.
+
+The tour/lesson filename bases come from `tourPhotoName()` and
+`surfLessonPhotoName` in `src/data/tours.ts`.
 
 ## Adding more photos (or videos) to a carousel
 
@@ -58,8 +56,8 @@ photo exists for it. To add items beyond the first one, use the same
 base name with `-2`, `-3`, etc. — each slot can be either a `.jpg`
 photo or an `.mp4` video, in any mix:
 
-- `tours/kayak-tour.jpg`, `tours/kayak-tour-2.jpg`, `tours/kayak-tour-3.mp4`, ...
-- `surf-lessons/lesson.jpg`, `surf-lessons/lesson-2.jpg`, `surf-lessons/lesson-3.jpg`, ...
+- `tours/kayak-tour-puerto-viejo.jpg`, `tours/kayak-tour-puerto-viejo-2.jpg`, `tours/kayak-tour-puerto-viejo-3.mp4`, ...
+- `surf-lessons/surf-lesson-puerto-viejo.jpg`, `surf-lessons/surf-lesson-puerto-viejo-2.jpg`, ...
 
 Any numbers up to 15 are auto-detected — drop a file in and it just
 appears in the carousel, no code changes needed. Gaps are fine (e.g.
@@ -90,5 +88,7 @@ appears in the carousel, no code changes needed. Gaps are fine (e.g.
   it with a real designed image later if you want.
 - **Videos**: `.mp4` works anywhere a numbered carousel slot is listed
   above (see "Adding more photos (or videos) to a carousel"), and as a
-  single clip via `location/cocles-video.mp4`. Keep clips compressed
+  single clip like `home/cedric-mccrackin-surfing-cocles.mp4`. New `.mp4`
+  files are gitignored by default (raw camera files are huge) — add a
+  `!public/images/...` line to `.gitignore` for each one the site uses. Keep clips compressed
   (under ~25MB) so pages stay fast.

@@ -46,8 +46,8 @@ export default async function HomePage({
     <>
       <section className="relative isolate overflow-hidden pb-12 pt-16 sm:pb-28 sm:pt-24">
         <HeroMedia
-          imageSrc="/images/home/hero-surf-class.webp"
-          mobileImageSrc="/images/gallery/cocles3.webp"
+          imageSrc="/images/home/surfer-aerial-puerto-viejo-costa-rica.jpg"
+          mobileImageSrc="/images/about/cedric-mccrackin-surfing-cocles.jpg"
           imageAlt={
             locale === "es"
               ? "Surfista en una ola en Puerto Viejo, Costa Rica"
@@ -139,7 +139,7 @@ export default async function HomePage({
               body={t("surfHighlight.body")}
               cta={t("surfHighlight.cta")}
               href="/surf-lessons"
-              imageSrc="/images/home/surf-highlight.jpg"
+              imageSrc="/images/home/surf-lesson-group-cocles-beach.jpg"
               imageAlt={
                 locale === "es"
                   ? "Instructor enseñando una clase de surf en Puerto Viejo"
@@ -153,7 +153,7 @@ export default async function HomePage({
               body={t("toursTeaser.body")}
               cta={t("toursTeaser.cta")}
               href="/tours"
-              imageSrc="/images/tours/kayak-tour.jpg"
+              imageSrc="/images/tours/kayak-tour-puerto-viejo.jpg"
               imageAlt={
                 locale === "es"
                   ? "Grupo en kayak y paddle board por un río en la selva de Talamanca"
@@ -168,7 +168,7 @@ export default async function HomePage({
               cta={t("packagesTeaser.cta")}
               href="/packages"
               priceLabel={`${tCommon("from")} $${lowestPackagePrice}`}
-              imageSrc="/images/surf-lessons/surf13.webp"
+              imageSrc="/images/surf-lessons/surf-lesson-puerto-viejo-9.jpg"
               imageAlt={
                 locale === "es"
                   ? "Estudiante de surf con rashguard de Zalty Boyz cargando una tabla por la playa en Puerto Viejo"
@@ -186,7 +186,7 @@ export default async function HomePage({
               cta={t("wellnessTeaser.cta")}
               href="/yoga"
               priceLabel={`${tCommon("from")} $${yogaDropInPrice}`}
-              imageSrc="/images/about/team-julie.jpg"
+              imageSrc="/images/tours/massage-puerto-viejo-2.jpg"
               imageAlt={
                 locale === "es"
                   ? "Julie Hickey dando un masaje en su espacio al aire libre en la selva en Cocles"
@@ -199,7 +199,7 @@ export default async function HomePage({
               body={t("aboutTeaser.body")}
               cta={t("aboutTeaser.cta")}
               href="/about"
-              imageSrc="/images/about/team-cedric-surfing.jpg"
+              imageSrc="/images/about/cedric-mccrackin-surfing-cocles.jpg"
               imageAlt={
                 locale === "es"
                   ? "Cedric McCrackin, fundador de Zalty Boyz, surfeando una ola en Cocles"
@@ -212,7 +212,7 @@ export default async function HomePage({
               body={t("locationTeaser.body")}
               cta={t("locationTeaser.cta")}
               href="/location"
-              imageSrc="/images/location/cocles.jpg"
+              imageSrc="/images/location/cocles-beach-puerto-viejo.jpg"
               imageAlt={
                 locale === "es"
                   ? "Playa Cocles en Puerto Viejo, Costa Rica"
@@ -241,7 +241,7 @@ export default async function HomePage({
 
           <div className="mx-auto mt-8 max-w-3xl">
             <PlaceholderVideo
-              src="/images/gallery/cocles5.mp4"
+              src="/images/home/cedric-mccrackin-surfing-cocles.mp4"
               label={
                 locale === "es"
                   ? "Video de Cedric surfeando — próximamente"
