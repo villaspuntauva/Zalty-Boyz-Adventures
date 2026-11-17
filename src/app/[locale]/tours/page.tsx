@@ -73,9 +73,10 @@ export default async function ToursPage({
           <Container>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {tours.map((tour) => (
+                // Whole card is tappable: the Learn More link's ::after covers it.
                 <div
                   key={tour.slug}
-                  className="flex flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm"
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm transition-shadow hover:shadow-md has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-brand-600"
                 >
                   <div className="relative">
                     <PlaceholderImage
@@ -114,7 +115,7 @@ export default async function ToursPage({
                     </dl>
                     <Link
                       href={{ pathname: "/tours/[slug]", params: { slug: tour.slug } }}
-                      className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:text-brand-800"
+                      className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 after:absolute after:inset-0 after:content-[''] focus-visible:outline-none group-hover:text-brand-800"
                     >
                       {tCommon("learnMore")}
                       <span aria-hidden="true">→</span>

@@ -301,7 +301,8 @@ function ServiceCard({
   priceLabel?: string;
 }) {
   return (
-    <div className="flex flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm">
+    // Whole card is tappable: the link's ::after covers it (see Link below).
+    <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm transition-shadow hover:shadow-md has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-brand-600">
       <div className="relative">
         <PlaceholderImage
           src={imageSrc}
@@ -325,7 +326,7 @@ function ServiceCard({
         <p className="mt-2 flex-1 text-sm text-ink-700">{body}</p>
         <Link
           href={href}
-          className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:text-brand-800"
+          className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 after:absolute after:inset-0 after:content-[''] focus-visible:outline-none group-hover:text-brand-800"
         >
           {cta}
           <span aria-hidden="true">→</span>
