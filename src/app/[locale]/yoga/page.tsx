@@ -8,8 +8,8 @@ import { HeroMedia } from "@/components/HeroMedia";
 import { YogaSection } from "@/components/YogaSection";
 import { MassageSection } from "@/components/MassageSection";
 import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema, tourServiceSchema } from "@/lib/schema";
-import { yogaDropInPrice } from "@/data/yoga";
+import { breadcrumbSchema, yogaServiceSchema } from "@/lib/schema";
+import { yogaDropInPrice, yogaPrivatePrice } from "@/data/yoga";
 import { siteUrl } from "@/lib/business";
 
 type Locale = "en" | "es";
@@ -47,14 +47,21 @@ export default async function YogaPage({
         ])}
       />
       <JsonLd
-        data={tourServiceSchema({
+        data={yogaServiceSchema({
           locale: l,
           name: t("title"),
           description: t("hero.subtitle"),
-          slug: "yoga",
-          type: "Service",
           url: `${siteUrl}/${locale}/yoga`,
-          priceFrom: yogaDropInPrice,
+          image: "/images/yoga/yoga-class-puerto-viejo-2.jpg",
+          // Same prices as the visible yoga pricing cards.
+          offers: [
+            ...(yogaDropInPrice !== undefined
+              ? [{ name: t("dropInFrom"), price: yogaDropInPrice }]
+              : []),
+            ...(yogaPrivatePrice !== undefined
+              ? [{ name: t("privateClass"), price: yogaPrivatePrice }]
+              : []),
+          ],
         })}
       />
 

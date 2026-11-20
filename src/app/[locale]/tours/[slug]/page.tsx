@@ -9,7 +9,7 @@ import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { PhotoCarousel } from "@/components/ui/PhotoCarousel";
 import { QuickBookWidget } from "@/components/QuickBookWidget";
 import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema, tourServiceSchema } from "@/lib/schema";
+import { breadcrumbSchema, tourSchema } from "@/lib/schema";
 import { siteUrl, whatsappLink } from "@/lib/business";
 import { CTAButton } from "@/components/ui/Button";
 import { HeroMedia } from "@/components/HeroMedia";
@@ -83,14 +83,13 @@ export default async function TourDetailPage({
         ])}
       />
       <JsonLd
-        data={tourServiceSchema({
+        data={tourSchema({
           locale: l,
+          slug: tour.slug,
           name: tour.name[l],
           description: tour.description[l],
-          slug: tour.slug,
-          durationIso: tour.durationIso,
+          url: `${siteUrl}/${locale}/tours/${tour.slug}`,
           priceFrom: tour.pricing?.priceFromNumber,
-          type: tour.slug === "massage" ? "Service" : "TouristTrip",
         })}
       />
 

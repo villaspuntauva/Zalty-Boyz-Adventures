@@ -9,7 +9,7 @@ import { PhotoCarousel } from "@/components/ui/PhotoCarousel";
 import { HeroMedia } from "@/components/HeroMedia";
 import { QuickBookWidget } from "@/components/QuickBookWidget";
 import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema, tourServiceSchema } from "@/lib/schema";
+import { breadcrumbSchema, surfLessonsServiceSchema } from "@/lib/schema";
 import { siteUrl, whatsappLink } from "@/lib/business";
 import { findMedia } from "@/lib/findMedia";
 import { surfLessonPhotoName } from "@/data/tours";
@@ -67,15 +67,16 @@ export default async function SurfLessonsPage({
         ])}
       />
       <JsonLd
-        data={tourServiceSchema({
+        data={surfLessonsServiceSchema({
           locale: l,
           name: t("hero.title"),
           description: t("hero.subtitle"),
-          slug: "surf-lessons",
-          type: "Service",
           url: `${siteUrl}${getPathname({ locale: l, href: "/surf-lessons" })}`,
-          durationIso: "PT2H",
-          priceFrom: 60,
+          // Same prices as the visible Pricing section below.
+          offers: [
+            { name: t("pricing.group.title"), price: Number(t("pricing.group.price").replace(/\D/g, "")) },
+            { name: t("pricing.private.title"), price: Number(t("pricing.private.price").replace(/\D/g, "")) },
+          ],
         })}
       />
 

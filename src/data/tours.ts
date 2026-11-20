@@ -13,7 +13,7 @@ export type Tour = {
   shortDescription: Localized<string>;
   description: Localized<string>;
   durationLabel: Localized<string>;
-  /** ISO 8601 duration, used in TouristTrip schema. */
+  /** ISO 8601 duration (Schema.org TouristTrip has no duration property, so not in JSON-LD). */
   durationIso: string;
   groupSize: Localized<string>;
   difficulty: Localized<string>;

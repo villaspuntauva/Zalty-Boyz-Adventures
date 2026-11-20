@@ -9,7 +9,7 @@ import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloatingButton } from "@/components/WhatsAppFloatingButton";
 import { JsonLd } from "@/components/JsonLd";
 import { CookieConsent } from "@/components/CookieConsent";
-import { organizationSchema, localBusinessSchema, websiteSchema } from "@/lib/schema";
+import { siteGraphSchema } from "@/lib/schema";
 import { siteUrl, business } from "@/lib/business";
 import "../globals.css";
 
@@ -86,9 +86,8 @@ export default async function LocaleLayout({
         <a href="#main-content" className="skip-link">
           {t("skipToContent")}
         </a>
-        <JsonLd data={organizationSchema()} />
-        <JsonLd data={websiteSchema(locale as "en" | "es")} />
-        <JsonLd data={localBusinessSchema(locale as "en" | "es")} />
+        {/* Site-wide WebSite + LocalBusiness graph — the only place it's emitted. */}
+        <JsonLd data={siteGraphSchema(locale as "en" | "es")} />
         <NextIntlClientProvider>
           <Header />
           <main id="main-content" className="flex-1">
