@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/Container";
 import { CTAButton } from "@/components/ui/Button";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { HeroMedia } from "@/components/HeroMedia";
-import { YouTubeEmbed } from "@/components/YouTubeEmbed";
+import { PlaceholderVideo } from "@/components/ui/PlaceholderVideo";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { siteUrl, business } from "@/lib/business";
@@ -16,11 +16,6 @@ import { Link } from "@/i18n/navigation";
 
 type Locale = "en" | "es";
 
-// A real Zalty Boyz surf vlog, picked from their own channel
-// (youtube.com/@zaltyboyz6720) via YouTube's oEmbed API.
-const FEATURED_YOUTUBE_VIDEO_ID = "HI3V08zGKyA";
-const FEATURED_YOUTUBE_VIDEO_TITLE =
-  "Surfing the perfect lefts of Boca Barranca | ZALTY BOYZ VLOG #8";
 // "Watch Us on YouTube" button target — the Zalty Boyz vlog playlist.
 const YOUTUBE_PLAYLIST_URL =
   "https://www.youtube.com/playlist?list=PLKBO6F4qxWlFSkMLNzQCpC_pGKztDKCgX";
@@ -139,21 +134,11 @@ export default async function AboutPage({
         <Container>
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              {business.social.youtube ? (
-                <YouTubeEmbed
-                  videoId={FEATURED_YOUTUBE_VIDEO_ID}
-                  title={FEATURED_YOUTUBE_VIDEO_TITLE}
-                />
-              ) : (
-                <PlaceholderImage
-                  alt={
-                    l === "es"
-                      ? "El equipo de Zalty Boyz en la playa de Puerto Viejo"
-                      : "The Zalty Boyz team on the beach in Puerto Viejo"
-                  }
-                  aspect="aspect-video"
-                />
-              )}
+              {/* Self-hosted clip (720p H.264); the button below links to the channel. */}
+              <PlaceholderVideo
+                src="/images/about/zalty-boyz-surfing-puerto-viejo.mp4"
+                poster="/images/about/zalty-boyz-surfing-puerto-viejo-poster.jpg"
+              />
               {business.social.youtube && (
                 <div className="mt-4 flex justify-center">
                   <CTAButton

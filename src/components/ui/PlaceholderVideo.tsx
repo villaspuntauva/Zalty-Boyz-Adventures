@@ -9,11 +9,14 @@ import path from "node:path";
  */
 export function PlaceholderVideo({
   src,
+  poster,
   label,
   className = "",
   aspect = "aspect-video",
 }: {
   src?: string;
+  /** Still shown before playback (otherwise iOS shows a black box). */
+  poster?: string;
   label?: string;
   className?: string;
   aspect?: string;
@@ -24,7 +27,12 @@ export function PlaceholderVideo({
   if (fileExists && src) {
     return (
       <div className={`${aspect} ${className} overflow-hidden rounded-2xl bg-black`}>
-        <video controls playsInline preload="metadata" className="h-full w-full object-cover">
+        <video
+          controls
+          playsInline
+          preload="metadata"
+          poster={poster}
+          className="h-full w-full object-cover">
           <source src={src} />
         </video>
       </div>

@@ -241,7 +241,8 @@ export default async function HomePage({
 
           <div className="mx-auto mt-8 max-w-3xl">
             <PlaceholderVideo
-              src="/images/home/cedric-mccrackin-surfing-cocles.mp4"
+              src="/images/home/surfing-puerto-viejo.mp4"
+              poster="/images/home/surfing-puerto-viejo-poster.jpg"
               label={
                 locale === "es"
                   ? "Video de Cedric surfeando — próximamente"

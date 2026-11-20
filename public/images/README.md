@@ -20,8 +20,8 @@ understand the photo; keep that pattern for anything new.
 | `home/surfer-aerial-puerto-viejo-costa-rica.jpg` | Homepage — hero background (desktop) |
 | `about/cedric-mccrackin-surfing-cocles.jpg` | Homepage — hero background (mobile), Cedric's spotlight + About team card |
 | `home/surf-lesson-group-cocles-beach.jpg` | Homepage — "Surf Lessons for Every Level" card |
-| `home/cedric-mccrackin-surfing-cocles.mp4` | Homepage — "Cedric surfing" video |
-| `surf-lessons/surf-lesson-puerto-viejo.jpg` (+ `-2` … `-9`) | Surf Lessons page carousel. `-2` is also the page hero, `-5` the Surf & Relax package card, `-9` a homepage card |
+| `home/surfing-puerto-viejo.mp4` (+ `-poster.jpg`) | Homepage — "See Your Instructor in Action" video (720p H.264) |
+| `surf-lessons/surf-lesson-puerto-viejo.jpg` (+ `-2` … `-10`) | Surf Lessons page carousel. `-2` is also the page hero, `-5` the Surf & Relax package card, `-9` a homepage card |
 | `tours/tours-puerto-viejo-hero.mp4` | Tours page — hero video |
 | `tours/kayak-tour-puerto-viejo.jpg` (+ `-2`, `-3.mp4`) | Kayak Tour — card + detail carousel; `-2` is also the Full Week Explorer package card |
 | `tours/paddle-board-puerto-viejo.jpg` (+ `-2`, `-3.mp4`) | Paddle Board — card + detail carousel; also the Packages page hero |
@@ -32,7 +32,8 @@ understand the photo; keep that pattern for anything new.
 | `tours/massage-puerto-viejo.jpg` (+ `-2`, `-3`) | Massage — card + detail carousel. `-2` (Julie massaging) is also Julie's About team card; `-2` and `-3` (Watsu) are the Yoga & Massage page's Massage carousel |
 | `yoga/yoga-class-puerto-viejo-1.jpg` … `-3.jpg` | Yoga & Massage page — "About the classes" photo strip; `-2` is also the page header |
 | `about/surfer-barrel-wave-caribbean-costa-rica.jpg` | About page — hero background |
-| `about/solomon-mccrackin-surf-instructor.jpg` | About page — Solomon's team card (**not added yet**, shows a placeholder) |
+| `about/solomon-mccrackin-surf-instructor.jpg` | About page — Solomon's team card |
+| `about/zalty-boyz-surfing-puerto-viejo.mp4` (+ `-poster.jpg`) | About page — video next to "How it started" (720p H.264) |
 | `location/cocles-beach-puerto-viejo.jpg` | Location page hero + homepage "Find Us" card |
 | `faq/surfer-airborne-puerto-viejo.jpg` | FAQ page — hero background |
 
@@ -88,7 +89,7 @@ appears in the carousel, no code changes needed. Gaps are fine (e.g.
   it with a real designed image later if you want.
 - **Videos**: `.mp4` works anywhere a numbered carousel slot is listed
   above (see "Adding more photos (or videos) to a carousel"), and as a
-  single clip like `home/cedric-mccrackin-surfing-cocles.mp4`. New `.mp4`
+  single clip like `home/surfing-puerto-viejo.mp4`. New `.mp4`
   files are gitignored by default (raw camera files are huge) — add a
   `!public/images/...` line to `.gitignore` for each one the site uses. Keep clips compressed
   (under ~25MB) so pages stay fast.
