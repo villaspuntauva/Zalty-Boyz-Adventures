@@ -34,13 +34,13 @@ Lessons go to whichever beach has the best conditions that day, with pickup in t
 
 ## Key pages
 
-- [Surf Lessons](https://www.zaltyboyzadventures.com/en/surf-lessons): group and private lessons, levels, pricing
-- [Tours](https://www.zaltyboyzadventures.com/en/tours): all tours with prices and details
-- [Yoga & Massage](https://www.zaltyboyzadventures.com/en/yoga): weekly yoga schedule and prices, plus massage with Julie Hickey at One Love Wellness
-- [Packages](https://www.zaltyboyzadventures.com/en/packages): multi-day bundles and a custom package builder
-- [About](https://www.zaltyboyzadventures.com/en/about): the team
-- [Location](https://www.zaltyboyzadventures.com/en/location): map, beaches, surf forecast
-- [FAQ](https://www.zaltyboyzadventures.com/en/faq): prices, what's included, what to bring, payment, booking
-- [Contact](https://www.zaltyboyzadventures.com/en/contact): WhatsApp and inquiry form
+- [Surf Lessons](https://zaltyboyz.com/en/surf-lessons): group and private lessons, levels, pricing
+- [Tours](https://zaltyboyz.com/en/tours): all tours with prices and details
+- [Yoga & Massage](https://zaltyboyz.com/en/yoga): weekly yoga schedule and prices, plus massage with Julie Hickey at One Love Wellness
+- [Packages](https://zaltyboyz.com/en/packages): multi-day bundles and a custom package builder
+- [About](https://zaltyboyz.com/en/about): the team
+- [Location](https://zaltyboyz.com/en/location): map, beaches, surf forecast
+- [FAQ](https://zaltyboyz.com/en/faq): prices, what's included, what to bring, payment, booking
+- [Contact](https://zaltyboyz.com/en/contact): WhatsApp and inquiry form
 
 Spanish versions live under /es/ (for example /es/lecciones-de-surf, /es/paquetes, /es/sobre-nosotros, /es/ubicacion, /es/preguntas-frecuentes, /es/contacto).
